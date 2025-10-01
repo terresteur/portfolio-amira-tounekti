@@ -14,9 +14,10 @@
 :root {
     --bleu-fonce: #426C8D;
     --bleu-claire: #D6E5EF;
-    --mauve-claire: #8992D2;
+    --mauve-claire: #97EAD2;
     --mauve-fonce: #222C73;
     --blanc: rgb(255, 255, 255);
+    --jaune: #F3E478;
 }
 
 body {
@@ -24,45 +25,7 @@ body {
     background-color: var(--bleu-fonce);
 }
 
-.logo {
-    width: 40vh;
-}
 
-/*Pour le style des boutons, j'ai mis un (::before) pour le linear-gradient sur leurs bordures.*/
-.bouton {
-    position: relative;
-    margin: 20px;
-    padding: 13px 21px;
-    border: none;
-    border-radius: 13px;
-    font-family: "ougkeh", sans-serif;
-    font-size: 1.5em;
-    color: var(--mauve-claire);
-    z-index: 0;
-    background: transparent;
-}
-
-.bouton::before {
-    content: "";
-    position: absolute;
-    inset: 0; 
-    border-radius: 13px;
-    padding: 2px; 
-    background: linear-gradient(40deg, var(--mauve-claire), var(--mauve-fonce));
-    -webkit-mask:
-        linear-gradient(#ffffff 0 0) content-box,
-        linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask:
-        linear-gradient(#fff 0 0) content-box,
-        linear-gradient(#fff 0 0);
-    mask-composite: exclude;
-    z-index: -1;
-}
-
-.menuSandwitch {
-    display: none;
-}
 
 /*J'ai mis des div qui englobent d'autres div à la fin pour chaque partie du site.*/
 header {
@@ -79,6 +42,51 @@ header {
     flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
+}
+
+.logo {
+    width: 40vh;
+}
+
+/*Pour le style des boutons, j'ai mis un (::before) pour le linear-gradient sur leurs bordures.*/
+.bouton {
+    position: relative;
+    margin: 20px;
+    padding: 9px 19px;
+    border: none;
+    border-radius: 13px;
+    font-family: "ougkeh", sans-serif;
+    font-size: 1.8em;
+    color: var(--mauve-claire);
+    z-index: 0;
+    background: transparent;
+}
+
+.bouton:hover {
+    color: var(--jaune);
+    box-shadow: 0px 0px 9px var(--blanc);
+}
+
+.bouton::before {
+    content: "";
+    position: absolute;
+    inset: 0; 
+    border-radius: 13px;
+    padding: 2px; 
+    background: linear-gradient(40deg, var(--mauve-claire), var(--bleu-fonce));
+    -webkit-mask:
+        linear-gradient(#ffffff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    z-index: -1;
+}
+
+.menuSandwitch {
+    display: none;
 }
 
 /*Les flocons se trouvent dans ce grand div avec (.principalImag).*/
@@ -261,7 +269,7 @@ p {
     }
 
     .menu {
-        background: linear-gradient(40deg, var(--mauve-claire), var(--mauve-fonce));
+        background: linear-gradient(40deg, var(--mauve-claire), var(--bleu-fonce));
         width: 50px;
         height: 7px;
         border-radius: 2px;
