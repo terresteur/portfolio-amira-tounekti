@@ -3,7 +3,12 @@
 @font-face {
     src: url("./font/OugkehRegular-DYYrW.otf") format("opentype");
     font-family: "ougkeh";
-  }
+}
+
+@font-face {
+    src: url("./font/Merriweather-Italic-VariableFont_opsz\,wdth\,wght.ttf") format("truetype");
+    font-family: "merriweather";
+}
 
 /*Liste des couleurs que je vais souvent utiliser*/
 :root {
@@ -171,6 +176,10 @@ header {
     align-items: flex-start;
     font-family: "ougkeh", sans-serif;
     font-size: 1.4em;
+}
+
+p {
+    font-family: "merriweather";
 }
 
 /*Je vais le remplacer par une (div) pour mettre l’image directement dans le CSS.*/
