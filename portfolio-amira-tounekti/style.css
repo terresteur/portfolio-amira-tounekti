@@ -25,11 +25,11 @@ body {
 .bouton {
     position: relative;
     margin: 20px;
-    padding: 8px 16px;
+    padding: 13px 21px;
     border: none;
     border-radius: 13px;
     font-family: "ougkeh", sans-serif;
-    font-size: 1.1em;
+    font-size: 1.5em;
     color: var(--mauve-claire);
     z-index: 0;
     background: transparent;
@@ -226,10 +226,9 @@ header {
 }
 
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 793px) {
 
   .menuSandwitch {
-
         width: 40px;
         height: 30px;
         overflow: hidden;

@@ -11,9 +11,11 @@
 </head>
 <body>
     
+    <!-- Première partie du visuel qui présente le style du portfolio -->
     <div class="Portfolio">
         <header>
             <div class="navigation">
+                <!-- Les boutons sont faits pour un écran large, alors que le menu sandwich est pour un écran plus petit. -->
                 <div class="boutons">
                         <button class="bouton accueil">Accueil</button>
                         <button class="bouton projet">Projet</button>
@@ -27,6 +29,7 @@
             </div>
         </header>
 
+        <!-- La neige sera animée pour donner vie à l'environnement avec le scroll. -->
         <div class="decoPresentation">
                 <div class="flocon neige1"></div>
                 <div class="flocon neige2"></div>
@@ -35,24 +38,37 @@
                 <div class="flocon neige5"></div>
                 <div class="flocon neige6"></div>
 
+            <!-- Donne un avant-goût du style de mon art. -->
             <div class="principalImage">
                 <img class="dessin" src="./img/sorciere.png" alt="dessin-principal" >
             </div>
         </div>
 
+        <!-- Cette section sera animée pour donner un effet de carte. -->
         <div class="deuxiemeSection">
             <section class="presentation">
+
+                <!-- Ce sera une photo professionnelle de moi. -->
                 <img class="photo" src="./img/photo.png" alt="dessin-principal" >
+
+                <!-- L'article me présente. -->
                 <article class="aPropos">
                     <h2>À propos</h2>
                     <p>Je m'appele Amira, l'un de mes loisirs est de dessiner et cela ce reflete sur ma volontés de metier que je faire partis. En effet, je souhaite intégrer une équipe en tant que web designer pour créer des interfaces modernes et intuitives, en mobilisant mes connaissances en HTML, CSS et design graphique.</p>
                 </article>
             </section>
+
+            <!-- Je vais enlever l'image pour l’intégrer directement dans le CSS. -->
             <img class="montagneFond" src="./img/2ieme-section.svg" alt="fond-enneiger" >
         </div>
 
+        <!-- Cette section sera animée pour donner un effet de carte. -->
         <div class="troisiemeSection">
+
+            <!-- Cette section montrera tous les logiciels que je maîtrise et elle montrera des projets que j’ai réalisés. -->
             <div class="competance">
+
+                <!-- Le carousel donne un avant-goût en images de mes projets ; lorsque tu cliques dessus, ça emmène à la page Projets. -->
                 <div class="carousel">
                     <div class="arrow left" onclick="prevSlide()"><img class="flecheGauche" src="./img/fleche.svg" alt="" ></div>
                 
@@ -65,6 +81,8 @@
                     <div class="arrow right" onclick="nextSlide()"><img class="flecheDroit" src="./img/fleche.svg" alt="" ></div>
                 </div>
             </div>
+
+            <!-- Je vais enlever l'image pour l’intégrer directement dans le CSS. -->
             <img class="piqueFond" src="./img/3ieme-section.svg" alt="fond-enneiger" >
         </div>
 
