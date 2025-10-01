@@ -63,6 +63,8 @@ body {
     align-items: center;
 }
 
+
+
 header {
     background-color: var(--bleu-fonce);
     display: flex;
@@ -160,11 +162,6 @@ header {
     font-size: 1em;
 }
 
-/*img {
-    border-radius: 10px;
-}*/
-
-
 .piqueFond {
     width: 100%;
 }
@@ -228,3 +225,70 @@ header {
   position: relative;
 }
 
+
+@media screen and (max-width: 500px) {
+
+  .menuSandwitch {
+
+        width: 40px;
+        height: 30px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .menu {
+        background: linear-gradient(40deg, var(--mauve-claire), var(--mauve-fonce));
+        width: 50px;
+        height: 7px;
+        border-radius: 2px;
+    }
+
+    .bouton {
+        display: none;
+    }
+
+    .logo {
+        width: 29vh;
+    }
+
+    .presentation {
+        position: absolute;
+        margin: 10% 0 10% 0;
+        width: 100%;
+        height: 70%;
+        overflow: hidden;
+        z-index: 1; 
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    
+    .photo {
+        width: 30%;
+        height: 30%;
+        object-fit: contain;
+        display: block;
+    }
+
+    .aPropos {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        font-family: "ougkeh", sans-serif;
+        font-size: 0.9em;
+    }
+
+    .decoPresentation {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        height: 50vh; 
+        float: top;
+    }
+
+}
