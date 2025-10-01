@@ -55,6 +55,10 @@ body {
     z-index: -1;
 }
 
+.menuSandwitch {
+    display: none;
+}
+
 /*J'ai mis des div qui englobent d'autres div à la fin pour chaque partie du site.*/
 header {
     background-color: var(--bleu-fonce);
@@ -166,7 +170,7 @@ header {
     justify-content: center;
     align-items: flex-start;
     font-family: "ougkeh", sans-serif;
-    font-size: 1em;
+    font-size: 1.4em;
 }
 
 /*Je vais le remplacer par une (div) pour mettre l’image directement dans le CSS.*/
