@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    
+    <div class="Portfolio">
+        <header>
+            <div class="navigation">
+                <div class="boutons">
+                        <button class="bouton accueil">Accueil</button>
+                        <button class="bouton projet">Projet</button>
+                </div>
+                <img class="logo" src="./img/Portfolio.svg" alt="logo-portfolio" >
+            </div>
+        </header>
+
+        <div class="decoPresentation">
+                <div class="flocon neige1"></div>
+                <div class="flocon neige2"></div>
+                <div class="flocon neige3"></div>
+                <div class="flocon neige4"></div>
+                <div class="flocon neige5"></div>
+                <div class="flocon neige6"></div>
+
+            <div class="principalImage">
+                <img class="dessin" src="./img/sorciere.png" alt="dessin-principal" >
+            </div>
+        </div>
+
+        <div class="deuxiemeSection">
+            <section class="presentation">
+                <img class="photo" src="./img/photo.png" alt="dessin-principal" >
+                <article class="aPropos">
+                    <h2>À propos</h2>
+                    <p>Je m'appele Amira, l'un de mes loisirs est de dessiner et cela ce reflete sur ma volontés de metier que je faire partis. En effet, je souhaite intégrer une équipe en tant que web designer pour créer des interfaces modernes et intuitives, en mobilisant mes connaissances en HTML, CSS et design graphique.</p>
+                </article>
+            </section>
+            <img class="montagneFond" src="./img/2ieme-section.svg" alt="fond-enneiger" >
+        </div>
+
+        <div class="troisiemeSection">
+            <div class="competance">
+                <div class="carousel">
+                    <div class="arrow left" onclick="prevSlide()"><img class="flecheGauche" src="./img/fleche.svg" alt="" ></div>
+                
+                    <div class="carousel-images">
+                        <img src="./img/photo.png" class="carousel-img active" alt="projet 1">
+                        <img src="./img/sorciere.png" class="carousel-img" alt="projet 2">
+                        <img src="./img/photo.png" class="carousel-img" alt="projet 3">
+                    </div>
+                
+                    <div class="arrow right" onclick="nextSlide()"><img class="flecheDroit" src="./img/fleche.svg" alt="" ></div>
+                </div>
+            </div>
+            <img class="piqueFond" src="./img/3ieme-section.svg" alt="fond-enneiger" >
+        </div>
+
+        <footer></footer>
+
+    </div>
+    
+</body>
+</html>

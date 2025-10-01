@@ -1,0 +1,230 @@
+@font-face {
+    src: url("./font/OugkehRegular-DYYrW.otf") format("opentype");
+    font-family: "ougkeh";
+  }
+
+:root {
+    --bleu-fonce: #426C8D;
+    --bleu-claire: #D6E5EF;
+    --mauve-claire: #8992D2;
+    --mauve-fonce: #222C73;
+    --blanc: rgb(255, 255, 255);
+    --perspective: 1000px;
+    --rotation: 120deg;
+}
+
+body {
+    margin: 0;
+    background-color: var(--bleu-fonce);
+}
+
+.logo {
+    width: 40vh;
+}
+
+.bouton {
+    position: relative;
+    margin: 20px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 13px;
+    font-family: "ougkeh", sans-serif;
+    font-size: 1.1em;
+    color: var(--mauve-claire);
+    z-index: 0;
+    background: transparent;
+}
+
+.bouton::before {
+    content: "";
+    position: absolute;
+    inset: 0; 
+    border-radius: 13px;
+    padding: 2px; 
+    background: linear-gradient(40deg, var(--mauve-claire), var(--mauve-fonce));
+    -webkit-mask:
+        linear-gradient(#ffffff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    z-index: -1;
+}
+
+
+.navigation {
+    height: 20vh;
+    width: 80vw;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header {
+    background-color: var(--bleu-fonce);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.decoPresentation {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: 100vh; 
+    float: top;
+}
+
+.principalImage {
+    top: 20px;
+    margin: 80px 0 80px 0;
+    width: 100%;
+    overflow: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.dessin {
+    width: 60%;
+    object-fit: contain;
+    display: block;
+}
+
+
+.flocon {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    margin: 10px;
+    background-color: var(--blanc);
+    border-radius: 20px;
+    box-shadow: 0px 0px 9px var(--blanc);
+    z-index: 2;
+}
+
+.neige1 { top: 0%; left: 10%; }
+.neige2 { top: 30%; left: 0%; }
+.neige3 { top: 80%; left: 10%; }
+.neige4 { top: 15%; right: 15%; }
+.neige5 { top: 90%; right: 10%; }
+.neige6 { top: 40%; left: 90%; }
+
+.montagneFond {
+    position: relative;
+    width: 100%;
+    z-index: 0;
+}
+
+.deuxiemeSection {
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    float: bottom;
+}
+
+.presentation {
+    position: absolute;
+    margin: 10% 0 10% 0;
+    width: 100%;
+    height: 70%;
+    overflow: hidden;
+    z-index: 1; 
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+}
+
+.photo {
+    width: 30%;
+    height: 60%;
+    object-fit: contain;
+    display: block;
+}
+
+.aPropos {
+    width: 40%;
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    font-family: "ougkeh", sans-serif;
+    font-size: 1em;
+}
+
+/*img {
+    border-radius: 10px;
+}*/
+
+
+.piqueFond {
+    width: 100%;
+}
+
+.troisiemeSection {
+    position: relative;
+    width: 100%;
+    bottom: 200px;
+    display: flex;
+    align-items: center; 
+    justify-self: center;
+}
+
+.competance {
+    position: absolute;
+    width: 100%;
+}
+
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  position: relative;
+
+}
+
+.arrow {
+  cursor: pointer;
+  width: 10%;
+  height: 10%;
+  overflow: hidden;
+}
+
+.flecheDroit {
+    width: 90%;
+}
+
+.flecheGauche {
+    width: 90%;
+    transform: scaleX(-1);
+}
+
+.carousel-images {
+  width: 230px;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  opacity: 0;
+}
+
+.carousel-img.active {
+  opacity: 1;
+  position: relative;
+}
+
