@@ -29,14 +29,17 @@ body {
 
 /*J'ai mis des div qui englobent d'autres div à la fin pour chaque partie du site.*/
 header {
+    position: sticky;
+    top: 0vh;
     background-color: var(--bleu-fonce);
     display: flex;
     flex-direction: row;
     justify-content: center;
+    z-index: 5;
+    height: 130px;
 }
 
 .navigation {
-    height: 20vh;
     width: 80vw;
     display: flex;
     flex-direction: row-reverse;
@@ -257,7 +260,7 @@ p {
 }
 
 /*Cette partie est adaptative au plus petit format d’écran.*/
-@media screen and (max-width: 793px) {
+@media screen and (max-width: 793px)  {
 
   .menuSandwitch {
         width: 40px;
@@ -297,8 +300,8 @@ p {
     }
     
     .photo {
-        width: 30%;
-        height: 30%;
+        width: 32%;
+        height: 32%;
         object-fit: contain;
         display: block;
     }
@@ -310,7 +313,7 @@ p {
         justify-content: center;
         align-items: flex-start;
         font-family: "ougkeh", sans-serif;
-        font-size: 0.9em;
+        font-size: 0.8em;
     }
 
     .decoPresentation {
@@ -322,3 +325,24 @@ p {
     }
 
 }
+
+@media screen and (max-width: 631px) { 
+    .photo {
+        width: 23%;
+        height: 20%;
+        object-fit: contain;
+        display: block;
+    }
+
+    .aPropos {
+        width: 80%;
+        margin-top: 110px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        font-family: "ougkeh", sans-serif;
+        font-size: 0.6em;
+    }
+
+ }

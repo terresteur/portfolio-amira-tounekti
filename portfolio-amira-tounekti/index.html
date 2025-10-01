@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,8 +10,9 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="script.js" defer></script>
 </head>
+
 <body>
-    
+
     <!-- Première partie du visuel qui présente le style du portfolio -->
     <div class="Portfolio">
         <header>
@@ -20,27 +22,28 @@
                     <div class="menu sandwitch2"></div>
                     <div class="menu sandwitch3"></div>
                 </div>
-                <!-- Les boutons sont faits pour un écran large, alors que le menu sandwich est pour un écran plus petit. -->
-                <div class="boutons">
-                        <button class="bouton accueil">Accueil</button>
-                        <button class="bouton projet">Projet</button>
-                </div>
-                <img class="logo" src="./img/Portfolio.svg" alt="logo-portfolio" >
+                <!-- Les boutons sont faits pour un écran large, alors que le menu sandwich est pour un écran plus petit. <a href="" >accueil</a>-->
+                <nav class="boutons">
+                    <button class="bouton accueil">Accueil</button> 
+                    <button class="bouton projet">Projet</button>
+                </nav>
+                <img class="logo" src="./img/Portfolio.svg" alt="logo-portfolio">
             </div>
         </header>
 
         <!-- La neige sera animée pour donner vie à l'environnement avec le scroll. -->
         <div class="decoPresentation">
-                <div class="flocon neige1"></div>
-                <div class="flocon neige2"></div>
-                <div class="flocon neige3"></div>
-                <div class="flocon neige4"></div>
-                <div class="flocon neige5"></div>
-                <div class="flocon neige6"></div>
+
+            <div class="flocon neige1"></div>
+            <div class="flocon neige2"></div>
+            <div class="flocon neige3"></div>
+            <div class="flocon neige4"></div>
+            <div class="flocon neige5"></div>
+            <div class="flocon neige6"></div>
 
             <!-- Donne un avant-goût du style de mon art. -->
             <div class="principalImage">
-                <img class="dessin" src="./img/sorciere.png" alt="dessin-principal" >
+                <img class="dessin" src="./img/sorciere.png" alt="dessin-principal">
             </div>
         </div>
 
@@ -49,36 +52,41 @@
             <section class="presentation">
 
                 <!-- Ce sera une photo professionnelle de moi. -->
-                <img class="photo" src="./img/photo.png" alt="dessin-principal" >
+                <img class="photo" src="./img/photo.png" alt="dessin-principal">
 
                 <!-- L'article me présente. -->
                 <article class="aPropos">
                     <h2>À propos</h2>
-                    <p>Je m'appele Amira, l'un de mes loisirs est de dessiner et cela ce reflete sur ma volontés de metier que je faire partis. En effet, je souhaite intégrer une équipe en tant que web designer pour créer des interfaces modernes et intuitives, en mobilisant mes connaissances en HTML, CSS et design graphique.</p>
+                    <p>Je m'appele Amira, l'un de mes loisirs est de dessiner et cela ce reflete sur ma volontés de
+                        metier que je faire partis. En effet, je souhaite intégrer une équipe en tant que web designer
+                        pour créer des interfaces modernes et intuitives, en mobilisant mes connaissances en HTML, CSS
+                        et design graphique.</p>
                 </article>
             </section>
 
             <!-- Je vais enlever l'image pour l’intégrer directement dans le CSS. -->
-            <img class="montagneFond" src="./img/2ieme-section.svg" alt="fond-enneiger" >
+            <img class="montagneFond" src="./img/2ieme-section.svg" alt="fond-enneiger">
         </div>
 
         <!-- Cette section sera animée pour donner un effet de carte. -->
-        <div class="troisiemeSection">
+        <section class="troisiemeSection">
 
             <!-- Cette section montrera tous les logiciels que je maîtrise et elle montrera des projets que j’ai réalisés. -->
             <div class="competance">
 
                 <!-- Le carousel donne un avant-goût en images de mes projets ; lorsque tu cliques dessus, ça emmène à la page Projets. -->
                 <div class="carousel">
-                    <div class="arrow left" onclick="prevSlide()"><img class="flecheGauche" src="./img/fleche.svg" alt="" ></div>
-                
+                    <div class="arrow left" onclick="prevSlide()"><img class="flecheGauche" src="./img/fleche.svg"
+                            alt=""></div>
+
                     <div class="carousel-images">
                         <img src="./img/photo.png" class="carousel-img active" alt="projet 1">
                         <img src="./img/sorciere.png" class="carousel-img" alt="projet 2">
                         <img src="./img/photo.png" class="carousel-img" alt="projet 3">
                     </div>
-                
-                    <div class="arrow right" onclick="nextSlide()"><img class="flecheDroit" src="./img/fleche.svg" alt="" ></div>
+
+                    <div class="arrow right" onclick="nextSlide()"><img class="flecheDroit" src="./img/fleche.svg"
+                            alt=""></div>
                 </div>
 
                 <div class="iconsComp">
@@ -87,12 +95,13 @@
             </div>
 
             <!-- Je vais enlever l'image pour l’intégrer directement dans le CSS. -->
-            <img class="piqueFond" src="./img/3ieme-section.svg" alt="fond-enneiger" >
-        </div>
+            <img class="piqueFond" src="./img/3ieme-section.svg" alt="fond-enneiger">
+        </section>
 
         <footer></footer>
 
     </div>
-    
+
 </body>
+
 </html>
