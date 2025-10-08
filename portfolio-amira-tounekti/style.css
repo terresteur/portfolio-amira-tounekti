@@ -10,6 +10,12 @@
     font-family: "merriweather";
 }
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    
+}
+
 /*Liste des couleurs que je vais souvent utiliser*/
 :root {
     --bleu-fonce: #426C8D;
@@ -21,7 +27,6 @@
 }
 
 body {
-    margin: 0;
     background-color: var(--bleu-fonce);
 }
 
@@ -29,14 +34,15 @@ body {
 
 /*J'ai mis des div qui englobent d'autres div à la fin pour chaque partie du site.*/
 header {
-    position: sticky;
+    position: fixed;
     top: 0vh;
     background-color: var(--bleu-fonce);
     display: flex;
     flex-direction: row;
     justify-content: center;
-    z-index: 5;
+    z-index: 10;
     height: 130px;
+    width: 100vw;
 }
 
 .navigation {
@@ -68,6 +74,7 @@ header {
 .bouton:hover {
     color: var(--jaune);
     box-shadow: 0px 0px 9px var(--blanc);
+    background: linear-gradient(40deg, var(--mauve-claire), var(--bleu-fonce));
 }
 
 .bouton::before {
@@ -94,16 +101,15 @@ header {
 
 /*Les flocons se trouvent dans ce grand div avec (.principalImag).*/
 .decoPresentation {
-    position: relative;
-    width: 100%;
+    position: absolute;
+    z-index: 1;
+    height: 100vh;
+    width: 100vw;
     overflow: hidden;
-    height: 100vh; 
-    float: top;
 }
 
 /*(.principalImag) englobe le dessin.*/
 .principalImage {
-    top: 20px;
     margin: 80px 0 80px 0;
     width: 100%;
     overflow: auto;
@@ -111,11 +117,12 @@ header {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    z-index: 1;
+    transform: none !important;
+    opacity: 1 !important;
 }
 
 .dessin {
-    width: 60%;
+    width: 50%;
     object-fit: contain;
     display: block;
 }
@@ -129,7 +136,6 @@ header {
     background-color: var(--blanc);
     border-radius: 20px;
     box-shadow: 0px 0px 9px var(--blanc);
-    z-index: 2;
 }
 
 .neige1 { top: 0%; left: 10%; }
@@ -140,29 +146,29 @@ header {
 .neige6 { top: 40%; left: 90%; }
 
 /*Je vais le remplacer par une div pour mettre l’image directement dans le CSS.*/
-.montagneFond {
-    position: relative;
-    width: 100%;
-    z-index: 0;
-}
+
 
 /*Cette section est enneigée et elle englobe À propos. Il y aura dessus une animation GSAP.*/
 .deuxiemeSection {
-    overflow: hidden;
+    position: absolute;
+    top: 80vh; /* Ajuste pour contrôler à quel moment elle “écrase” la première */
+    left: 0;
     width: 100%;
-    display: flex;
-    align-items: center;
-    float: bottom;
+    height: 170vh;
+    background-image: url('./img/2ieme-section.svg');
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    z-index: 2; /* Passe au-dessus de decoPresentation */
 }
 
 /*Dans la section Présentation, il y a la photo et le (À propos). Elle prend toute la largeur pour les centrer.*/
 .presentation {
-    position: absolute;
     margin: 10% 0 10% 0;
     width: 100%;
     height: 70%;
     overflow: hidden;
-    z-index: 1; 
+    z-index: 2; 
     display: flex;
     flex-direction: row-reverse;
     justify-content: center;
@@ -171,10 +177,12 @@ header {
 
 /*Il y a dedans une image temporaire en attendant la photo professionnelle.*/
 .photo {
-    width: 30%;
-    height: 60%;
-    object-fit: contain;
-    display: block;
+    width: 200px;
+    height: 300px;
+    background-image: url('./img/photo.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 /*Description de ma personne*/
@@ -194,18 +202,19 @@ p {
 }
 
 /*Je vais le remplacer par une (div) pour mettre l’image directement dans le CSS.*/
-.piqueFond {
-    width: 100%;
-}
 
 /*Cette section est glacée et elle englobe les compétences. Il y aura dessus une animation GSAP.*/
 .troisiemeSection {
     position: relative;
     width: 100%;
-    bottom: 200px;
+    background-image: url('./img/3ieme-section.svg');
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
     display: flex;
     align-items: center; 
     justify-self: center;
+    z-index: 5;
 }
 
 .competance {
@@ -300,10 +309,8 @@ p {
     }
     
     .photo {
-        width: 32%;
-        height: 32%;
-        object-fit: contain;
-        display: block;
+        width: 150px;
+        height: 250px;
     }
 
     .aPropos {
@@ -328,10 +335,8 @@ p {
 
 @media screen and (max-width: 631px) { 
     .photo {
-        width: 23%;
-        height: 20%;
-        object-fit: contain;
-        display: block;
+        width: 100px;
+        height: 200px;
     }
 
     .aPropos {
