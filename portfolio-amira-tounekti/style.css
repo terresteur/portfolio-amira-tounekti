@@ -102,7 +102,7 @@ header {
 
 /*Les flocons se trouvent dans ce grand div avec (.principalImag).*/
 .decoPresentation {
-    position: absolute;
+    position: relative;
     z-index: 1;
     height: 100vh;
     width: 100%;
@@ -123,7 +123,7 @@ header {
 }
 
 .dessin {
-    width: 50%;
+    width: 40%;
     object-fit: contain;
     display: block;
 }
@@ -151,16 +151,19 @@ header {
 
 /*Cette section est enneigée et elle englobe À propos. Il y aura dessus une animation GSAP.*/
 .deuxiemeSection {
-    position: absolute;
-    top: 120vh; /* Ajuste pour contrôler à quel moment elle “écrase” la première */
+    position: relative;
+    top: -40vh; /* Ajuste pour contrôler à quel moment elle “écrase” la première */
     left: 0;
     width: 100%;
-    height: 170vh;
+    height: 200vh;
     background-image: url('./img/2ieme-section.svg');
     background-repeat: no-repeat;
     background-position: top;
     background-size: cover;
     z-index: 2; /* Passe au-dessus de decoPresentation */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /*Dans la section Présentation, il y a la photo et le (À propos). Elle prend toute la largeur pour les centrer.*/
@@ -199,15 +202,16 @@ header {
 }
 
 p {
+    margin-top: 10px;
     font-family: "merriweather";
 }
-
-/*Je vais le remplacer par une (div) pour mettre l’image directement dans le CSS.*/
 
 /*Cette section est glacée et elle englobe les compétences. Il y aura dessus une animation GSAP.*/
 .troisiemeSection {
     position: relative;
     width: 100%;
+    height: 290vh;
+    top: -130vh;
     background-image: url('./img/3ieme-section.svg');
     background-repeat: no-repeat;
     background-position: top;
@@ -215,21 +219,20 @@ p {
     display: flex;
     align-items: center; 
     justify-self: center;
-    z-index: 5;
+    z-index: 9;
 }
 
 .competance {
-    position: absolute;
     width: 100%;
 }
 
 /*Le carrousel englobe les images et les flèches du carrousel.*/
 .carousel {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 30px;
-  position: relative;
 
 }
 
@@ -250,9 +253,9 @@ p {
 }
 
 .carousel-images {
-  width: 230px;
-  height: 200px;
   position: relative;
+  width: 330px;
+  height: 300px;
   overflow: hidden;
 }
 
