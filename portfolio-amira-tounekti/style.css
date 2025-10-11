@@ -13,12 +13,13 @@
 * {
     box-sizing: border-box;
     margin: 0;
-    
+   
 }
 
 /*Liste des couleurs que je vais souvent utiliser*/
 :root {
     --bleu-fonce: #426C8D;
+    --bleu-tres-fonce: #2d4a61;
     --bleu-claire: #D6E5EF;
     --mauve-claire: #97EAD2;
     --mauve-fonce: #222C73;
@@ -41,7 +42,7 @@ header {
     flex-direction: row;
     justify-content: center;
     z-index: 10;
-    height: 130px;
+    height: 150px;
     width: 100vw;
     box-shadow: 0px 0px 50px black;
 }
@@ -58,23 +59,26 @@ header {
     width: 40vh;
 }
 
+.boutons {
+    display: flex;
+}
 /*Pour le style des boutons, j'ai mis un (::before) pour le linear-gradient sur leurs bordures.*/
 .bouton {
     position: relative;
-    margin: 20px;
+    margin: 25px;
     padding: 9px 19px;
     border: none;
     border-radius: 13px;
     font-family: "ougkeh", sans-serif;
-    font-size: 1.8em;
+    font-size: 2.2em;
     color: var(--mauve-claire);
     z-index: 0;
     background: transparent;
+      cursor: pointer;
 }
 
 .bouton:hover {
     color: var(--jaune);
-    box-shadow: 0px 0px 9px var(--blanc);
     background: linear-gradient(40deg, var(--mauve-claire), var(--bleu-fonce));
 }
 
@@ -111,26 +115,26 @@ header {
 
 /*(.principalImag) englobe le dessin.*/
 .principalImage {
-    margin: 200px 0 80px 0;
+    margin: 300px 0 80px 0;
     width: 100%;
     overflow: auto;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    transform: none !important;
-    opacity: 1 !important;
 }
 
 .dessin {
     width: 40%;
     object-fit: contain;
     display: block;
+    border: inset 10px var(--bleu-claire);
 }
 
 /*Les flocons possèdent les mêmes caractéristiques, ensuite ils sont mis à diverses positions avec (.neige).*/
 .flocon {
     position: absolute;
+    top: 0; 
     width: 25px;
     height: 25px;
     margin: 10px;
@@ -139,21 +143,10 @@ header {
     box-shadow: 0px 0px 9px var(--blanc);
 }
 
-.neige1 { top: 0%; left: 10%; }
-.neige2 { top: 30%; left: 0%; }
-.neige3 { top: 80%; left: 10%; }
-.neige4 { top: 15%; right: 15%; }
-.neige5 { top: 90%; right: 10%; }
-.neige6 { top: 40%; left: 90%; }
-
-/*Je vais le remplacer par une div pour mettre l’image directement dans le CSS.*/
-
 
 /*Cette section est enneigée et elle englobe À propos. Il y aura dessus une animation GSAP.*/
 .deuxiemeSection {
     position: relative;
-    top: -40vh; /* Ajuste pour contrôler à quel moment elle “écrase” la première */
-    left: 0;
     width: 100%;
     height: 200vh;
     background-image: url('./img/2ieme-section.svg');
@@ -169,50 +162,54 @@ header {
 /*Dans la section Présentation, il y a la photo et le (À propos). Elle prend toute la largeur pour les centrer.*/
 .presentation {
     margin: 10% 0 10% 0;
-    width: 100%;
-    height: 70%;
+    width: 55%;
+    height: 25%;
     overflow: hidden;
     z-index: 2; 
     display: flex;
     flex-direction: row-reverse;
     justify-content: center;
     align-items: center;
+    opacity: 0;
+    background-color: var(--bleu-fonce);
+    box-shadow: inset 0 0 20px 25px var(--bleu-tres-fonce);
 }
 
 /*Il y a dedans une image temporaire en attendant la photo professionnelle.*/
 .photo {
-    width: 200px;
-    height: 300px;
+    width: 20%;
+    height: 70%;
     background-image: url('./img/photo.png');
     background-position: center;
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
+    border-radius: 7px;
 }
 
 /*Description de ma personne*/
 .aPropos {
-    width: 40%;
+    width: 60%;
     margin: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     font-family: "ougkeh", sans-serif;
-    font-size: 1.4em;
+    font-size: 1.8em;
+    color: var(--bleu-claire);
 }
 
-p {
-    margin-top: 10px;
-    font-family: "merriweather";
+.aPropos p {
+    margin-top: 20px;
 }
 
 /*Cette section est glacée et elle englobe les compétences. Il y aura dessus une animation GSAP.*/
 .troisiemeSection {
     position: relative;
     width: 100%;
-    height: 290vh;
-    top: -130vh;
-    background-image: url('./img/3ieme-section.svg');
+    height: 260vh;
+    margin: 0;
+    background-image: url('./img/3ieme-section.png');
     background-repeat: no-repeat;
     background-position: top;
     background-size: cover;
@@ -272,7 +269,43 @@ p {
   position: relative;
 }
 
-/*Cette partie est adaptative au plus petit format d’écran.*/
+footer {
+    position: relative; 
+    width: 100%;
+    height: 20vh;
+    background-color: rgb(214, 214, 214);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.infoGeneral {
+    height: 70%;
+    width: 60%; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact, .Navigation {
+    display: flex;
+    flex-direction: column;
+}
+
+h4 {
+    font-size: 1.2em;
+    font-family: "ougkeh", sans-serif;
+    margin-bottom: 6px; 
+}
+
+p {
+    margin: 0;
+    font-family: "merriweather";
+    line-height: 1.4;
+}
+
+
+/*Cette partie est adaptative au plus petit format d’écran.
 @media screen and (max-width: 793px)  {
 
   .menuSandwitch {
@@ -335,6 +368,8 @@ p {
         float: top;
     }
 
+    
+
 }
 
 @media screen and (max-width: 631px) { 
@@ -354,4 +389,4 @@ p {
         font-size: 0.6em;
     }
 
- }
+ }*/
