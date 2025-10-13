@@ -3,7 +3,7 @@ gsap.registerPlugin(ScrollTrigger);
 ScrollTrigger.create({
   trigger: ".decoPresentation",
   start: "top top",
-  end: "bottom+=150% top",
+  end: "bottom+=100% top",
   pin: true,
   pinSpacing: false,
   markers: true,
