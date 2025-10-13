@@ -498,7 +498,7 @@ h4 {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    border: outset 10px var(--bleu-claire);
+    border: outset 11px var(--bleu-claire);
 }
 
 .projetConception {
@@ -543,11 +543,12 @@ h4 {
 .restoDeux {
     width: 40%;
     height: 60%;
+    margin: 0;
     background-image: url('./img/projets/projet_resto2.png');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    border: inset 10px var(--bleu-claire);
+    border: inset 11px var(--bleu-claire);
 }
 
 .projetDescritpion {
