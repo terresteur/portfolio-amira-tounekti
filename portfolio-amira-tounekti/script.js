@@ -1,4 +1,12 @@
 
+  let boutonProjet = document.querySelector(".bouton.projet");
+
+
+
+  boutonProjet.addEventListener("click", () => {
+    window.location.href = "projets.html";
+  });
+
 const app = Vue.createApp({
   data() {
     return {
@@ -15,11 +23,9 @@ const app = Vue.createApp({
   },
   methods: {
     jeux() {
-      window.location.href = "projets.html";
       this.titreDescritpion = "BaloBilou";
     },
     resto() {
-      window.location.href = "projets.html";
       this.titreDescritpion = "Restorant";
     }
   }
@@ -32,6 +38,13 @@ app.mount('#app')
 # Animation GSAP de la page Projets
 
 -------------------------------------------------------------------------------------------------------------*/ 
+
+  let boutonAccueil = document.querySelector(".bouton.accueil");
+
+  
+  boutonAccueil.addEventListener("click", () => {
+    window.location.href = "accueil.html";
+  });
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -92,13 +105,6 @@ ScrollTrigger.create({
   }
 });
 
-  let boutonProjet = document.querySelector(".bouton.projet");
-  let boutonAccueil = document.querySelector(".bouton.accueil");
-
-
-  boutonAccueil.addEventListener("click", () => {
-    window.location.href = "accueil.html";
-  });
 
 function animeFlocon(selector, delay = 0) {
   const flocon = document.querySelector(selector);
