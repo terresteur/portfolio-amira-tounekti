@@ -81,8 +81,8 @@ header {
     color: var(--mauve-claire);
     z-index: 0;
     background: transparent;
-      cursor: pointer;
-      margin: 0 30px;
+    cursor: pointer;
+    margin: 0 30px;
 }
 
 .bouton:hover {
@@ -106,6 +106,31 @@ header {
         linear-gradient(#fff 0 0);
     mask-composite: exclude;
     z-index: -1;
+}
+
+.sousMenu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    background-color: #333;
+    display: flex;
+    flex-direction: row;
+}
+
+.sousMenu li {
+    position: relative;
+}
+
+.sousMenu li a {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+}
+
+.sousMenu li a:hover {
+    background-color: #575757;
 }
 
 .menuSandwitch {
@@ -516,6 +541,7 @@ h4 {
 .projetExplixation {
     width: 55%;
     height: 20%;
+    margin-bottom: 300px;
     overflow: hidden;
     z-index: 2; 
     display: flex;
@@ -539,16 +565,34 @@ h4 {
     font-size: 0.7em;
 }
 
+.restoUn {
+    width: 40%;
+    height: 60%;
+    margin: 0;
+    border: outset 11px var(--bleu-claire);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.restoImg{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
 
 .restoDeux {
     width: 40%;
     height: 60%;
     margin: 0;
-    background-image: url('./img/projets/projet_resto2.png');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
     border: inset 11px var(--bleu-claire);
+    overflow: hidden; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .projetDescritpion {
@@ -561,10 +605,11 @@ h4 {
     font-family: "ougkeh", sans-serif;
     font-size: 2.5em;
     color: var(--bleu-claire);
+
 }
 
 .projetDeveloppement {
-    margin-top: 20px;
+    margin-top: 60px;
     width: 55%;
     height: 20%;
     overflow: hidden;

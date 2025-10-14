@@ -21,7 +21,16 @@
             </nav>
             <img class="logo" src="./img/Portfolio.svg" alt="logo-portfolio">
         </div>
+            <section class="menuDeroulant">
+                <ul class="sousMenu">
+                    <li><a href="#">modelisation 3D</a></li>
+                    <li><a href="#">jeux video</a></li>
+                    <li><a href="#">animation 3D</a></li>
+                    <li><a href="#">court metrage</a></li>
+                </ul>
+            </section>
     </header>
+
     <div class="Portfolio"> <!-- La neige sera animée pour donner vie à l'environnement avec le scroll. -->
             <div class="decoPresentation">
 
@@ -34,7 +43,7 @@
     
                 <!-- Donne un avant-goût du style de mon art. -->
                 <div class="principalImage">
-                    <img class="dessin" src="./img/projets/projet_resto3.jpg" alt="dessin-principal">
+                    <img class="dessin" :src="imagePrincipal" alt="dessin-principal">
                 </div>
             </div>
     
@@ -44,27 +53,27 @@
                 <section class="projetExplixation">
     
                     <!-- Ce sera une photo professionnelle de moi. -->
-                    <div class="imageProjet restoUn" alt="dessin-principal"></div>
+                    <div class="imageProjet restoUn">
+                        <img id="restoImg 1" src="./img/projets/projet_resto1.png" alt="dessin-principal">
+                    </div>
     
                     <!-- L'article me présente. -->
                     <article class="projetConception">
-                        <h2 class="titre">À propos</h2>
-                        <p class="conception">Je m'appelle Amira. L'un de mes loisirs est le dessin, et cela se reflète dans le métier que je souhaite exercer.
-                             En effet, je souhaite intégrer une équipe en tant que web designer, 
-                             afin de créer des interfaces modernes et intuitives en mobilisant mes connaissances en HTML, CSS et design graphique.</p>
+                        <h2 class="titre">{{titreDescritpion}}</h2>
+                        <p class="conception">{{paragrapheDescription}}</p>
                     </article>
                 </section>
                 <section class="projetDeveloppement">
     
                     <!-- Ce sera une photo professionnelle de moi. -->
-                    <div class="imageProjet restoDeux" alt="dessin-principal"></div>
+                    <div class="imageProjet restoDeux">
+                        <img id="restoImg 2" src="./img/projets/projet_resto2.png" alt="dessin-principal">
+                    </div>
     
                     <!-- L'article me présente. -->
                     <article class="projetDescritpion">
-                        <h2 class="titre">À propos</h2>
-                        <p class="conception">Je m'appelle Amira. L'un de mes loisirs est le dessin, et cela se reflète dans le métier que je souhaite exercer.
-                             En effet, je souhaite intégrer une équipe en tant que web designer, 
-                             afin de créer des interfaces modernes et intuitives en mobilisant mes connaissances en HTML, CSS et design graphique.</p>
+                        <h2 class="titre">{{titreConception}}</h2>
+                        <p class="conception">{{paragrapheConception}}</p>
                     </article>
                 </section>
             </section>
@@ -82,6 +91,7 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="script_projets.js" defer></script>
 </div>
 </body>
