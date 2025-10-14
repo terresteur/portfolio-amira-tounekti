@@ -88,6 +88,7 @@ header {
 .bouton:hover {
     color: var(--jaune);
     background: linear-gradient(40deg, var(--mauve-claire), var(--bleu-fonce));
+    border-radius: 10px 10px 0 0;
 }
 
 .bouton::before {
@@ -108,29 +109,39 @@ header {
     z-index: -1;
 }
 
-.sousMenu {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    background-color: #333;
-    display: flex;
-    flex-direction: row;
+.menuDeroulant {
+  position: absolute;
+  top: 100%; 
+  left: 0;
+  background-color: var(--bleu-tres-fonce);
+  border-radius: 0 0 10px 10px ;
+  display: none;
 }
 
-.sousMenu li {
-    position: relative;
+.sousMenu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column; 
 }
 
 .sousMenu li a {
-    display: block;
-    padding: 15px 20px;
-    color: white;
-    text-decoration: none;
+  display: block;
+  padding: 10px 22px;
+  color: var(--mauve-claire);
+  text-decoration: none;
+  font-family: "ougkeh", sans-serif;
+  font-size: 0.8em;
 }
 
 .sousMenu li a:hover {
-    background-color: #575757;
+  background-color: var(--bleu-claire-fonce);
+  color: var(--jaune);
+}
+
+.bouton.projet:hover .menuDeroulant {
+  display: block;
 }
 
 .menuSandwitch {
