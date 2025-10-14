@@ -61,43 +61,6 @@ ScrollTrigger.create({
   markers: true,
 });
 
-ScrollTrigger.create({
-  trigger: ".premierSectionProjet",
-  start: "center-+=20% center",
-  markers: true,
-  onEnter: () => {
-    gsap
-    .timeline()
-    .to(".projetExplixation", { 
-      opacity: 1, 
-      duration: 0.8, 
-      ease: "power2.out",
-      scale:1,
-    })
-    .to(".projetDeveloppement", { 
-      opacity: 1, 
-      duration: 0.8, 
-      ease: "power2.out",
-      scale:1,
-    })
-  },
-  onLeaveBack: () => {
-    gsap
-    .timeline()
-    .to(".projetExplixation", { 
-      opacity: 0, 
-      duration: 0.8, 
-      ease: "power2.out",
-      scale: 0.95,
-    }).to(".projetDeveloppement", { 
-      opacity: 0, 
-      duration: 0.8, 
-      ease: "power2.out",
-      scale: 0.95,
-    })
-  }
-});
-
 
 
 function animeFlocon(selector, delay = 0) {

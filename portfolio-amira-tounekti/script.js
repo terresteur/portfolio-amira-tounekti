@@ -1,15 +1,14 @@
+/*-----------------------------------------------------------------------------------------------------------
 
-  let boutonProjet = document.querySelector(".bouton.projet");
+# Vue de la navigation project
 
-
-
-  boutonProjet.addEventListener("click", () => {
-    window.location.href = "projets.html";
-  });
+-------------------------------------------------------------------------------------------------------------*/ 
 
 const app = Vue.createApp({
   data() {
+    
     return {
+      projets: 0,
       imagePrincipal: "./img/projets/projet_resto3.jpg",
       titreDescritpion: "Resto",
       paragrapheDescription: `Resto est un projet à mention académique, réalisé dans le cadre du cours Modélisation 3D. Ce travail a été effectué en équipe de trois, avec Kristy Moussally et Mégane Ranger.
@@ -23,10 +22,17 @@ const app = Vue.createApp({
   },
   methods: {
     jeux() {
+      window.location.href = "projets.html?projet=jeux";
+      this.projets = 1;
       this.titreDescritpion = "BaloBilou";
     },
     resto() {
+      window.location.href = "projets.html";
       this.titreDescritpion = "Restorant";
+      this.projets = 2;
+      if(this.projets = 2) {
+        this.titreDescritpion = "BaloBilou";
+      }
     }
   }
 });
@@ -39,13 +45,6 @@ app.mount('#app')
 
 -------------------------------------------------------------------------------------------------------------*/ 
 
-  let boutonAccueil = document.querySelector(".bouton.accueil");
-
-  
-  boutonAccueil.addEventListener("click", () => {
-    window.location.href = "accueil.html";
-  });
-
 gsap.registerPlugin(ScrollTrigger);
 
 ScrollTrigger.create({
@@ -57,7 +56,7 @@ ScrollTrigger.create({
   markers: true,
 });
 
-ScrollTrigger.create({
+/*ScrollTrigger.create({
   trigger: ".deuxiemeSection",
   start: "center center",
   end: "bottom+=50% top",
@@ -80,7 +79,7 @@ ScrollTrigger.create({
       scale: 0.95,
     });
   }
-});
+});*/
 
 ScrollTrigger.create({
   trigger: ".troisiemeSection",
@@ -102,6 +101,43 @@ ScrollTrigger.create({
       ease: "power2.out",
       scale: 0.95,
     });
+  }
+});
+
+ScrollTrigger.create({
+  trigger: ".premierSectionProjet",
+  start: "center-+=20% center",
+  markers: true,
+  onEnter: () => {
+    gsap
+    .timeline()
+    .to(".projetExplixation", { 
+      opacity: 1, 
+      duration: 0.8, 
+      ease: "power2.out",
+      scale:1,
+    })
+    .to(".projetDeveloppement", { 
+      opacity: 1, 
+      duration: 0.8, 
+      ease: "power2.out",
+      scale:1,
+    })
+  },
+  onLeaveBack: () => {
+    gsap
+    .timeline()
+    .to(".projetExplixation", { 
+      opacity: 0, 
+      duration: 0.8, 
+      ease: "power2.out",
+      scale: 0.95,
+    }).to(".projetDeveloppement", { 
+      opacity: 0, 
+      duration: 0.8, 
+      ease: "power2.out",
+      scale: 0.95,
+    })
   }
 });
 
@@ -155,3 +191,13 @@ function nextSlide() {
 function prevSlide() {
   showSlide(currentIndex - 1);
 }
+
+
+
+let boutonAccueil = document.querySelector(".bouton.accueil");
+
+  
+boutonAccueil.addEventListener("click", () => {
+  window.location.href = "accueil.html";
+});
+
