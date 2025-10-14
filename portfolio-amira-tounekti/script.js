@@ -8,9 +8,8 @@ const app = Vue.createApp({
   data() {
     
     return {
-      projets: 0,
       imagePrincipal: "./img/projets/projet_resto3.jpg",
-      titreDescritpion: "Resto",
+      titreDescritpionDefaut: "Resto",
       paragrapheDescription: `Resto est un projet à mention académique, réalisé dans le cadre du cours Modélisation 3D. Ce travail a été effectué en équipe de trois, avec Kristy Moussally et Mégane Ranger.
                               Mon rôle principal dans ce projet consistait à la modélisation de trois objets. Le projet a été conçu à l’aide du logiciel Maya et appartient à la catégorie des scènes 3D.`,
       imageDescritpion: '',
@@ -23,15 +22,32 @@ const app = Vue.createApp({
   methods: {
     jeux() {
       window.location.href = "projets.html?projet=jeux";
-      this.projets = 1;
-      this.titreDescritpion = "BaloBilou";
     },
     resto() {
-      window.location.href = "projets.html";
-      this.titreDescritpion = "Restorant";
-      this.projets = 2;
-      if(this.projets = 2) {
-        this.titreDescritpion = "BaloBilou";
+      window.location.href = "projets.html?projet=modele";
+    },
+    courtMetrage() {
+      window.location.href = "projets.html?projet=montage";
+    },
+    animation3d() {
+      window.location.href = "projets.html?projet=animation";
+    }
+  },
+  computed: {
+    titreDescritpion(){
+      const params = new URLSearchParams(window.location.search);
+      const projet = params.get("projet");
+
+      if (projet === "jeux") {
+        return "BaloBilou";
+      } else if (projet === "modele") {
+        return "Resto";
+      } else if (projet === "montage") {
+        return "Patatophobie";
+      } else if (projet === "animation") {
+        return "Conséquence|Insouciance";
+      } else {
+        return this.titreDescritpionDefaut; 
       }
     }
   }
