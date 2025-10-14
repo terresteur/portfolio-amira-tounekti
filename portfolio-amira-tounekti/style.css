@@ -88,7 +88,6 @@ header {
 .bouton:hover {
     color: var(--jaune);
     background: linear-gradient(40deg, var(--mauve-claire), var(--bleu-fonce));
-    border-radius: 10px 10px 0 0;
 }
 
 .bouton::before {
@@ -142,6 +141,10 @@ header {
 
 .bouton.projet:hover .menuDeroulant {
   display: block;
+}
+
+.bouton.projet:hover {
+    border-radius: 10px 10px 0 0;
 }
 
 .menuSandwitch {

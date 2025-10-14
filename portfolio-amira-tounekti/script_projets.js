@@ -17,15 +17,19 @@ const app = Vue.createApp({
       paragrapheConception: `Le projet consistait à réaliser une modélisation originale en 3D. Le professeur nous a demandé de dessiner un environnement sur le thème de notre choix et de réaliser en équipe une modélisation 3D originale de cet environnement, en intégrant les méthodes apprises en cours.
                              Pour ma part, j’ai participé au sketch en dessinant l’environnement et j’ai également réalisé trois modèles 3D : un pot de fleurs, une porte et un drapeau italien.`,
       imageConception: '',
-    }
+    };
   },
   methods: {
-    showActor() {
+    jeux() {
+      this.titreDescritpion = "BaloBilou";
+    },
+    resto() {
+      this.titreDescritpion = "Restorant";
     }
   }
 });
 
-app.mount('.Portfolio')
+app.mount('#app')
 
 /*-----------------------------------------------------------------------------------------------------------
 
@@ -84,9 +88,9 @@ ScrollTrigger.create({
   let boutonProjet = document.querySelector(".bouton.projet");
   let boutonAccueil = document.querySelector(".bouton.accueil");
 
-  boutonProjet.addEventListener("click", () => {
+  /*boutonProjet.addEventListener("click", () => {
     window.location.href = "projets.html";
-  });
+  });*/
 
   boutonAccueil.addEventListener("click", () => {
     window.location.href = "accueil.html";

@@ -1,100 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projets</title>
     <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-    <header>
-        <div class="navigation">
-            <div class="menuSandwitch">
-                <div class="menu sandwitch1"></div>
-                <div class="menu sandwitch2"></div>
-                <div class="menu sandwitch3"></div>
-            </div>
-            <!-- Les boutons sont faits pour un écran large, alors que le menu sandwich est pour un écran plus petit. <a href="" >accueil</a>-->
-            <nav class="boutons">
-                <div class="bouton accueil">Accueil</div> 
-                <div class="bouton projet">Projet
-                    <section class="menuDeroulant">
-                        <ul class="sousMenu">
-                            <li><a href="#">modelisation 3D</a></li>
-                            <li><a href="#">jeux video</a></li>
-                            <li><a href="#">animation 3D</a></li>
-                            <li><a href="#">court metrage</a></li>
-                        </ul>
-                    </section>
+    <div id="app" class="Portfolio">
+        <header>
+            <div class="navigation">
+                <div class="menuSandwitch">
+                    <div class="menu sandwitch1"></div>
+                    <div class="menu sandwitch2"></div>
+                    <div class="menu sandwitch3"></div>
                 </div>
-            </nav>
-            <img class="logo" src="./img/Portfolio.svg" alt="logo-portfolio">
+                <!-- Les boutons sont faits pour un écran large, alors que le menu sandwich est pour un écran plus petit. <a href="" >accueil</a>-->
+                <nav class="boutons">
+                    <div class="bouton accueil">Accueil</div>
+                    <div class="bouton projet">Projet
+                        <section class="menuDeroulant">
+                            <ul class="sousMenu">
+                                <li id="projet1" @click="resto()"><a href="#">modelisation 3D</a></li>
+                                <li id="projet2" @click="jeux()"><a href="#">jeux video</a></li>
+                                <li id="projet3"><a href="#">animation 3D</a></li>
+                                <li id="projet4"><a href="#">court metrage</a></li>
+                            </ul>
+                        </section>
+                    </div>
+                </nav>
+                <img class="logo" src="./img/Portfolio.svg" alt="logo-portfolio">
+            </div>
+
+        </header>
+
+        <!-- La neige sera animée pour donner vie à l'environnement avec le scroll. -->
+        <div class="decoPresentation">
+
+            <div class="flocon neige1"></div>
+            <div class="flocon neige2"></div>
+            <div class="flocon neige3"></div>
+            <div class="flocon neige4"></div>
+            <div class="flocon neige5"></div>
+            <div class="flocon neige6"></div>
+
+            <!-- Donne un avant-goût du style de mon art. -->
+            <div class="principalImage">
+                <img class="dessin" :src="imagePrincipal" alt="dessin-principal">
+            </div>
         </div>
-            
-    </header>
 
-    <div class="Portfolio"> <!-- La neige sera animée pour donner vie à l'environnement avec le scroll. -->
-            <div class="decoPresentation">
+        <!-- Cette section sera animée pour donner un effet de carte. -->
 
-                <div class="flocon neige1"></div>
-                <div class="flocon neige2"></div>
-                <div class="flocon neige3"></div>
-                <div class="flocon neige4"></div>
-                <div class="flocon neige5"></div>
-                <div class="flocon neige6"></div>
-    
-                <!-- Donne un avant-goût du style de mon art. -->
-                <div class="principalImage">
-                    <img class="dessin" :src="imagePrincipal" alt="dessin-principal">
+        <section class="premierSectionProjet">
+            <section class="projetExplixation">
+
+                <!-- Ce sera une photo professionnelle de moi. -->
+                <div class="imageProjet restoUn">
+                    <img id="restoImg 1" src="./img/projets/projet_resto1.png" alt="dessin-principal">
                 </div>
-            </div>
-    
-            <!-- Cette section sera animée pour donner un effet de carte. -->
-             
-            <section class="premierSectionProjet">
-                <section class="projetExplixation">
-    
-                    <!-- Ce sera une photo professionnelle de moi. -->
-                    <div class="imageProjet restoUn">
-                        <img id="restoImg 1" src="./img/projets/projet_resto1.png" alt="dessin-principal">
-                    </div>
-    
-                    <!-- L'article me présente. -->
-                    <article class="projetConception">
-                        <h2 class="titre">{{titreDescritpion}}</h2>
-                        <p class="conception">{{paragrapheDescription}}</p>
-                    </article>
-                </section>
-                <section class="projetDeveloppement">
-    
-                    <!-- Ce sera une photo professionnelle de moi. -->
-                    <div class="imageProjet restoDeux">
-                        <img id="restoImg 2" src="./img/projets/projet_resto2.png" alt="dessin-principal">
-                    </div>
-    
-                    <!-- L'article me présente. -->
-                    <article class="projetDescritpion">
-                        <h2 class="titre">{{titreConception}}</h2>
-                        <p class="conception">{{paragrapheConception}}</p>
-                    </article>
-                </section>
+
+                <!-- L'article me présente. -->
+                <article class="projetConception">
+                    <h2 class="titre">{{titreDescritpion}}</h2>
+                    <p class="conception">{{paragrapheDescription}}</p>
+                </article>
             </section>
-    <footer>
-        <div class="infoGeneral">
-            <div class="contact">
-                <h4>Contact</h4>
-                <p class="paragrapheInfo">Email: amiratounekti05@gmail.com<br>Téléphone: 438-465-9454 <br>Ville: Saint-Eustache </p>
+            <section class="projetDeveloppement">
+
+                <!-- Ce sera une photo professionnelle de moi. -->
+                <div class="imageProjet restoDeux">
+                    <img id="restoImg 2" src="./img/projets/projet_resto2.png" alt="dessin-principal">
+                </div>
+
+                <!-- L'article me présente. -->
+                <article class="projetDescritpion">
+                    <h2 class="titre">{{titreConception}}</h2>
+                    <p class="conception">{{paragrapheConception}}</p>
+                </article>
+            </section>
+        </section>
+        <footer>
+            <div class="infoGeneral">
+                <div class="contact">
+                    <h4>Contact</h4>
+                    <p class="paragrapheInfo">Email: amiratounekti05@gmail.com<br>Téléphone: 438-465-9454 <br>Ville:
+                        Saint-Eustache </p>
+                </div>
+                <div class="Navigation">
+                    <h4>Navigation</h4>
+                    <p class="paragrapheInfo">Accueil<br>Projets</p>
+                </div>
             </div>
-            <div class="Navigation">
-                <h4>Navigation</h4>
-                <p class="paragrapheInfo">Accueil<br>Projets</p>
-            </div>
-        </div>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src="script_projets.js" defer></script>
-</div>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <script src="script_projets.js" defer></script>
+    </div>
 </body>
+
 </html>
