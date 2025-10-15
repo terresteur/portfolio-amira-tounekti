@@ -1,8 +1,12 @@
-/*-----------------------------------------------------------------------------------------------------------
+/*-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 # Vue de la navigation project
 
--------------------------------------------------------------------------------------------------------------*/ 
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/ 
 
 const app = Vue.createApp({
   data() {
@@ -10,7 +14,7 @@ const app = Vue.createApp({
     return {
       imagePrincipal: "./img/projets/projet_resto3.jpg",
       titreDescritpionDefaut: "Resto",
-      paragrapheDescription: `Resto est un projet à mention académique, réalisé dans le cadre du cours Modélisation 3D. Ce travail a été effectué en équipe de trois, avec Kristy Moussally et Mégane Ranger.
+      paragrapheDescriptionDefaut: `Resto est un projet à mention académique, réalisé dans le cadre du cours Modélisation 3D. Ce travail a été effectué en équipe de trois, avec Kristy Moussally et Mégane Ranger.
                               Mon rôle principal dans ce projet consistait à la modélisation de trois objets. Le projet a été conçu à l’aide du logiciel Maya et appartient à la catégorie des scènes 3D.`,
       imageDescritpion: '',
       titreConception: "Description",
@@ -49,17 +53,38 @@ const app = Vue.createApp({
       } else {
         return this.titreDescritpionDefaut; 
       }
-    }
+    },
+    paragrapheDescription(){
+      const params = new URLSearchParams(window.location.search);
+      const projet = params.get("projet");
+
+      if (projet === "jeux") {
+        return "BaloBilou";
+      } else if (projet === "modele") {
+        return `Resto est un projet à mention académique, réalisé dans le cadre du cours Modélisation 3D. Ce travail a été effectué en équipe de trois, avec Kristy Moussally et Mégane Ranger.
+                Mon rôle principal dans ce projet consistait à la modélisation de trois objets. Le projet a été conçu à l’aide du logiciel Maya et appartient à la catégorie des scènes 3D.`;
+      } else if (projet === "montage") {
+        return "Patatophobie";
+      } else if (projet === "animation") {
+        return "Conséquence|Insouciance";
+      } else {
+        return this.titreDescritpionDefaut; 
+      }
+    },
   }
 });
 
 app.mount('#app')
 
-/*-----------------------------------------------------------------------------------------------------------
+/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 # Animation GSAP de la page Projets
 
--------------------------------------------------------------------------------------------------------------*/ 
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/ 
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -72,7 +97,9 @@ ScrollTrigger.create({
   markers: true,
 });
 
-/*ScrollTrigger.create({
+const deuxiemeSection = document.querySelector(".deuxiemeSection");
+if (deuxiemeSection) {
+ScrollTrigger.create({
   trigger: ".deuxiemeSection",
   start: "center center",
   end: "bottom+=50% top",
@@ -95,8 +122,11 @@ ScrollTrigger.create({
       scale: 0.95,
     });
   }
-});*/
+})};
 
+
+const troisiemeSection = document.querySelector(".troisiemeSection");
+if (troisiemeSection) {
 ScrollTrigger.create({
   trigger: ".troisiemeSection",
   start: "center-=15% center",
@@ -118,8 +148,10 @@ ScrollTrigger.create({
       scale: 0.95,
     });
   }
-});
+})};
 
+const premierSectionProjet = document.querySelector(".premierSectionProjet");
+if (premierSectionProjet) {
 ScrollTrigger.create({
   trigger: ".premierSectionProjet",
   start: "center-+=20% center",
@@ -155,7 +187,7 @@ ScrollTrigger.create({
       scale: 0.95,
     })
   }
-});
+})};
 
 
 function animeFlocon(selector, delay = 0) {
@@ -207,8 +239,6 @@ function nextSlide() {
 function prevSlide() {
   showSlide(currentIndex - 1);
 }
-
-
 
 let boutonAccueil = document.querySelector(".bouton.accueil");
 
