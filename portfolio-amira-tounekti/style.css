@@ -170,6 +170,14 @@ header {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    opacity: 1;
+    animation-name: anim;
+    animation-duration: 2s;
+}
+
+@keyframes anim { 
+  from { opacity: 0; } 
+  to { opacity: 1; }  
 }
 
 .dessin {
@@ -243,15 +251,19 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    font-family: "ougkeh", sans-serif;
-    font-size: 2.5em;
     color: var(--bleu-claire);
+}
+
+.aPropos h2 {
+    width: 60%;
+    font-size: 2.9em;
+    font-family: "ougkeh", sans-serif;
 }
 
 .aPropos p {
     margin-top: 20px;
     font-family: "merriweather";
-
+    font-size: 2.0em;
 }
 
 /*Cette section est glacée et elle englobe les compétences. Il y aura dessus une animation GSAP.*/
@@ -545,11 +557,19 @@ h4 {
 .restoUn  {
     width: 40%;
     height: 60%;
-    background-image: url('./img/projets/projet_resto1.jpg');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
     border: outset 11px var(--bleu-claire);
+    margin: 0;
+    border: outset 11px var(--bleu-claire);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.restoUn img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .projetConception {
@@ -591,17 +611,6 @@ h4 {
     font-size: 0.7em;
 }
 
-.restoUn {
-    width: 40%;
-    height: 60%;
-    margin: 0;
-    border: outset 11px var(--bleu-claire);
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .restoImg{
     width: 100%;
     height: 100%;
@@ -620,6 +629,13 @@ h4 {
     justify-content: center;
     align-items: center;
 }
+
+.restoDeux img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 
 .projetDescritpion {
     width: 60%;

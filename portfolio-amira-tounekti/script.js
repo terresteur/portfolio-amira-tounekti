@@ -12,15 +12,15 @@ const app = Vue.createApp({
   data() {
     
     return {
-      imagePrincipal: "./img/projets/projet_resto3.jpg",
+      imagePrincipalDefaut: "./img/projets/projet_resto3.jpg",
       titreDescritpionDefaut: "Resto",
       paragrapheDescriptionDefaut: `Resto est un projet à mention académique, réalisé dans le cadre du cours Modélisation 3D. Ce travail a été effectué en équipe de trois, avec Kristy Moussally et Mégane Ranger.
                               Mon rôle principal dans ce projet consistait à la modélisation de trois objets. Le projet a été conçu à l’aide du logiciel Maya et appartient à la catégorie des scènes 3D.`,
-      imageDescritpion: '',
+      imageDescritpionDefaut: '',
       titreConception: "Description",
       paragrapheConception: `Le projet consistait à réaliser une modélisation originale en 3D. Le professeur nous a demandé de dessiner un environnement sur le thème de notre choix et de réaliser en équipe une modélisation 3D originale de cet environnement, en intégrant les méthodes apprises en cours.
                              Pour ma part, j’ai participé au sketch en dessinant l’environnement et j’ai également réalisé trois modèles 3D : un pot de fleurs, une porte et un drapeau italien.`,
-      imageConception: '',
+      imageConceptionDefaut: '',
     };
   },
   methods: {
@@ -68,7 +68,55 @@ const app = Vue.createApp({
       } else if (projet === "animation") {
         return "Conséquence|Insouciance";
       } else {
-        return this.titreDescritpionDefaut; 
+        return this.paragrapheDescriptionDefaut; 
+      }
+    },
+    imagePrincipal(){
+      const params = new URLSearchParams(window.location.search);
+      const projet = params.get("projet");
+
+      if (projet === "jeux") {
+        return "./img/projets/balobilou2.png";
+      } else if (projet === "modele") {
+        return "./img/projets/projet_resto3.jpg";
+      } else if (projet === "montage") {
+        return "./img/projets/patatophobie2.png";
+      } else if (projet === "animation") {
+        return "./img/projets/consequence-insouciance1.png";
+      } else {
+        return this.imagePrincipalDefaut; 
+      }
+    },
+    imageDescritpion(){
+      const params = new URLSearchParams(window.location.search);
+      const projet = params.get("projet");
+
+      if (projet === "jeux") {
+        return "./img/projets/balobilou1.png";
+      } else if (projet === "modele") {
+        return "./img/projets/projet_resto1.jpg";
+      } else if (projet === "montage") {
+        return "./img/projets/patatophobie1.png";
+      } else if (projet === "animation") {
+        return "./img/projets/consequence-insouciance2.png";
+      } else {
+        return this.imageDescritpionDefaut; 
+      }
+    },
+    imageConception(){
+      const params = new URLSearchParams(window.location.search);
+      const projet = params.get("projet");
+
+      if (projet === "jeux") {
+        return "./img/projets/balobilou3.png";
+      } else if (projet === "modele") {
+        return "./img/projets/projet_resto2.png";
+      } else if (projet === "montage") {
+        return "./img/projets/patatophobie3.png";
+      } else if (projet === "animation") {
+        return "./img/projets/consequence-insouciance3.png";
+      } else {
+        return this.imageConceptionDefaut; 
       }
     },
   }
