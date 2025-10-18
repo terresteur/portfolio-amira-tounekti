@@ -1,0 +1,34 @@
+[
+  {
+    "imageProjet": ["./img/projets/projet_resto3.jpg"],
+    "titreProjet": "Resto",
+    "projetPresentation": "Resto est un projet à mention académique, réalisé dans le cadre du cours Modélisation 3D. Ce travail a été effectué en équipe de trois, avec Kristy Moussally et Mégane Ranger. Mon rôle principal dans ce projet consistait à la modélisation de trois objets. Le projet a été conçu à l’aide du logiciel Maya et appartient à la catégorie des scènes 3D.",
+    "imagePresentation": ["./img/projets/projet_resto1.jpg"],
+    "projetDescritpion": "Resto est un projet visant à réaliser une modélisation originale en 3D. Dans le cadre du cours, il fallait dessiner un environnement sur le thème de notre choix, puis créer une modélisation 3D originale en équipe en intégrant les méthodes apprises en cours. Pour ma part, j’ai participé au sketch en dessinant l’environnement et j’ai également réalisé trois modèles 3D : un pot de fleurs, une porte et un drapeau italien.",
+    "imageDescritpion": ["./img/projets/projet_resto2.png"]
+  },
+  {
+    "imageProjet": ["./img/projets/balobilou2.png"],
+    "titreProjet": "BaloBilou",
+    "projetPresentation": "Balobilou est un projet réalisé dans le cadre du cours Interactivité ludique, dans un contexte académique. Ce projet a été réalisé individuellement, et j’ai assumé l’ensemble des responsabilités, notamment coder le jeu et définir l’histoire. Le développement a été effectué à l’aide de Visual Studio Code, en utilisant les outils Phaser et Tiled, et le projet s’inscrit dans la catégorie des jeux vidéo.",
+    "imagePresentation": ["./img/projets/balobilou1.png"],
+    "projetDescritpion": "Balobilou est un projet consistant à coder un jeu vidéo original. Dans le cadre du cours, il fallait créer un environnement et une histoire pour le jeu à l’aide de Tiled, puis coder le jeu afin de le publier sur itch.io. Pour ce projet, j’ai codé l’intégralité du jeu et conçu un univers original avec Tiled. J’ai sélectionné des sons et créé quelques assets originaux, tandis que le reste des assets a été récupéré sur itch.io. Dans le jeu, le joueur incarne un ballon rose qui tente de découvrir la raison de son arrivée dans cet univers étrange. Celui-ci ne connaît rien de son environnement, ayant perdu toute mémoire de son passé, et le joueur doit récolter des indices pour reconstituer le fil de son histoire.",
+    "imageDescritpion": ["./img/projets/balobilou3.png"]
+  },
+  {
+    "imageProjet": ["./img/projets/consequence-insouciance1.png"],
+    "titreProjet": "Conséquence|Insouciance",
+    "projetPresentation": "Conséquence | Insouciance est un projet réalisé dans le cadre du cours Animation 3D, dans un contexte académique. Ce projet a été réalisé individuellement, et j’ai assuré l’ensemble des rôles : modélisation 3D, conception sonore, montage vidéo et animation 3D. Le travail a été produit à l’aide des logiciels Maya, DaVinci Resolve et Reaper, et il s’inscrit dans la catégorie des animations 3D originales.",
+    "imagePresentation": ["./img/projets/consequence-insouciance2.png"],
+    "projetDescritpion": "Conséquence | Insouciance est un projet consistant à créer une animation 3D originale. Dans le cadre du cours, il fallait concevoir une animation 3D avec un montage sonore original, puis réaliser un montage vidéo final en intégrant l’animation et la composition sonore. Pour ce projet, j’ai créé les modèles 3D et réalisé une animation racontant une histoire derrière chaque élément. Avec l’animation et la conception sonore que j’avais préparée, j’ai finalisé le montage vidéo. L’animation raconte, à travers les péripéties de la botte, l’histoire d’un jeune montagnard trop confiant qui, par manque de prudence, va recevoir une amère conséquence.",
+    "imageDescritpion": ["./img/projets/consequence-insouciance3.png"]
+  },
+  {
+    "imageProjet": ["./img/projets/patatophobie2.png"],
+    "titreProjet": "Patatophobie",
+    "projetPresentation": "Patatophobie est un projet réalisé dans le cadre du cours Conception Vidéo, dans un contexte académique. Ce travail d’équipe, composé de quatre membres — Ian Corbin, Jacob Jetté-Longpré, Keven Malric et moi-même — explore la création audiovisuelle autour d’un concept original. J’y ai occupé les rôles de comédienne, animatrice et directrice de la photographie. Le projet a été conçu à l’aide des logiciels After Effects, DaVinci Resolve et Illustrator, et s’inscrit dans la catégorie du montage vidéo.",
+    "imagePresentation": ["./img/projets/patatophobie1.png"],
+    "projetDescritpion": "Patatophobie est un projet consistant à réaliser un court-métrage en stop motion. Dans le cadre du cours, il fallait créer un court-métrage en réalisant soi-même le montage, en s’inspirant d’un poème, et intégrer des animations 2D. Pour ma part, j’ai été l’actrice principale du court-métrage, j’ai réalisé trois animations et participé au montage vidéo. Le court-métrage se base sur un poème qui transmet un message sur la pauvreté à travers la consommation d’un ingrédient peu coûteux : la patate, et explore cette thématique à travers la phobie des patates.",
+    "imageDescritpion": ["./img/projets/patatophobie3.png"]
+  }
+]
