@@ -13,6 +13,7 @@ const app = Vue.createApp({
     
     return {
       project: [],
+      disponible: true,
       imagePrincipalDefaut: "./img/projets/projet_resto3.jpg",
       titreDescritpionDefaut: "Resto",
       paragrapheDescriptionDefaut: `Resto est un projet à mention académique, réalisé dans le cadre du cours Modélisation 3D. Ce travail a été effectué en équipe de trois, avec Kristy Moussally et Mégane Ranger.
@@ -33,7 +34,7 @@ const app = Vue.createApp({
           this.project = data;
       })
       .catch(error => {
-          console.error("Erreur fetch RandomUser :", error);
+          console.error("Erreur le fetch ne fonctionne pas:", error);
       });
   },
   methods: {
@@ -48,7 +49,7 @@ const app = Vue.createApp({
     },
     animation3d() {
       window.location.href = "projets.html?projet=animation";
-    }
+    },
   },
   computed: {
     titreDescritpion(){

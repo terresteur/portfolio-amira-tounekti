@@ -59,8 +59,17 @@
             <section class="presentation">
 
                 <!-- Ce sera une photo professionnelle de moi. -->
-                <div class="photo" alt="dessin-principal"></div>
-
+                 <div class="photoDispo">
+                    <div class="photo" alt="dessin-principal"></div>
+                     <div class="disponibilite">
+                        <p v-if="disponible" class="dispo">
+                        🟢 Disponible pour un stage à partir de mars 2026
+                        </p>
+                        <p v-else class="pasDispo">
+                        🔴 Actuellement indisponible pour un stage
+                        </p>
+                    </div>
+                </div>
                 <!-- L'article me présente. -->
                 <article class="aPropos">
                     <h2>À propos</h2>
@@ -69,7 +78,6 @@
                          afin de créer des interfaces modernes et intuitives en mobilisant mes connaissances en HTML, CSS et design graphique.</p>
                 </article>
             </section>
-
             <!-- Je vais enlever l'image pour l’intégrer directement dans le CSS. -->
         </section>
 
