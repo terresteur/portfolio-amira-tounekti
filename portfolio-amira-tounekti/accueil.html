@@ -27,7 +27,7 @@
                             <ul class="sousMenu">
                                 <li id="projet1" ><a @click="resto()">modelisation 3D</a></li>
                                 <li id="projet2"><a  @click="jeux()">jeux video</a></li>
-                                <li id="projet3"><a @click="animation3d() ">animation 3D</a></li>
+                                <li id="projet3"><a @click="animation3d()">animation 3D</a></li>
                                 <li id="projet4"><a @click="courtMetrage()">court metrage</a></li>
                             </ul>
                         </section>
@@ -87,17 +87,18 @@
             <!-- Cette section montrera tous les logiciels que je maîtrise et elle montrera des projets que j’ai réalisés. -->
             <div class="competance">
 
-                <!-- Le carousel donne un avant-goût en images de mes projets ; lorsque tu cliques dessus, ça emmène à la page Projets. -->
+                <!-- onclick="slidePresedant()"onclick="slideSuivant()"Le carousel donne un avant-goût en images de mes projets ; lorsque tu cliques dessus, ça emmène à la page Projets. -->
                 <div class="carousel">
-                    <div class="arrow left" onclick="prevSlide()"></div>
+                    <div class="arrow left" onclick="slidePresedant()"></div>
 
                     <div class="carousel-images">
-                        <img src="./img/photo.png" class="carousel-img active" alt="projet 1">
-                        <img src="./img/sorciere.png" class="carousel-img" alt="projet 2">
-                        <img src="./img/photo.png" class="carousel-img" alt="projet 3">
+                        <img src="./img/carrousel-img/resto_carrousel.png" @click="resto()" class="carousel-img active" alt="projet 1">
+                        <img src="./img/carrousel-img/balobilou_carrousel.png" @click="jeux()" class="carousel-img" alt="projet 2">
+                        <img src="./img/carrousel-img/consequence-insouciance_carrousel.png" @click="animation3d()" class="carousel-img" alt="projet 3">
+                        <img src="./img/carrousel-img/patatophobie_carrousel.png" @click="courtMetrage()" class="carousel-img" alt="projet 4">
                     </div>
 
-                    <div class="arrow right" onclick="nextSlide()"></div>
+                    <div class="arrow right" ></div>
                 </div>
 
                 <div class="iconsComp">

@@ -14,7 +14,7 @@ const app = Vue.createApp({
     return {
       project: [],
       disponible: true,
-      imagePrincipalDefaut: "./img/projets/projet_resto3.jpg",
+      imagePrincipalDefaut: "./img/projets/projet_resto3.png",
       titreDescritpionDefaut: "Resto",
       paragrapheDescriptionDefaut: `Resto est un projet à mention académique, réalisé dans le cadre du cours Modélisation 3D. Ce travail a été effectué en équipe de trois, avec Kristy Moussally et Mégane Ranger.
                               Mon rôle principal dans ce projet consistait à la modélisation de trois objets. Le projet a été conçu à l’aide du logiciel Maya et appartient à la catégorie des scènes 3D.`,
@@ -70,6 +70,22 @@ const app = Vue.createApp({
         return this.project[2].titreProjet;
       } else {
         return this.titreDescritpionDefaut; 
+      }
+    },
+   lienProjet() {
+      const params = new URLSearchParams(window.location.search);
+      const projet = params.get("projet");
+
+    if (!this.project || this.project.length === 0) return "#";
+
+      if (projet === "jeux") {
+        return "https://amiratounekt.itch.io/balobilou";
+      } else if (projet === "montage") {
+        return "https://youtu.be/fH8j3C7BZWk";
+      } else if (projet === "animation") {
+        return "https://youtu.be/UIA_zOXrovo";
+      } else {
+        return "#";
       }
     },
     paragrapheDescription(){
@@ -296,6 +312,13 @@ ScrollTrigger.create({
   }
 })};
 
+let boutonAccueil = document.querySelector(".bouton.accueil");
+
+  
+boutonAccueil.addEventListener("click", () => {
+  window.location.href = "accueil.html";
+});
+
 
 function animeFlocon(selector, delay = 0) {
   const flocon = document.querySelector(selector);
@@ -321,36 +344,36 @@ animeFlocon(".neige4", 1.5);
 animeFlocon(".neige5", 2);
 animeFlocon(".neige6", 2.5);
 
+/*const images = document.querySelectorAll(".carousel-img");
+let carrouselIndex = 0;
 
-const images = document.querySelectorAll(".carousel-img");
-let currentIndex = 0; 
-
-function showSlide(index) {
-  if (index >= images.length) {
-    currentIndex = 0;
-  } else if (index < 0) {
-    currentIndex = images.length - 1;
-  } else {
-    currentIndex = index;
-  }
-
-  images.forEach(img => img.classList.remove("active"));
-
-  images[currentIndex].classList.add("active");
-}
-
-function nextSlide() {
-  showSlide(currentIndex + 1);
-}
-
-function prevSlide() {
-  showSlide(currentIndex - 1);
-}
-
-let boutonAccueil = document.querySelector(".bouton.accueil");
-
-  
-boutonAccueil.addEventListener("click", () => {
-  window.location.href = "accueil.html";
+images.forEach((img, i) => {
+  img.style.opacity = "0";
+  img.style.zIndex = "0"; 
 });
+images[carrouselIndex].style.opacity = "1";
+images[carrouselIndex].style.zIndex = "10"; 
+
+function voirSlide(index) {
+  images.forEach(img => {
+    img.style.opacity = "0";
+    img.style.zIndex = "0";
+  });
+
+  if (index >= images.length) carrouselIndex = 0;
+  else if (index < 0) carrouselIndex = images.length - 1;
+  else carrouselIndex = index;
+
+  images[carrouselIndex].style.opacity = "1";
+  images[carrouselIndex].style.zIndex = "10";
+}
+
+function slideSuivant() {
+  voirSlide(carrouselIndex + 1);
+}
+
+function slidePresedant() {
+  voirSlide(carrouselIndex - 1);
+}*/
+
 

@@ -109,38 +109,38 @@ header {
 }
 
 .menuDeroulant {
-  position: absolute;
-  top: 100%; 
-  left: 0;
-  background-color: var(--bleu-tres-fonce);
-  border-radius: 0 0 10px 10px ;
-  display: none;
-}
-
-.sousMenu {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column; 
-}
-
-.sousMenu li a {
-  display: block;
-  padding: 10px 22px;
-  color: var(--mauve-claire);
-  text-decoration: none;
-  font-family: "ougkeh", sans-serif;
-  font-size: 0.8em;
-}
-
-.sousMenu li a:hover {
-  background-color: var(--bleu-claire-fonce);
-  color: var(--jaune);
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    background-color: var(--bleu-tres-fonce);
+    border-radius: 0 0 10px 10px ;
+    display: none;
 }
 
 .bouton.projet:hover .menuDeroulant {
-  display: block;
+    display: block;
+}
+
+.sousMenu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column; 
+}
+
+.sousMenu li a {
+    display: block;
+    padding: 10px 22px;
+    color: var(--mauve-claire);
+    text-decoration: none;
+    font-family: "ougkeh", sans-serif;
+    font-size: 0.8em;
+}
+
+.sousMenu li a:hover {
+    background-color: var(--bleu-claire-fonce);
+    color: var(--jaune);
 }
 
 .bouton.projet:hover {
@@ -173,11 +173,6 @@ header {
     opacity: 1;
     animation-name: anim;
     animation-duration: 2s;
-}
-
-@keyframes anim { 
-  from { opacity: 0; } 
-  to { opacity: 1; }  
 }
 
 .dessin {
@@ -341,7 +336,7 @@ header {
     align-items: center;
     justify-content: center;
     gap: 30px;
-    width: 60%;
+    width: 950px;
 }
 
 .arrow {
@@ -378,11 +373,18 @@ header {
   object-fit: cover;
   position: absolute;
   opacity: 0;
+  cursor: pointer;
+  transition: opacity 0.5s ease, transform 1s ease;
+  border-radius: 10px;
 }
 
-.carousel-img.active {
-  opacity: 1;
-  position: relative;
+.carousel-images:hover {
+   overflow: visible;
+}
+
+.carousel-img:hover {
+    transform: scale(1.1);
+    transition-duration: 1s;
 }
 
 .iconsComp {
@@ -480,7 +482,7 @@ h4 {
         display: block;
         border: inset 10px var(--bleu-claire);
     }
-
+    
     .deuxiemeSection {
         width: 100%;
         height: 200vh;
@@ -593,8 +595,8 @@ h4 {
     margin: 0;
 }
 
-.restoUn  {
-    width: 40%;
+.imageProjet {
+    width: 50%;
     height: 60%;
     border: outset 11px var(--bleu-claire);
     margin: 0;
@@ -605,11 +607,22 @@ h4 {
     align-items: center;
 }
 
-.restoUn img {
+.explixationImg img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
+    display: block;
 }
+
+.developpementImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
 
 .projetConception {
     width: 60%;
@@ -650,32 +663,6 @@ h4 {
     font-size: 0.7em;
 }
 
-.restoImg{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-}
-
-.restoDeux {
-    width: 40%;
-    height: 60%;
-    margin: 0;
-    border: inset 11px var(--bleu-claire);
-    overflow: hidden; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.restoDeux img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-
 .projetDescritpion {
     width: 60%;
     margin: 30px;
@@ -702,4 +689,40 @@ h4 {
     opacity: 0;
     background-color: var(--bleu-fonce);
     box-shadow: inset 0 0 20px 25px var(--bleu-tres-fonce);
+}
+
+.principalImageProjet {
+    position: fixed;
+    margin: 30vh 0 80px 0;
+    width: 100%;
+    overflow: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    animation-name: anim;
+    animation-duration: 2s;
+}
+
+.principalImageProjet a {
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+@keyframes anim { 
+  from { opacity: 0; } 
+  to { opacity: 1; }  
+}
+
+.imageProjet {
+    width: 100%;
+    object-fit: contain;
+    display: block;
+    border: inset 10px var(--bleu-claire);
 }

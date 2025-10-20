@@ -25,7 +25,7 @@
                             <ul class="sousMenu">
                                 <li id="projet1" ><a @click="resto()">modelisation 3D</a></li>
                                 <li id="projet2"><a  @click="jeux()">jeux video</a></li>
-                                <li id="projet3"><a @click="animation3d() ">animation 3D</a></li>
+                                <li id="projet3"><a @click="animation3d()">animation 3D</a></li>
                                 <li id="projet4"><a @click="courtMetrage()">court metrage</a></li>
                             </ul>
                         </section>
@@ -47,8 +47,10 @@
             <div class="flocon neige6"></div>
 
             <!-- Donne un avant-goût du style de mon art. -->
-            <div class="principalImage">
-                <img class="dessin" :src="imagePrincipal" alt="dessin-principal">
+            <div class="principalImageProjet" v-if="project.length">
+                <a :href="lienProjet" target="_blank">
+                    <img class="imageProjet" :src="imagePrincipal" alt="dessin-principal">
+                </a>
             </div>
         </div>
 
@@ -58,8 +60,8 @@
             <section class="projetExplixation">
 
                 <!-- Ce sera une photo professionnelle de moi. -->
-                <div class="imageProjet restoUn">
-                    <img id="restoImg 1" :src="imageDescritpion" alt="dessin-principal">
+                <div class="imageProjet explixationImg">
+                    <img id="explixationImage" :src="imageDescritpion" alt="dessin-principal">
                 </div>
 
                 <!-- L'article me présente. -->
@@ -71,8 +73,8 @@
             <section class="projetDeveloppement">
 
                 <!-- Ce sera une photo professionnelle de moi. -->
-                <div class="imageProjet restoDeux">
-                    <img id="restoImg 2" :src="imageConception" alt="dessin-principal">
+                <div class="imageProjet developpementImg">
+                    <img id="developpementImage" :src="imageConception" alt="dessin-principal">
                 </div>
 
                 <!-- L'article me présente. -->

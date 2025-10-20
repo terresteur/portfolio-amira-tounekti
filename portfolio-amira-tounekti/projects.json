@@ -1,6 +1,7 @@
 [
   {
-    "imageProjet": ["./img/projets/projet_resto3.jpg"],
+    "typeProjet": "Modelisation 3D",
+    "imageProjet": ["./img/projets/projet_resto3.png"],
     "titreProjet": "Resto",
     "projetPresentation": "Resto est un projet à mention académique, réalisé dans le cadre du cours Modélisation 3D. Ce travail a été effectué en équipe de trois, avec Kristy Moussally et Mégane Ranger. Mon rôle principal dans ce projet consistait à la modélisation de trois objets. Le projet a été conçu à l’aide du logiciel Maya et appartient à la catégorie des scènes 3D.",
     "imagePresentation": ["./img/projets/projet_resto1.jpg"],
@@ -8,6 +9,7 @@
     "imageDescritpion": ["./img/projets/projet_resto2.png"]
   },
   {
+    "typeProjet": "Jeux Video",
     "imageProjet": ["./img/projets/balobilou2.png"],
     "titreProjet": "BaloBilou",
     "projetPresentation": "Balobilou est un projet réalisé dans le cadre du cours Interactivité ludique, dans un contexte académique. Ce projet a été réalisé individuellement, et j’ai assumé l’ensemble des responsabilités, notamment coder le jeu et définir l’histoire. Le développement a été effectué à l’aide de Visual Studio Code, en utilisant les outils Phaser et Tiled, et le projet s’inscrit dans la catégorie des jeux vidéo.",
@@ -16,6 +18,7 @@
     "imageDescritpion": ["./img/projets/balobilou3.png"]
   },
   {
+    "typeProjet": "Animation 3D",
     "imageProjet": ["./img/projets/consequence-insouciance1.png"],
     "titreProjet": "Conséquence|Insouciance",
     "projetPresentation": "Conséquence | Insouciance est un projet réalisé dans le cadre du cours Animation 3D, dans un contexte académique. Ce projet a été réalisé individuellement, et j’ai assuré l’ensemble des rôles : modélisation 3D, conception sonore, montage vidéo et animation 3D. Le travail a été produit à l’aide des logiciels Maya, DaVinci Resolve et Reaper, et il s’inscrit dans la catégorie des animations 3D originales.",
@@ -24,11 +27,13 @@
     "imageDescritpion": ["./img/projets/consequence-insouciance3.png"]
   },
   {
+    "typeProjet": "Montage Video",
     "imageProjet": ["./img/projets/patatophobie2.png"],
     "titreProjet": "Patatophobie",
     "projetPresentation": "Patatophobie est un projet réalisé dans le cadre du cours Conception Vidéo, dans un contexte académique. Ce travail d’équipe, composé de quatre membres — Ian Corbin, Jacob Jetté-Longpré, Keven Malric et moi-même — explore la création audiovisuelle autour d’un concept original. J’y ai occupé les rôles de comédienne, animatrice et directrice de la photographie. Le projet a été conçu à l’aide des logiciels After Effects, DaVinci Resolve et Illustrator, et s’inscrit dans la catégorie du montage vidéo.",
     "imagePresentation": ["./img/projets/patatophobie1.png"],
     "projetDescritpion": "Patatophobie est un projet consistant à réaliser un court-métrage en stop motion. Dans le cadre du cours, il fallait créer un court-métrage en réalisant soi-même le montage, en s’inspirant d’un poème, et intégrer des animations 2D. Pour ma part, j’ai été l’actrice principale du court-métrage, j’ai réalisé trois animations et participé au montage vidéo. Le court-métrage se base sur un poème qui transmet un message sur la pauvreté à travers la consommation d’un ingrédient peu coûteux : la patate, et explore cette thématique à travers la phobie des patates.",
-    "imageDescritpion": ["./img/projets/patatophobie3.png"]
+    "imageDescritpion": ["./img/projets/patatophobie3.png"],
+    "lien": "https://youtu.be/fH8j3C7BZWk"
   }
 ]
