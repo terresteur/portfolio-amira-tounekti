@@ -53,9 +53,11 @@ const app = Vue.createApp({
   },
   computed: {
     titreDescritpion(){
+      //Un objet JavaScript qui te permet de facilement lire les paramètres passés dans l’URL
       const params = new URLSearchParams(window.location.search);
       const projet = params.get("projet");
 
+      //Elle empêche que le code continue si le tableu project est vide
       if (!this.project || this.project.length === 0) {
         return this.titreDescritpionDefaut; 
       };
@@ -313,9 +315,13 @@ ScrollTrigger.create({
 })};
 
 let boutonAccueil = document.querySelector(".bouton.accueil");
+let logoAccueil = document.querySelector(".logo");
 
   
 boutonAccueil.addEventListener("click", () => {
+  window.location.href = "accueil.html";
+});
+logoAccueil.addEventListener("click", () => {
   window.location.href = "accueil.html";
 });
 
