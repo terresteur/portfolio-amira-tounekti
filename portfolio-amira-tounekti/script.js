@@ -344,7 +344,7 @@ animeFlocon(".neige4", 1.5);
 animeFlocon(".neige5", 2);
 animeFlocon(".neige6", 2.5);
 
-/*const images = document.querySelectorAll(".carousel-img");
+const images = document.querySelectorAll(".carousel-img");
 let carrouselIndex = 0;
 
 images.forEach((img, i) => {
@@ -374,6 +374,6 @@ function slideSuivant() {
 
 function slidePresedant() {
   voirSlide(carrouselIndex - 1);
-}*/
+}
 
 

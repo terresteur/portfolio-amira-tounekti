@@ -216,7 +216,6 @@ header {
     margin: 10% 0 10% 0;
     width: 55%;
     height: 25%;
-    z-index: 2; 
     display: flex;
     flex-direction: row-reverse;
     justify-content: center;
@@ -239,7 +238,6 @@ header {
     position: relative;
     width: 100%;
     height: 70%;
-
     background-image: url('./img/photo.png');
     background-position: center;
     background-size: cover;
@@ -262,7 +260,7 @@ header {
     left: 80%;
     border-radius: 8px;
     text-align: center;
-    z-index: 99;
+    z-index: 3;/* Passe au-dessus de deuxiemeSection  */
     opacity: 0;
     font-family: "merriweather";
 }
@@ -314,7 +312,7 @@ header {
     flex-direction: row;
     align-items: center; 
     justify-content: center;
-    z-index: 9;
+    z-index: 4; /* Passe au-dessus de disponibilite */
 }
 
 .competance {
@@ -413,7 +411,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 10;
+    z-index: 5; /* Passe au-dessus de troisiemeSection */
     margin: 0;
 }
 
@@ -587,7 +585,7 @@ h4 {
     background-repeat: no-repeat;
     background-position: top;
     background-size: cover;
-    z-index: 2; /* Passe au-dessus de decoPresentation */
+    z-index: 1; 
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -596,11 +594,10 @@ h4 {
 }
 
 .imageProjet {
-    width: 50%;
+    width: 40%;
     height: 60%;
-    border: outset 11px var(--bleu-claire);
+    max-height: 70vh;
     margin: 0;
-    border: outset 11px var(--bleu-claire);
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -613,6 +610,7 @@ h4 {
     object-fit: cover;
     object-position: center;
     display: block;
+    border: outset 11px var(--bleu-claire);
 }
 
 .developpementImg img {
@@ -621,8 +619,16 @@ h4 {
     object-fit: cover;
     object-position: center;
     display: block;
+    border: inset 11px var(--bleu-claire);
 }
 
+.imagePrincipalProjet  {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    border: outset 11px var(--bleu-claire);
+}
 
 .projetConception {
     width: 60%;
@@ -720,9 +726,4 @@ h4 {
   to { opacity: 1; }  
 }
 
-.imageProjet {
-    width: 100%;
-    object-fit: contain;
-    display: block;
-    border: inset 10px var(--bleu-claire);
-}
+
