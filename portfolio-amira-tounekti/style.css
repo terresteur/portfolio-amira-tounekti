@@ -53,7 +53,6 @@ header {
     width: 100%;
     box-shadow: 0px 0px 50px black;
     margin: 0;
-    
 }
 
 .navigation {
@@ -228,18 +227,11 @@ header {
     box-shadow: inset 0 0 29px 25px rgb(45, 74, 97, 0.6);
 }
 
-.photoDispo {
-    width: 20%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
 
 /*Il y a dedans une image temporaire en attendant la photo professionnelle.*/
 .photo {
     position: relative;
-    width: 100%;
+    width: 18%;
     height: 70%;
     background-image: url('./img/photo.png');
     background-position: center;
@@ -248,34 +240,20 @@ header {
     border: inset 10px var(--bleu-claire);
 }
 
-.photo:hover {
-    filter: invert(100%);
-    transition-duration: 1s;
-}
-
 .disponibilite {
-    position: absolute;
     background-color: var(--blanc);
-    font-size: 0rem;
-    padding: 5px;
-    width: 0;
-    top: 48%;
-    left: 80%;
-    border-radius: 8px;
-    text-align: center;
-    z-index: 3;/* Passe au-dessus de deuxiemeSection  */
-    opacity: 0;
+    margin-top: 30px;
+    width: 50%;
+    height: 50%;
+    left: 50%;
+    border-radius: 8px;    
+    display: flex;
+    justify-content: center; 
+    align-items: center;  
+    text-align: center;    
+    z-index: 3;
     font-family: "merriweather";
-}
-
-.photoDispo:hover .disponibilite {
-    transform: scale(1.2);
-    width: 30%;
-    font-size: 2rem;
-    top: -3%;
-    left: 90%;
-    opacity: 1;
-    transition-duration: 1s;
+    color: black;
 }
 
 /*Description de ma personne*/
@@ -285,18 +263,22 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     color: var(--bleu-claire);
+    text-align: justify;
 }
 
 .aPropos h2 {
     width: 60%;
     font-size: 1.9em;
     font-family: "ougkeh", sans-serif;
+    letter-spacing: 2px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
 }
 
 .aPropos p {
-    margin-top: 20px;
     font-family: "merriweather";
     font-size: 1.4em;
 }
@@ -449,6 +431,7 @@ h4 {
     font-size: 1.8em;
     font-family: "ougkeh", sans-serif;
     margin-bottom: 6px; 
+    letter-spacing: 2px;
 }
 
 .paragrapheInfo {
@@ -523,13 +506,13 @@ h4 {
     }
     
     .photo {
-        width: 100%;
-        height: 70%;
+        width: 200px;
+        height: 300px;
     }
 
     .aPropos {
         width: 40%;
-        font-size: 1em;
+        font-size: 0.7em;
     }
 
     .decoPresentation {
@@ -572,7 +555,7 @@ h4 {
 
     .presentation {
         width: 100%;
-        height: 28%;
+        height: 34%;
         display: flex;
         flex-direction: column-reverse;
         justify-content: center;
@@ -596,8 +579,8 @@ h4 {
     
     /*Il y a dedans une image temporaire en attendant la photo professionnelle.*/
     .photo {
-        width: 80%;
-        height: 60%;
+        width: 200px;
+        height: 230px;
     }
 
     .bouton {
@@ -606,12 +589,8 @@ h4 {
 
     .aPropos {
         width: 80%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
         font-family: "ougkeh", sans-serif;
-        font-size: 0.9em;
+        font-size: 0.7em;
     }
       .menuSandwitch {
         width: 40px;
@@ -621,9 +600,40 @@ h4 {
         flex-direction: column;
         justify-content: space-between;
     }
+    .menuSandwitch:hover .menuDeroulant {
+        display: block;
+    }
 
+    .menuDeroulant {
+        width: 100vw;
+    }
+    
+    .sousMenu {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: row; 
+        width: 100%;
+    }
+    
+    .sousMenu li a {
+        display: block;
+        width: 100%;
+        padding: 20px 20px;
+        color: var(--mauve-claire);
+        text-decoration: none;
+        font-family: "ougkeh", sans-serif;
+        font-size: 0.9em;
+    }
+
+    .sousMenu li {
+        width: 100%;
+        text-align: center;
+    }
+    
     .logo {
-        width: 35vh;
+        width: 29vh;
     }
 
     .paragrapheInfo {
@@ -654,7 +664,7 @@ h4 {
         justify-content: center;
         gap: 15px;
         margin-bottom: 20px;
-        width: 450px;
+        width: 400px;
         height: 200px;
     }
     
@@ -762,14 +772,14 @@ h4 {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
     font-family: "ougkeh", sans-serif;
     font-size: 2.5em;
     color: var(--bleu-claire);
 }
 
 .projetExplixation {
-    width: 55%;
+    width: 50%;
     height: 20%;
     margin-bottom: 300px;
     overflow: hidden;
@@ -785,14 +795,18 @@ h4 {
 
 .titre {
     width: 60%;
+    display: flex;
+    justify-content: center;
     font-size: 0.7em;
     font-family: "ougkeh", sans-serif;
+    letter-spacing: 2px;
 }
 
 .conception {
     margin-top: 20px;
     font-family: "merriweather";
     font-size: 0.5em;
+    text-align: justify;
 }
 
 .projetDescritpion {
@@ -801,7 +815,7 @@ h4 {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     font-family: "ougkeh", sans-serif;
     font-size: 2.5em;
     color: var(--bleu-claire);

@@ -18,6 +18,14 @@
                     <div class="menu sandwitch1"></div>
                     <div class="menu sandwitch2"></div>
                     <div class="menu sandwitch3"></div>
+                    <section class="menuDeroulant">
+                        <ul class="sousMenu">
+                            <li id="projet1" ><a @click="resto()">modelisation 3D</a></li>
+                            <li id="projet2"><a  @click="jeux()">jeux video</a></li>
+                            <li id="projet3"><a @click="animation3d()">animation 3D</a></li>
+                            <li id="projet4"><a @click="courtMetrage()">court metrage</a></li>
+                        </ul>
+                    </section>
                 </div>
                 <!-- Les boutons sont faits pour un écran large, alors que le menu sandwich est pour un écran plus petit. <a href="" >accueil</a>-->
                 <nav class="boutons">
@@ -59,24 +67,24 @@
             <section class="presentation">
 
                 <!-- Ce sera une photo professionnelle de moi. -->
-                 <div class="photoDispo">
                     <div class="photo" alt="dessin-principal"></div>
-                     <div class="disponibilite">
-                        <p v-if="disponible" class="dispo">
-                        🟢 Disponible pour un stage à partir de mars 2026
-                        </p>
-                        <p v-else class="pasDispo">
-                        🔴 Actuellement indisponible pour un stage
-                        </p>
-                    </div>
-                </div>
                 <!-- L'article me présente. -->
                 <article class="aPropos">
                     <h2>À propos</h2>
-                    <p>Je m'appelle Amira. L'un de mes loisirs est le dessin, et cela se reflète dans le métier que je souhaite exercer.
+                    <p> Je m'appelle Amira. L'un de mes loisirs est le dessin, et cela se reflète dans le métier que je souhaite exercer.
                          En effet, je souhaite intégrer une équipe en tant que web designer, 
-                         afin de créer des interfaces modernes et intuitives en mobilisant mes connaissances en HTML, CSS et design graphique.</p>
+                         afin de créer des interfaces modernes et intuitives en mobilisant mes connaissances en HTML, CSS et design graphique.
+                    </p>
+                         <div class="disponibilite">
+                            <p v-if="disponible" class="dispo">
+                            🟢 Disponible pour un stage à partir de mars 2026
+                            </p>
+                            <p v-else class="pasDispo">
+                            🔴 Actuellement indisponible pour un stage
+                            </p>
+                        </div>
                 </article>
+                
             </section>
             <!-- Je vais enlever l'image pour l’intégrer directement dans le CSS. -->
         </section>
