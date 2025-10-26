@@ -66,7 +66,6 @@ header {
     height: 13vh;
     width: 100%;
     box-shadow: 0px 0px 50px black;
-    margin: 0;
 }
 
 /*Le navigateur possede le logo et mes navigations en forme de div cliquable*/
@@ -93,40 +92,24 @@ header {
 .bouton {
     position: relative;
     margin: 70px;
+    font-size: 2em;
     padding: 12px 19px;
-    border: none;
     border-radius: 13px;
     font-family: "ougkeh", sans-serif;
-    font-size: 2.5em;
     color: var(--mauve-claire);
     z-index: 0;
-    background: transparent;
     cursor: pointer;
     margin: 0 30px;
+    background:
+        linear-gradient(var(--mauve-fond, #426C8D), var(--mauve-fond, #426C8D)) padding-box,
+        linear-gradient(40deg, var(--mauve-claire), var(--bleu-fonce)) border-box;
+    border: 4px solid transparent;
 }
 
 /*Le bouton:hover creer un changement de couleur pour signifier a l'interacteur qu'il peut cliquer dessus*/
 .bouton:hover {
     color: var(--jaune);
     background: linear-gradient(40deg, var(--mauve-claire), var(--bleu-fonce));
-}
-
-.bouton::before {
-    content: "";
-    position: absolute;
-    inset: 0; 
-    border-radius: 13px;
-    padding: 2px; 
-    background: linear-gradient(40deg, var(--mauve-claire), var(--bleu-fonce));
-    -webkit-mask:
-        linear-gradient(#ffffff 0 0) content-box,
-        linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask:
-        linear-gradient(#fff 0 0) content-box,
-        linear-gradient(#fff 0 0);
-    mask-composite: exclude;
-    z-index: -1;
 }
 
 /*Le menuDeroulant onglobe le sousMenu ou il vas se trouver la liste des projets. Il est positionner juste en dessous du bouton projet et n'est pas encore visible car il est en display: none*/
@@ -558,6 +541,41 @@ h4 {
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
+/*principalImageProjet est un div qui englobe une grand image qui a la class imagePrincipalProjet du projets. Une animation d'opaciter lorsque la page est charger a etais mis dessus.*/
+.principalImageProjet {
+    position: fixed;
+    margin: 20vh 0 80px 0;
+    width: 100%;
+    overflow: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    animation-name: anim;
+    animation-duration: 2s;
+}
+
+/*Un lien cliquable vers une video ou le resultat du projets en question est mis sur le div lorsque en clique dessus il ouvre l'autre onlet avec le projet..*/
+.principalImageProjet a {
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/*imagePrincipalProjet est la class de l'image du projet.*/
+.imagePrincipalProjet  {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    border: outset 11px var(--bleu-claire);
+}
+
+/*La premierSectionProjet englobe tout la presentation du projets en image et texte. Elle possede une animation pour créer un effet paralaxe.*/
 .premierSectionProjet {
     position: relative;
     width: 100%;
@@ -574,6 +592,7 @@ h4 {
     margin: 0;
 }
 
+/*projetExplixation englobe tout la premier presentation du projets avec sont titre, son text et une image.*/
 .projetExplixation {
     width: 60%;
     height: 20%;
@@ -589,6 +608,7 @@ h4 {
     box-shadow: inset 0 0 20px 25px var(--bleu-tres-fonce);
 }
 
+/*imageProjet est un nom de class que possede les deux div qui englobe un des deux images qui presente le projets.*/
 .imageProjet {
     width: 30%;
     height: 60%;
@@ -600,6 +620,7 @@ h4 {
     align-items: center;
 }
 
+/*L'image dans projetExplixation est cherche dans explixationImg la deuxieme parti du nom de class ou ce trouve aussi imageProjet.*/
 .explixationImg img {
     width: 100%;
     height: 100%;
@@ -609,65 +630,7 @@ h4 {
     border: outset 11px var(--bleu-claire);
 }
 
-.developpementImg img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-    border: inset 11px var(--bleu-claire);
-}
-
-.imagePrincipalProjet  {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    display: block;
-    border: outset 11px var(--bleu-claire);
-}
-
-.projetConception {
-    width: 60%;
-    margin: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-family: "ougkeh", sans-serif;
-    font-size: 2.5em;
-    color: var(--bleu-claire);
-}
-
-
-.titre {
-    width: 60%;
-    display: flex;
-    justify-content: center;
-    font-size: 0.7em;
-    font-family: "ougkeh", sans-serif;
-    letter-spacing: 2px;
-}
-
-.conception {
-    margin-top: 20px;
-    font-family: "merriweather";
-    font-size: 0.5em;
-    text-align: justify;
-}
-
-.projetDescritpion {
-    width: 60%;
-    margin: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-family: "ougkeh", sans-serif;
-    font-size: 2.5em;
-    color: var(--bleu-claire);
-
-}
-
+/*projetDeveloppement englobe tout la deuxieme presentation du projets avec sont titre, son text et une image.*/
 .projetDeveloppement {
     margin-top: 50px;
     margin-bottom: 300px;
@@ -684,30 +647,49 @@ h4 {
     box-shadow: inset 0 0 20px 25px var(--bleu-tres-fonce);
 }
 
-.principalImageProjet {
-    position: fixed;
-    margin: 20vh 0 80px 0;
+/*L'image dans projetDeveloppement est cherche dans developpementImg la deuxieme parti du nom de class ou ce trouve aussi imageProjet.*/
+.developpementImg img {
     width: 100%;
-    overflow: auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    opacity: 1;
-    animation-name: anim;
-    animation-duration: 2s;
-}
-
-.principalImageProjet a {
-    width: 40%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    border: inset 11px var(--bleu-claire);
 }
 
 
+/*projetConception est le nom de class que possede deux div qui encadre le texte et titre dans le div projetExplixation et projetDeveloppement.*/
+.projetConception {
+    width: 60%;
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "ougkeh", sans-serif;
+    font-size: 2.5em;
+    color: var(--bleu-claire);
+}
+
+/*titre est le nom de class que possede deux h2 qui se trouve dans projetConception qui est lui dans le div projetExplixation et projetDeveloppement.*/
+.titre {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    font-size: 0.7em;
+    font-family: "ougkeh", sans-serif;
+    letter-spacing: 2px;
+}
+
+/*conception est le nom de class que possede deux p qui se trouve dans projetConception qui est lui dans le div projetExplixation et projetDeveloppement.*/
+.conception {
+    margin-top: 20px;
+    font-family: "merriweather";
+    font-size: 0.5em;
+    text-align: justify;
+}
+
+/*anim est le nom d'animation mis dans principalImageProjet et principalImage pour creer une transition d'opaciter.*/
 @keyframes anim { 
   from { opacity: 0; } 
   to { opacity: 1; }  
@@ -727,7 +709,8 @@ h4 {
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
-@media screen and (max-width: 1880px)  {
+/*Lorsque la taille de la page est plus petit en largeur que 1800px les diverses informationde de style mis dans des objets sont modifier pour s'adapter a la taille de la page.*/
+@media screen and (max-width: 1800px)  {
     .menu {
         background: linear-gradient(40deg, var(--mauve-claire), var(--bleu-fonce));
         width: 50px;
@@ -737,7 +720,7 @@ h4 {
     
     .bouton {
         margin: 15px;
-        font-size: 2em;
+        font-size: 1.6em;
     }
 
     .logo {
@@ -779,7 +762,7 @@ h4 {
     }
 
     .presentation {
-        width: 70%;
+        width: 60%;
         height: 25%;
         padding: 20px;
     }
@@ -873,6 +856,7 @@ h4 {
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
+/*Lorsque la taille de la page est plus petit en largeur que 900px les diverses informationde de style mis dans des objets sont modifier pour s'adapter a la taille de la page.*/
 @media screen and (max-width: 900px) { 
 
     .dessin {
