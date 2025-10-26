@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -14,12 +15,12 @@
     <div id="app" class="Portfolio">
         <header>
             <div class="navigation">
-                <div class="menuSandwitch">
+                <div class="menuSandwitch" @click="menuEtats">
                     <div class="menu sandwitch1"></div>
                     <div class="menu sandwitch2"></div>
                     <div class="menu sandwitch3"></div>
                     <section class="menuDeroulant">
-                        <ul class="sousMenu">
+                        <ul class="sousMenu" v-if="menuOuvert">
                             <li id="projet1" ><a @click="resto()">modelisation 3D</a></li>
                             <li id="projet2"><a  @click="jeux()">jeux video</a></li>
                             <li id="projet3"><a @click="animation3d()">animation 3D</a></li>
@@ -141,6 +142,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="script.js" ></script>
 </body>

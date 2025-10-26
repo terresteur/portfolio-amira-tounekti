@@ -12,28 +12,35 @@
     <div id="app" class="Portfolio">
         <header>
             <div class="navigation">
-                <div class="menuSandwitch">
+                <div class="menuSandwitch" @click="menuEtats">
                     <div class="menu sandwitch1"></div>
                     <div class="menu sandwitch2"></div>
                     <div class="menu sandwitch3"></div>
+                    <section class="menuDeroulant">
+                        <ul class="sousMenu" v-if="menuOuvert">
+                            <li id="projet1" ><a @click="resto()">modelisation 3D</a></li>
+                            <li id="projet2"><a  @click="jeux()">jeux video</a></li>
+                            <li id="projet3"><a @click="animation3d()">animation 3D</a></li>
+                            <li id="projet4"><a @click="courtMetrage()">court metrage</a></li>
+                        </ul>
+                    </section>
                 </div>
                 <!-- Les boutons sont faits pour un écran large, alors que le menu sandwich est pour un écran plus petit. <a href="" >accueil</a>-->
                 <nav class="boutons">
-                    <div class="bouton accueil">Accueil</div>
+                    <div class="bouton accueil">Accueil</div> 
                     <div class="bouton projet">Projet
                         <section class="menuDeroulant">
                             <ul class="sousMenu">
-                                <li id="projet1" ><a @click="resto()">modelisation 3D</a></li>
-                                <li id="projet2"><a  @click="jeux()">jeux video</a></li>
-                                <li id="projet3"><a @click="animation3d()">animation 3D</a></li>
-                                <li id="projet4"><a @click="courtMetrage()">court metrage</a></li>
+                                <li id="projetUn" ><a @click="resto()">modelisation 3D</a></li>
+                                <li id="projetDeux"><a  @click="jeux()">jeux video</a></li>
+                                <li id="projetTrois"><a @click="animation3d()">animation 3D</a></li>
+                                <li id="projetQuatre"><a @click="courtMetrage()">court metrage</a></li>
                             </ul>
                         </section>
                     </div>
                 </nav>
                 <img class="logo" src="./img/logo.png" alt="logo-portfolio">
             </div>
-
         </header>
 
         <!-- La neige sera animée pour donner vie à l'environnement avec le scroll. -->

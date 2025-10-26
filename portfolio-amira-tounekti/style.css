@@ -10,12 +10,6 @@
     font-family: "merriweather";
 }
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    
-}
-
 /*Liste des couleurs que je vais souvent utiliser*/
 :root {
     --bleu-fonce: #426C8D;
@@ -28,19 +22,39 @@
     --jaune: #F3E478;
 }
 
+/*L’intégration de la font pour mon site*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+/*Le potfolio est un div qui anglobe tous et empeche que des elements depansse l'ecran*/
 .Portfolio {
     overflow: hidden;
     width: 100%;
     height: 100%;
 }
 
+/*Le body possede la couleur de base de mon site*/
 body {
     background-color: var(--bleu-fonce);
-    margin: 0;
-
 }
 
-/*J'ai mis des div qui englobent d'autres div à la fin pour chaque partie du site.*/
+/* -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+ # ⬆️ HEADER ET NAVIGATEUR DU PORFOLIO ⬆️
+ 
+ 
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*Le header englobe tout le navigateur de mon site*/
 header {
     position: fixed;
     top: 0vh;
@@ -55,6 +69,7 @@ header {
     margin: 0;
 }
 
+/*Le navigateur possede le logo et mes navigations en forme de div cliquable*/
 .navigation {
     width: 75vw;
     display: flex;
@@ -63,15 +78,18 @@ header {
     align-items: center;
 }
 
+/*Le logo presente l'identiter de mon site et presente mon nom*/
 .logo {
     width: 50vh;
     cursor: pointer;
 }
 
+/*Le boutons onglobe le bouton accueil et projet*/
 .boutons {
     display: flex;
 }
-/*Pour le style des boutons, j'ai mis un (::before) pour le linear-gradient sur leurs bordures.*/
+
+/*Le bouton s'occupe du style des deux bouton acceuil et projet*/
 .bouton {
     position: relative;
     margin: 70px;
@@ -87,6 +105,7 @@ header {
     margin: 0 30px;
 }
 
+/*Le bouton:hover creer un changement de couleur pour signifier a l'interacteur qu'il peut cliquer dessus*/
 .bouton:hover {
     color: var(--jaune);
     background: linear-gradient(40deg, var(--mauve-claire), var(--bleu-fonce));
@@ -110,19 +129,22 @@ header {
     z-index: -1;
 }
 
+/*Le menuDeroulant onglobe le sousMenu ou il vas se trouver la liste des projets. Il est positionner juste en dessous du bouton projet et n'est pas encore visible car il est en display: none*/
 .menuDeroulant {
     position: absolute;
     top: 100%; 
     left: 0;
     background-color: var(--bleu-tres-fonce);
-    border-radius: 0 0 10px 10px ;
+    border-radius: 0 10px 10px 10px;
     display: none;
 }
 
+/*Lorsque il y a un survole sur le .bouton.projet le menuDerout apparait en changant son display*/
 .bouton.projet:hover .menuDeroulant {
     display: block;
 }
 
+/*Le sousMenu vas englober les liste de projets qui sont en lien cliquable*/
 .sousMenu {
     list-style: none;
     padding: 0;
@@ -131,8 +153,10 @@ header {
     flex-direction: column; 
 }
 
+/*Les liens qui se trouve dans le sousMenu sont styliser pour l'adapter au style du sous menu dans lequel il se trouve et la font mis en place pour le texte.*/
 .sousMenu li a {
     display: block;
+    height: 100%;
     padding: 10px 22px;
     color: var(--mauve-claire);
     text-decoration: none;
@@ -140,18 +164,35 @@ header {
     font-size: 0.8em;
 }
 
+/*Pour chaque lien de projets le style changeras au survole pour signifier la possibiliter d'une interaction*/
 .sousMenu li a:hover {
     background-color: var(--bleu-claire-fonce);
     color: var(--jaune);
 }
 
+/*Le radius du bouton projet change au survol de celui-ci pour creer une plus grand symbiose avec le menuDeroulant*/
 .bouton.projet:hover {
     border-radius: 10px 10px 0 0;
 }
 
+/*Le menuSandwitch est la version mobile du menuDeroulant et il n'apparait que lorsque la largeur de l'ecran et plus petit que 900px*/
 .menuSandwitch {
     display: none;
 }
+
+/* -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+ # ↗️ PREMIERE SECTION DU PORTFOLIO ↗️
+ 
+ 
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 /*Les flocons se trouvent dans ce grand div avec (.principalImag).*/
 .decoPresentation {
@@ -162,7 +203,7 @@ header {
     overflow: hidden;
 }
 
-/*(.principalImag) englobe le dessin.*/
+/*(.principalImag) englobe le dessin. Une animation d'opaciter est creer a sont apparition*/
 .principalImage {
     position: fixed;
     margin: 20vh 0 80px 0;
@@ -177,6 +218,7 @@ header {
     animation-duration: 2s;
 }
 
+/*Le dessin est une illustration qui pressante mon style artistique.*/
 .dessin {
     width: 40%;
     object-fit: contain;
@@ -184,7 +226,7 @@ header {
     border: inset 10px var(--bleu-claire);
 }
 
-/*Les flocons possèdent les mêmes caractéristiques, ensuite ils sont mis à diverses positions avec (.neige).*/
+/*Les flocons sont des div rond qui represente de la neige et qui possèdent le  style, ensuite ils sont mis à diverses positions avec (.neige) dans le javascript.*/
 .flocon {
     position: absolute;
     top: 0; 
@@ -196,8 +238,21 @@ header {
     box-shadow: 0px 0px 30px var(--blanc);
 }
 
+/* -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-/*Cette section est enneigée et elle englobe À propos. Il y aura dessus une animation GSAP.*/
+
+
+ # ➡️ DEUXIEME SECTION DU PORTFOLIO ⬅️
+ 
+ 
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*Cette section est enneigée et elle englobe À propos. Il y a dessus dans le javascript une animation qui le fait l'effet parralaxe.*/
 .deuxiemeSection {
     position: relative;
     width: 100%;
@@ -228,7 +283,7 @@ header {
 }
 
 
-/*Il y a dedans une image temporaire en attendant la photo professionnelle.*/
+/*Dans photo il y a ma photo professionel.*/
 .photo {
     position: relative;
     width: 18%;
@@ -240,11 +295,13 @@ header {
     border: inset 10px var(--bleu-claire);
 }
 
+/*la disponibiliter presente en une phrase si je suis disponible pour un stage ou pas. Sont etat change avec vue.js on fonction de si je suis disponible ou non */
 .disponibilite {
     background-color: var(--blanc);
     margin-top: 30px;
-    width: 50%;
+    width: 100%;
     height: 50%;
+    padding: 10px;
     left: 50%;
     border-radius: 8px;    
     display: flex;
@@ -256,7 +313,7 @@ header {
     color: black;
 }
 
-/*Description de ma personne*/
+/*aPropos presente la description de ma personne*/
 .aPropos {
     width: 60%;
     margin: 30px;
@@ -268,6 +325,7 @@ header {
     text-align: justify;
 }
 
+/*C'est le titre du text aPropos*/
 .aPropos h2 {
     width: 60%;
     font-size: 1.9em;
@@ -278,12 +336,27 @@ header {
     margin-bottom: 20px;
 }
 
+/*C'est le text de aPropos*/
 .aPropos p {
     font-family: "merriweather";
     font-size: 1.4em;
 }
 
-/*Cette section est glacée et elle englobe les compétences. Il y aura dessus une animation GSAP.*/
+/* -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+ # ↘️ TROISIÉME SECTION DU PORTFOLIO ↘️
+ 
+ 
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*Cette section est glacée et elle englobe les compétences.  Il y a dessus dans le javascript une animation qui le fait l'effet parralaxe.*/
 .troisiemeSection {
     position: relative;
     width: 100%;
@@ -300,6 +373,7 @@ header {
     z-index: 4; /* Passe au-dessus de disponibilite */
 }
 
+/*comptenance enlobe le carrousel de mes projets et les logiciel metriser.*/
 .competance {
     width: 50%;
     height: 20%;
@@ -324,6 +398,7 @@ header {
     height: 300px;
 }
 
+/*La fleche change grace au javascript l'image qui se trouve dans le crrousel par un autre.*/
 .arrow {
     cursor: pointer;
     height: 100px;
@@ -335,14 +410,16 @@ header {
     background-position: center;
 }
 
+/*Le style de la fleche est changer avec un survole pour dire a l'interracteur qu'il pe provoquer un evenement au clique.*/
 .arrow:hover {
     filter: contrast(450%);
 }
-
+/*La fleche qui se trouve de l'autre cote du carrousel est inverse de sans.*/
 .left {
     transform: scaleX(-1);
 }
 
+/*se div vas contenire tout les images pour en montrer une seul a la fois.*/
 .carousel-images {
   position: relative;
   width: 100%;
@@ -352,6 +429,7 @@ header {
   border: solid 10px var(--bleu-tres-fonce);
 }
 
+/*Les images contenus dans carousel-images vas avoir le meme style de taille et une transition d'opaciter a chaque changement d'image dans le carrousel.*/
 .carousel-img {
   width: 100%;
   height: 100%;
@@ -363,15 +441,18 @@ header {
   border-radius: 10px;
 }
 
+/*Au survole du div contenant les images du carousel les images ne serons plus contenu dans le div.*/
 .carousel-images:hover {
    overflow: visible;
 }
 
+/*Au survole de l'image dans le carousel la taille de celui-ci vas organter.*/
 .carousel-img:hover {
     transform: scale(1.1);
     transition-duration: 1s;
 }
 
+/*le div iconsComp englobe les icons des logiciels metriser.*/
 .iconsComp {
     position: relative;
     width: 80%;
@@ -383,6 +464,7 @@ header {
     left: 27px;
 }
 
+/*La premier div possedant trois images d'icon seras placer a coter du div possedant deux images d'icons.*/
 .icon1, .icon2 {
     display: flex;
     flex-direction: row;
@@ -393,6 +475,7 @@ header {
     margin: 0;
 }
 
+/*.icon est la class de l'image et il lui est donner une taille.*/
 .icon {
     max-width: 60px; 
     height: auto;    
@@ -400,7 +483,21 @@ header {
     margin: 0;
 }
 
+/* -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+
+
+ # ⬇️ BAS DE PAGE ⬇️
+ 
+ 
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*Le footer englobe les infos general.*/
 footer {
     position: relative; 
     width: 100%;
@@ -414,19 +511,23 @@ footer {
     margin: 0;
 }
 
+/*infoGeneral englobe les information pour me contacter et les info de la navigation.*/
 .infoGeneral {
     height: 70%;
     width: 60%; 
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
 }
 
+/*Le text de contact et navigation est centrer en column.*/
 .contact, .Navigation {
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
 }
 
+/*Un taille et un style est mis sur les titres de Contact et Navigation.*/
 h4 {
     font-size: 1.8em;
     font-family: "ougkeh", sans-serif;
@@ -434,6 +535,7 @@ h4 {
     letter-spacing: 2px;
 }
 
+/*Un taille et un style est mis sur le text de Contact et Navigation.*/
 .paragrapheInfo {
     margin: 0;
     font-family: "merriweather";
@@ -442,7 +544,189 @@ h4 {
 }
 
 
-/*Cette partie est adaptative au plus petit format d’écran.*/
+/* -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+ # 🎭 PAGE DES PROJETS 🎭
+ 
+ 
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+.premierSectionProjet {
+    position: relative;
+    width: 100%;
+    height: 260vh;
+    background-image: url('./img/2ieme-section.png');
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    z-index: 1; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0;
+}
+
+.projetExplixation {
+    width: 60%;
+    height: 20%;
+    margin-bottom: 300px;
+    overflow: hidden;
+    z-index: 2; 
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    opacity: 0;
+    background-color: var(--bleu-fonce);
+    box-shadow: inset 0 0 20px 25px var(--bleu-tres-fonce);
+}
+
+.imageProjet {
+    width: 30%;
+    height: 60%;
+    max-height: 70vh;
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.explixationImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    border: outset 11px var(--bleu-claire);
+}
+
+.developpementImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    border: inset 11px var(--bleu-claire);
+}
+
+.imagePrincipalProjet  {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    border: outset 11px var(--bleu-claire);
+}
+
+.projetConception {
+    width: 60%;
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "ougkeh", sans-serif;
+    font-size: 2.5em;
+    color: var(--bleu-claire);
+}
+
+
+.titre {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    font-size: 0.7em;
+    font-family: "ougkeh", sans-serif;
+    letter-spacing: 2px;
+}
+
+.conception {
+    margin-top: 20px;
+    font-family: "merriweather";
+    font-size: 0.5em;
+    text-align: justify;
+}
+
+.projetDescritpion {
+    width: 60%;
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "ougkeh", sans-serif;
+    font-size: 2.5em;
+    color: var(--bleu-claire);
+
+}
+
+.projetDeveloppement {
+    margin-top: 50px;
+    margin-bottom: 300px;
+    width: 60%;
+    height: 20%;
+    overflow: hidden;
+    z-index: 2; 
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    align-items: center;
+    opacity: 0;
+    background-color: var(--bleu-fonce);
+    box-shadow: inset 0 0 20px 25px var(--bleu-tres-fonce);
+}
+
+.principalImageProjet {
+    position: fixed;
+    margin: 20vh 0 80px 0;
+    width: 100%;
+    overflow: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    animation-name: anim;
+    animation-duration: 2s;
+}
+
+.principalImageProjet a {
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+@keyframes anim { 
+  from { opacity: 0; } 
+  to { opacity: 1; }  
+}
+
+/* -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+ # 💻 VERSION TABLETTE 💻
+ 
+ 
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
 @media screen and (max-width: 1880px)  {
     .menu {
         background: linear-gradient(40deg, var(--mauve-claire), var(--bleu-fonce));
@@ -536,26 +820,74 @@ h4 {
         height: 260px;
     }
 
+    .infoGeneral {
+        height: 70%;
+        width: 80%; 
+    }
 
+    .principalImageProjet a{
+        width: 60%;
+    }
+
+    .projetExplixation {
+        width: 70%;
+        height: 23%;
+        margin-bottom: 100px;
+    }
+
+    .imageProjet {
+        width: 300px;
+        height: 240px;
+    }
+
+    .projetConception {
+        width: 60%;
+        font-size: 2.1em;
+    }
+
+    .projetDeveloppement {
+        margin-top: 60px;
+        width: 70%;
+        height: 25%;
+    }
+
+    .projetDescritpion {
+        width: 60%;
+        margin: 30px;
+        font-size: 2.1em;
+    }
 }
 
-/* La version mobile du portfolio */
+
+/* -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+ # 📱 VERSION MOBILE 📱
+ 
+ 
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 @media screen and (max-width: 900px) { 
 
     .dessin {
-        width: 80%;
+        width: 90%;
     }
 
     .deuxiemeSection {
         width: 100%;
         height: 200vh;
-        background-image: url('./img/2ieme-section-mobile.svg');
+        background-image: url('./img/2ieme-section-mobile.png');
     }
 
     .presentation {
         width: 100%;
-        height: 34%;
+        height: 30%;
         display: flex;
         flex-direction: column-reverse;
         justify-content: center;
@@ -565,7 +897,7 @@ h4 {
     .troisiemeSection {
         width: 100%;
         height: 260vh;
-        background-image: url('./img/3ieme-section-mobile.svg');
+        background-image: url('./img/3ieme-section-mobile.png');
     }
 
     .photoDispo {
@@ -592,6 +924,8 @@ h4 {
         font-family: "ougkeh", sans-serif;
         font-size: 0.7em;
     }
+
+    /*🥪Le menu Sandwitch apparait en version mobile de mon site et lorsque je clique dessus le sous menu apparait en dessous du header🥪*/
       .menuSandwitch {
         width: 40px;
         height: 30px;
@@ -599,15 +933,15 @@ h4 {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-    }
-    .menuSandwitch:hover .menuDeroulant {
-        display: block;
+        cursor: pointer;
     }
 
     .menuDeroulant {
         width: 100vw;
+        display: block;
     }
-    
+
+    /*🍔Le sous emnu permet montre les different liens qui mene vers un projets🍔*/
     .sousMenu {
         list-style: none;
         padding: 0;
@@ -620,11 +954,15 @@ h4 {
     .sousMenu li a {
         display: block;
         width: 100%;
-        padding: 20px 20px;
+        padding: 10px 20px;
         color: var(--mauve-claire);
         text-decoration: none;
         font-family: "ougkeh", sans-serif;
-        font-size: 0.9em;
+        font-size: 1em;
+        text-align: center;
+                display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .sousMenu li {
@@ -641,6 +979,22 @@ h4 {
         font-family: "merriweather";
         line-height: 1.4;
         font-size: 0.7em;
+    }
+
+    .troisiemeSection {
+        position: relative;
+        width: 100%;
+        height: 200vh;
+        margin: 0;
+        background-image: url('./img/3ieme-section-mobile.png');
+        background-repeat: no-repeat;
+        background-position: top;
+        background-size: cover;
+        display: flex;
+        flex-direction: row;
+        align-items: center; 
+        justify-content: center;
+        z-index: 4; /* Passe au-dessus de disponibilite */
     }
 
     .competance {
@@ -697,173 +1051,74 @@ h4 {
     .icon {
         max-width: 60px; 
     }
+
+    .infoGeneral {
+        height: 70%;
+        width: 80%; 
+    }
+
+    h4 {
+    font-size: 1.3em;
+    }
+
+    .paragrapheInfo {
+        font-size: 0.8em;
+    }
+
+    .premierSectionProjet {
+        position: relative;
+        width: 100%;
+        height: 200vh;
+        background-image: url('./img/2ieme-section-projets-mobile.png');
+    }
+
+    .principalImageProjet a{
+        width: 90%;
+    }
+
+    .projetExplixation {
+        width: 100%;
+        height: 23%;
+        margin-bottom: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .imageProjet {
+        width: 50%;
+        height: 50%;
+    }
+
+    .projetConception {
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5em;
+    }
+
+    .projetDeveloppement {
+        margin-top: 60px;
+        width: 100%;
+        height: 25%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .projetDescritpion {
+        width: 60%;
+        margin: 30px;
+        font-size: 1.5em;
+    }
+
+    .developpementImg img {
+        border: outset 11px var(--bleu-claire);
+    }
+
  }
-
- /* -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-
- # PAGE PROJET RESTO
- 
- 
-
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-
-.premierSectionProjet {
-    position: relative;
-    width: 100%;
-    height: 260vh;
-    background-image: url('./img/2ieme-section.png');
-    background-repeat: no-repeat;
-    background-position: top;
-    background-size: cover;
-    z-index: 1; 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-}
-
-.imageProjet {
-    width: 30%;
-    height: 60%;
-    max-height: 70vh;
-    margin: 0;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.explixationImg img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-    border: outset 11px var(--bleu-claire);
-}
-
-.developpementImg img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-    border: inset 11px var(--bleu-claire);
-}
-
-.imagePrincipalProjet  {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    display: block;
-    border: outset 11px var(--bleu-claire);
-}
-
-.projetConception {
-    width: 60%;
-    margin: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-family: "ougkeh", sans-serif;
-    font-size: 2.5em;
-    color: var(--bleu-claire);
-}
-
-.projetExplixation {
-    width: 50%;
-    height: 20%;
-    margin-bottom: 300px;
-    overflow: hidden;
-    z-index: 2; 
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    opacity: 0;
-    background-color: var(--bleu-fonce);
-    box-shadow: inset 0 0 20px 25px var(--bleu-tres-fonce);
-}
-
-.titre {
-    width: 60%;
-    display: flex;
-    justify-content: center;
-    font-size: 0.7em;
-    font-family: "ougkeh", sans-serif;
-    letter-spacing: 2px;
-}
-
-.conception {
-    margin-top: 20px;
-    font-family: "merriweather";
-    font-size: 0.5em;
-    text-align: justify;
-}
-
-.projetDescritpion {
-    width: 60%;
-    margin: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-family: "ougkeh", sans-serif;
-    font-size: 2.5em;
-    color: var(--bleu-claire);
-
-}
-
-.projetDeveloppement {
-    margin-top: 60px;
-    width: 55%;
-    height: 20%;
-    overflow: hidden;
-    z-index: 2; 
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: flex-start;
-    align-items: center;
-    opacity: 0;
-    background-color: var(--bleu-fonce);
-    box-shadow: inset 0 0 20px 25px var(--bleu-tres-fonce);
-}
-
-.principalImageProjet {
-    position: fixed;
-    margin: 20vh 0 80px 0;
-    width: 100%;
-    overflow: auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    opacity: 1;
-    animation-name: anim;
-    animation-duration: 2s;
-}
-
-.principalImageProjet a {
-    width: 40%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-
-}
-
-
-@keyframes anim { 
-  from { opacity: 0; } 
-  to { opacity: 1; }  
-}
-
 
