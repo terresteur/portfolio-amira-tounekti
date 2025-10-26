@@ -66,11 +66,14 @@ header {
     height: 13vh;
     width: 100%;
     box-shadow: 0px 0px 50px black;
+    overflow-x: hidden;
 }
 
 /*Le navigateur possede le logo et mes navigations en forme de div cliquable*/
 .navigation {
     width: 75vw;
+    max-width: 100%; 
+    flex-wrap: wrap;
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
@@ -79,13 +82,15 @@ header {
 
 /*Le logo presente l'identiter de mon site et presente mon nom*/
 .logo {
-    width: 50vh;
+    width: 300px;
+    max-width: 300px; 
     cursor: pointer;
 }
 
 /*Le boutons onglobe le bouton accueil et projet*/
 .boutons {
     display: flex;
+    flex-wrap: wrap;
 }
 
 /*Le bouton s'occupe du style des deux bouton acceuil et projet*/
@@ -724,7 +729,8 @@ h4 {
     }
 
     .logo {
-        width: 35vh;
+            width: 300px;
+            max-width: 300px; 
     }
 
     .flocon {
@@ -918,6 +924,7 @@ h4 {
         flex-direction: column;
         justify-content: space-between;
         cursor: pointer;
+        flex-wrap: wrap;
     }
 
     .menuDeroulant {
@@ -955,7 +962,8 @@ h4 {
     }
     
     .logo {
-        width: 29vh;
+        width: 200px;
+        max-width: 200px; 
     }
 
     .paragrapheInfo {
