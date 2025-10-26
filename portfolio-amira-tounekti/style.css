@@ -21,7 +21,11 @@
     --blanc: rgb(255, 255, 255);
     --jaune: #F3E478;
 }
-
+html {
+    box-sizing: border-box;
+    margin: 0;
+    overflow-x: hidden;
+}
 /*L’intégration de la font pour mon site*/
 * {
     box-sizing: border-box;
@@ -40,6 +44,10 @@ body {
     background-color: var(--bleu-fonce);
 }
 
+img {
+    max-width: 100%;
+}
+
 /* -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -56,15 +64,17 @@ body {
 
 /*Le header englobe tout le navigateur de mon site*/
 header {
-    position: fixed;
-    top: 0vh;
+    position: relative;
+    top: 0;
+    left: 0;
     background-color: var(--bleu-fonce);
     display: flex;
-    flex-direction: row;
     justify-content: center;
+    align-items: center;
     z-index: 10;
-    height: 13vh;
+    height: 80px;
     width: 100%;
+    max-width: 100%;
     box-shadow: 0px 0px 50px black;
     overflow-x: hidden;
 }
@@ -73,7 +83,6 @@ header {
 .navigation {
     width: 75vw;
     max-width: 100%; 
-    flex-wrap: wrap;
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
@@ -189,6 +198,7 @@ header {
     height: 200vh;
     width: 100%;
     overflow: hidden;
+    box-sizing: border-box;
 }
 
 /*(.principalImag) englobe le dessin. Une animation d'opaciter est creer a sont apparition*/
@@ -254,6 +264,7 @@ header {
     justify-content: center;
     align-items: center;
     margin: 0;
+    box-sizing: border-box;
 }
 
 /*Dans la section Présentation, il y a la photo et le (À propos). Elle prend toute la largeur pour les centrer.*/
@@ -359,6 +370,7 @@ header {
     align-items: center; 
     justify-content: center;
     z-index: 4; /* Passe au-dessus de disponibilite */
+    box-sizing: border-box;
 }
 
 /*comptenance enlobe le carrousel de mes projets et les logiciel metriser.*/

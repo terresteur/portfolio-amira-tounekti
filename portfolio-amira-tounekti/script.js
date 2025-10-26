@@ -215,15 +215,31 @@ app.mount('#app')
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/ 
 
+/*Recalcule toutes les positions et dimensions de tous tes ScrollTrigger sur la page.*/
+window.addEventListener("resize", () => {
+  ScrollTrigger.refresh();
+});
+
+window.addEventListener("orientationchange", () => {
+  ScrollTrigger.refresh();
+});
+
 gsap.registerPlugin(ScrollTrigger);
 
 ScrollTrigger.create({
-  trigger: ".decoPresentation",
+  trigger: "header",
   start: "top top",
-  end: "bottom+=100% top",
+  endTrigger: ".Portfolio",
+  end: "bottom top",
   pin: true,
   pinSpacing: false,
-  markers: true,
+});
+
+ScrollTrigger.create({
+  trigger: ".decoPresentation",
+  start: "top-=11% top",
+  pin: true,
+  pinSpacing: false,
 });
 
 const deuxiemeSection = document.querySelector(".deuxiemeSection");
@@ -234,7 +250,6 @@ ScrollTrigger.create({
   end: "bottom+=50% top",
   pin: true,
   pinSpacing: false,
-  markers: true,
   onEnter: () => {
     gsap.to(".presentation", { 
       opacity: 1, 
@@ -260,7 +275,6 @@ ScrollTrigger.create({
   trigger: ".troisiemeSection",
   start: "center-=15% center",
   end: "bottom top",
-  markers: true,
   onEnter: () => {
     gsap.to(".competance", { 
       opacity: 1, 
@@ -284,7 +298,6 @@ if (premierSectionProjet) {
 ScrollTrigger.create({
   trigger: ".premierSectionProjet",
   start: "center-+=20% center",
-  markers: true,
   onEnter: () => {
     gsap
     .timeline()
