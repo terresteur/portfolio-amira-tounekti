@@ -76,7 +76,6 @@ header {
     width: 100%;
     max-width: 100%;
     box-shadow: 0px 0px 50px black;
-    overflow-x: hidden;
 }
 
 /*Le navigateur possede le logo et mes navigations en forme de div cliquable*/
@@ -99,7 +98,6 @@ header {
 /*Le boutons onglobe le bouton accueil et projet*/
 .boutons {
     display: flex;
-    flex-wrap: wrap;
 }
 
 /*Le bouton s'occupe du style des deux bouton acceuil et projet*/
@@ -204,7 +202,7 @@ header {
 /*(.principalImag) englobe le dessin. Une animation d'opaciter est creer a sont apparition*/
 .principalImage {
     position: fixed;
-    margin: 20vh 0 80px 0;
+    margin: 5vh 0 80px 0;
     width: 100%;
     overflow: auto;
     display: flex;
@@ -227,7 +225,7 @@ header {
 /*Les flocons sont des div rond qui represente de la neige et qui possèdent le  style, ensuite ils sont mis à diverses positions avec (.neige) dans le javascript.*/
 .flocon {
     position: absolute;
-    top: 0; 
+    top: -100px; 
     width: 45px;
     height: 45px;
     margin: 10px;
@@ -381,83 +379,69 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center; 
-    justify-content: flex-end;
+    justify-content: center;
     background-color: var(--bleu-claire);
     box-shadow: inset 0 0 25px 25px rgba(159, 171, 179, 0.4);
     opacity: 0;
 }
 
-/*Le carrousel englobe les images et les flèches du carrousel.*/
-.carousel {
+.competance p {
+    font-size: 1.4em;
+    font-family: "ougkeh", sans-serif;
+    letter-spacing: 2px;
+}
+
+.competance p:nth-child(1) {
+    bottom: 0;
+}
+
+.swiper {
+    width: 550px; 
+    height: 450px; 
     position: relative;
+    margin: auto;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 30px;
-    width: 650px;
-    height: 300px;
 }
 
-/*La fleche change grace au javascript l'image qui se trouve dans le crrousel par un autre.*/
-.arrow {
+.swiper-wrapper {
+    width: 100%;
+    height: 100%;
+    margin-top: 15px;
+    object-fit: contain;
+}
+
+.swiper-slide {
+    width: 100%; 
+    height: 100%;
+    border-radius: 10px;
     cursor: pointer;
-    height: 100px;
-    overflow: hidden;
-    width: 100px;
-    background-image: url('./img/fleche.svg');
-    background-repeat: no-repeat;
+    transition: transform 0.5s ease;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.swiper-button-next, 
+.swiper-button-prev {
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    margin-top: 5px;
     background-size: contain;
-    background-position: center;
-}
-
-/*Le style de la fleche est changer avec un survole pour dire a l'interracteur qu'il pe provoquer un evenement au clique.*/
-.arrow:hover {
-    filter: contrast(450%);
-}
-/*La fleche qui se trouve de l'autre cote du carrousel est inverse de sans.*/
-.left {
-    transform: scaleX(-1);
-}
-
-/*se div vas contenire tout les images pour en montrer une seul a la fois.*/
-.carousel-images {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  border-radius: 20px;
-  border: solid 10px var(--bleu-tres-fonce);
-}
-
-/*Les images contenus dans carousel-images vas avoir le meme style de taille et une transition d'opaciter a chaque changement d'image dans le carrousel.*/
-.carousel-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  transition: opacity 0.5s ease, transform 1s ease;
-  border-radius: 10px;
-}
-
-/*Au survole du div contenant les images du carousel les images ne serons plus contenu dans le div.*/
-.carousel-images:hover {
-   overflow: visible;
-}
-
-/*Au survole de l'image dans le carousel la taille de celui-ci vas organter.*/
-.carousel-img:hover {
-    transform: scale(1.1);
-    transition-duration: 1s;
+    background-repeat: no-repeat;
 }
 
 /*le div iconsComp englobe les icons des logiciels metriser.*/
 .iconsComp {
     position: relative;
     width: 80%;
-    height: 30%;
-    margin-top: 10px;
+    height: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -561,7 +545,7 @@ h4 {
 /*principalImageProjet est un div qui englobe une grand image qui a la class imagePrincipalProjet du projets. Une animation d'opaciter lorsque la page est charger a etais mis dessus.*/
 .principalImageProjet {
     position: fixed;
-    margin: 20vh 0 80px 0;
+    margin: 5vh 0 80px 0;
     width: 100%;
     overflow: auto;
     display: flex;
@@ -755,7 +739,7 @@ h4 {
     }
 
     .principalImage {
-        margin: 20vh 0 80px 0;
+        margin: 5vh 0 80px 0;
         width: 100%;
     }
 
@@ -792,7 +776,7 @@ h4 {
     
     .photo {
         width: 200px;
-        height: 300px;
+        height: 90%;
     }
 
     .aPropos {
@@ -806,19 +790,15 @@ h4 {
     } 
 
     .competance {
-        width: 70%;
-        height: 20%;
+        width: 60%;
+        height: 29%;
     }
 
-    .carousel {
+    .swiper {
+        width: 410px; 
+        height: 330px; 
         position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 15px;
-        margin-bottom: 20px;
-        width: 550px;
-        height: 260px;
+        margin: auto;
     }
 
     .infoGeneral {
@@ -877,58 +857,18 @@ h4 {
 /*Lorsque la taille de la page est plus petit en largeur que 900px les diverses informationde de style mis dans des objets sont modifier pour s'adapter a la taille de la page.*/
 @media screen and (max-width: 900px) { 
 
-    .dessin {
-        width: 90%;
-    }
-
-    .deuxiemeSection {
-        width: 100%;
-        height: 200vh;
-        background-image: url('./img/2ieme-section-mobile.png');
-    }
-
-    .presentation {
-        width: 100%;
-        height: 30%;
-        display: flex;
-        flex-direction: column-reverse;
-        justify-content: center;
-        align-items: center;
-    }    
-
-    .troisiemeSection {
-        width: 100%;
-        height: 260vh;
-        background-image: url('./img/3ieme-section-mobile.png');
-    }
-
-    .photoDispo {
-        width: 50%;
-        height: 80%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    /*Il y a dedans une image temporaire en attendant la photo professionnelle.*/
-    .photo {
+    .logo {
         width: 200px;
-        height: 230px;
+        max-width: 200px; 
     }
 
     .bouton {
         display: none;
     }
-
-    .aPropos {
-        width: 80%;
-        font-family: "ougkeh", sans-serif;
-        font-size: 0.7em;
-    }
+    
 
     /*🥪Le menu Sandwitch apparait en version mobile de mon site et lorsque je clique dessus le sous menu apparait en dessous du header🥪*/
-      .menuSandwitch {
+    .menuSandwitch {
         width: 40px;
         height: 30px;
         overflow: hidden;
@@ -936,7 +876,6 @@ h4 {
         flex-direction: column;
         justify-content: space-between;
         cursor: pointer;
-        flex-wrap: wrap;
     }
 
     .menuDeroulant {
@@ -972,10 +911,51 @@ h4 {
         width: 100%;
         text-align: center;
     }
+
+    .dessin {
+        width: 90%;
+    }
+
+    .deuxiemeSection {
+        width: 100%;
+        height: 200vh;
+        background-image: url('./img/2ieme-section-mobile.png');
+    }
+
+    .presentation {
+        width: 100%;
+        height: 35%;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }    
+
+    .photoDispo {
+        width: 50%;
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
     
-    .logo {
-        width: 200px;
-        max-width: 200px; 
+    /*Il y a dedans une image temporaire en attendant la photo professionnelle.*/
+    .photo {
+        width: 150px;
+        height: 80%;
+    }
+
+    .aPropos {
+        width: 80%;
+        font-family: "ougkeh", sans-serif;
+        font-size: 0.7em;
+    }
+
+    .troisiemeSection {
+        width: 100%;
+        height: 260vh;
+        background-image: url('./img/3ieme-section-mobile.png');
     }
 
     .paragrapheInfo {
@@ -996,14 +976,14 @@ h4 {
         background-size: cover;
         display: flex;
         flex-direction: row;
-        align-items: center; 
+        align-items: flex-end; 
         justify-content: center;
         z-index: 4; /* Passe au-dessus de disponibilite */
     }
 
     .competance {
         width: 100%;
-        height: 25%;
+        height: 35%;
         padding: 50px;
         display: flex;
         flex-direction: column;
@@ -1012,34 +992,22 @@ h4 {
         background-color: var(--bleu-claire);
         box-shadow: inset 0 0 20px 25px var(--bleu-claire-fonce);
         opacity: 0;
+        margin-bottom: 40%;
     }
-    
-    /*Le carrousel englobe les images et les flèches du carrousel.*/
-    .carousel {
+
+    .swiper {
+        width: 300px; 
+        height: 250px; 
         position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 15px;
-        margin-bottom: 20px;
-        width: 400px;
-        height: 200px;
+        margin: auto;
+    }
+
+    .competance p:nth-child(2) {
+        margin-top: 25px;
     }
     
-    .arrow {
-        cursor: pointer;
-        height: 100px;
-        overflow: hidden;
-        width: 60px;
-        background-image: url('./img/fleche.svg');
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: center;
-    }
-
-
     .iconsComp {
-        margin-top: 10px;
+        margin-top: 25px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -1074,6 +1042,9 @@ h4 {
         width: 100%;
         height: 200vh;
         background-image: url('./img/2ieme-section-projets-mobile.png');
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
     }
 
     .principalImageProjet a{
@@ -1082,8 +1053,8 @@ h4 {
 
     .projetExplixation {
         width: 100%;
-        height: 23%;
-        margin-bottom: 100px;
+        height: 27%;
+        margin-bottom: 10px;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -1092,7 +1063,7 @@ h4 {
 
     .imageProjet {
         width: 50%;
-        height: 50%;
+        height: 40%;
     }
 
     .projetConception {
@@ -1107,11 +1078,12 @@ h4 {
     .projetDeveloppement {
         margin-top: 60px;
         width: 100%;
-        height: 25%;
+        height: 30%;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
+        margin-bottom: 150px;
     }
 
     .projetDescritpion {
@@ -1122,6 +1094,11 @@ h4 {
 
     .developpementImg img {
         border: outset 11px var(--bleu-claire);
+    }
+
+    .infoGeneral {
+        height: 70%;
+        width: 95%; 
     }
 
  }

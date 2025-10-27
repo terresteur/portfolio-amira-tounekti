@@ -17,13 +17,11 @@ const app = Vue.createApp({
       menuOuvert: false,
       imagePrincipalDefaut: "./img/projets/projet_resto3.png",
       titreDescritpionDefaut: "Resto",
-      paragrapheDescriptionDefaut: `Resto est un projet à mention académique, réalisé dans le cadre du cours Modélisation 3D. Ce travail a été effectué en équipe de trois, avec Kristy Moussally et Mégane Ranger.
-                              Mon rôle principal dans ce projet consistait à la modélisation de trois objets. Le projet a été conçu à l’aide du logiciel Maya et appartient à la catégorie des scènes 3D.`,
-      imageDescritpionDefaut: '',
+      paragrapheDescriptionDefaut: `Resto est un projet de modélisation 3D réalisé dans un cadre académique. Pour ce projet, deux logiciels ont dû être utilisés : Maya pour la modélisation et Unity pour l’importation. J’ai réalisé ce projet en équipe de trois personnes composées de Kristy Moussally, Mégane Ranger et moi-même. Mon rôle dans ce projet était de modéliser trois modèles 3D (le pot de fleur, le drapeau italien et la porte du resto). Ces modèles ont ensuite été intégrés dans le restaurant.`,
+      imageDescritpionDefaut: './img/projets/projet_resto1.png',
       titreConception: "Description",
-      paragrapheConceptionDefaut: `Le projet consistait à réaliser une modélisation originale en 3D. Le professeur nous a demandé de dessiner un environnement sur le thème de notre choix et de réaliser en équipe une modélisation 3D originale de cet environnement, en intégrant les méthodes apprises en cours.
-                             Pour ma part, j’ai participé au sketch en dessinant l’environnement et j’ai également réalisé trois modèles 3D : un pot de fleurs, une porte et un drapeau italien.`,
-      imageConceptionDefaut: '',
+      paragrapheConceptionDefaut: `Nous avons, en équipe, réalisé ce projet dans le cadre du cours de modélisation 3D. En effet, nous devions créer une modélisation 3D originale sur le thème de notre choix, qui démontrerait nos capacités de modélisation dans un temps imparti et en utilisant les outils appris jusqu’à présent. Dans ce projet, j’ai dû, avec mon équipe, réaliser un sketch qui permettrait de visualiser la modélisation que nous devions faire. Nous avons réalisé un restaurant italien qui devait, rien que par le visuel, transporter le spectateur dans l’ambiance du pays où se trouvait ce restaurant.`,
+      imageConceptionDefaut: './img/projets/projet_resto2.png',
     };
   },
   mounted() {
@@ -99,7 +97,7 @@ const app = Vue.createApp({
       const projet = params.get("projet");
 
       if (!this.project || this.project.length === 0) {
-        return this.titreDescritpionDefaut; 
+        return this.paragrapheDescriptionDefaut; 
       };
 
 
@@ -121,7 +119,7 @@ const app = Vue.createApp({
 
 
       if (!this.project || this.project.length === 0) {
-        return this.titreDescritpionDefaut; 
+        return this.imagePrincipalDefaut; 
       };
 
 
@@ -134,7 +132,7 @@ const app = Vue.createApp({
       } else if (projet === "animation") {
         return this.project[2].imageProjet;
       } else {
-        return this.paragrapheDescriptionDefaut; 
+        return this.imagePrincipalDefaut; 
       }
     },
     imageDescritpion(){
@@ -142,7 +140,7 @@ const app = Vue.createApp({
       const projet = params.get("projet");
 
       if (!this.project || this.project.length === 0) {
-        return this.titreDescritpionDefaut; 
+        return this.imageDescritpionDefaut; 
       };
 
 
@@ -155,7 +153,7 @@ const app = Vue.createApp({
       } else if (projet === "animation") {
         return this.project[2].imagePresentation;
       } else {
-        return this.paragrapheDescriptionDefaut; 
+        return this.imageDescritpionDefaut; 
       }
     },
     paragrapheConception(){
@@ -163,7 +161,7 @@ const app = Vue.createApp({
       const projet = params.get("projet");
 
       if (!this.project || this.project.length === 0) {
-        return this.titreDescritpionDefaut; 
+        return this.paragrapheConceptionDefaut; 
       };
 
 
@@ -176,7 +174,7 @@ const app = Vue.createApp({
       } else if (projet === "animation") {
         return this.project[2].projetDescritpion;
       } else {
-        return this.paragrapheDescriptionDefaut; 
+        return this.paragrapheConceptionDefaut; 
       }
     },
     imageConception(){
@@ -184,7 +182,7 @@ const app = Vue.createApp({
       const projet = params.get("projet");
 
       if (!this.project || this.project.length === 0) {
-        return this.titreDescritpionDefaut; 
+        return this.imageConceptionDefaut; 
       };
 
 
@@ -197,7 +195,7 @@ const app = Vue.createApp({
       } else if (projet === "animation") {
         return this.project[2].imageDescritpion;
       } else {
-        return this.paragrapheDescriptionDefaut; 
+        return this.imageConceptionDefaut; 
       }
     },
   }
@@ -331,19 +329,6 @@ ScrollTrigger.create({
   }
 })};
 
-let boutonAccueil = document.querySelector(".bouton.accueil");
-let logoAccueil = document.querySelector(".logo");
-
-  
-boutonAccueil.addEventListener("click", () => {
-  window.location.href = "accueil.html";
-});
-logoAccueil.addEventListener("click", () => {
-  window.location.href = "accueil.html";
-});
-
-
-
 function animeFlocon(selector, delay = 0) {
   const flocon = document.querySelector(selector);
   const windowWidth = window.innerWidth;
@@ -351,7 +336,7 @@ function animeFlocon(selector, delay = 0) {
   gsap.set(flocon, { x: Math.random() * windowWidth, y: 0 });
 
   gsap.to(flocon, {
-      y: window.innerHeight + 20, 
+      y: window.innerHeight + 10, 
       x: `+=${Math.random() * 100 - 0}`, 
       duration: Math.random() * 5 + 5,
       repeat: -1, 
@@ -368,36 +353,35 @@ animeFlocon(".neige4", 1.5);
 animeFlocon(".neige5", 2);
 animeFlocon(".neige6", 2.5);
 
-const images = document.querySelectorAll(".carousel-img");
-let carrouselIndex = 0;
+/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-images.forEach((img, i) => {
-  img.style.opacity = "0";
-  img.style.zIndex = "0"; 
+
+#   JAVASCRIPT PURE AVEC SWIPER
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+let boutonAccueil = document.querySelector(".bouton.accueil");
+let logoAccueil = document.querySelector(".logo");
+
+  
+boutonAccueil.addEventListener("click", () => {
+  window.location.href = "accueil.html";
 });
-images[carrouselIndex].style.opacity = "1";
-images[carrouselIndex].style.zIndex = "10"; 
+logoAccueil.addEventListener("click", () => {
+  window.location.href = "accueil.html";
+});
 
-function voirSlide(index) {
-  images.forEach(img => {
-    img.style.opacity = "0";
-    img.style.zIndex = "0";
-  });
 
-  if (index >= images.length) carrouselIndex = 0;
-  else if (index < 0) carrouselIndex = images.length - 1;
-  else carrouselIndex = index;
-
-  images[carrouselIndex].style.opacity = "1";
-  images[carrouselIndex].style.zIndex = "10";
-}
-
-function slideSuivant() {
-  voirSlide(carrouselIndex + 1);
-}
-
-function slidePresedant() {
-  voirSlide(carrouselIndex - 1);
-}
+const swiper = new Swiper('.swiper', {
+  direction: 'horizontal',
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  slidesPerView: 1,
+});
 
 
