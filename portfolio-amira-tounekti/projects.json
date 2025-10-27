@@ -16,6 +16,7 @@
     "imagePresentation": ["./img/projets/balobilou1.png"],
     "projetDescritpion": "J’ai réalisé ce projet dans le cadre du cours d’Interactivité ludique. En effet, nous devions créer un jeu vidéo original sur le thème de notre choix, qui démontrerait nos capacités de codage en Phaser dans un temps imparti et en nous adaptant aux divers problèmes rencontrés pendant le développement. Dans ce projet, j’ai dû créer un environnement avec des collisions dans Tiled, créer quelques assets originaux en plus de ceux trouvés libres de droit sur Itch.io, et coder les fonctionnalités dans un dossier de Visual Studio Code que j’ai publié à la fin du projet sur Itch.io. Dans ce jeu, vous incarnez un ballon rose qui va tenter de découvrir, dans cet univers étrange, la raison de son arrivée en ces lieux. En effet, celui-ci ne connaît rien de son environnement, car il a perdu toute mémoire de son passé. En tant que joueur, vous devez récolter des indices afin de reconstituer le fil de son histoire.",
     "imageDescritpion": ["./img/projets/balobilou3.png"]
+    
   },
   {
     "typeProjet": "Animation 3D",

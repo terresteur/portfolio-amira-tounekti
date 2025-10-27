@@ -336,7 +336,7 @@ function animeFlocon(selector, delay = 0) {
   gsap.set(flocon, { x: Math.random() * windowWidth, y: 0 });
 
   gsap.to(flocon, {
-      y: window.innerHeight + 10, 
+      y: window.innerHeight + 500, 
       x: `+=${Math.random() * 100 - 0}`, 
       duration: Math.random() * 5 + 5,
       repeat: -1, 
@@ -368,10 +368,10 @@ let logoAccueil = document.querySelector(".logo");
 
   
 boutonAccueil.addEventListener("click", () => {
-  window.location.href = "accueil.html";
+  window.location.href = "./index.html";
 });
 logoAccueil.addEventListener("click", () => {
-  window.location.href = "accueil.html";
+  window.location.href = "./index.html";
 });
 
 
