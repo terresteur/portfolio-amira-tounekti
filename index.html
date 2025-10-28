@@ -11,11 +11,11 @@
     <body>
         <!-- Id app se charge de communiquer avec Vue, et la class portfolio donne le style CSS. -->
         <div id="app" class="portfolio">
-            <!-- Le header est « pinné » avec GSAP pour qu’il ne bouge pas lors des défilements, afin qu’il reste toujours visible avec la navigation et le logo. -->
+            <!-- ⬆️Le header est « pinné » avec GSAP pour qu’il ne bouge pas lors des défilements, afin qu’il reste toujours visible avec la navigation et le logo.⬆️ -->
             <header>
                 <!-- La navigation permet le déplacement général sur mon site, entre les sections Projets et Accueil. -->
                 <div class="navigation">
-                    <!-- Le menu sandwich apparaît lors du format mobile de mon site. Cela permet de prendre moins de place que les deux boutons classiques de navigation.-->
+                    <!-- 📱Le menu sandwich apparaît lors du format mobile de mon site. Cela permet de prendre moins de place que les deux boutons classiques de navigation.📱-->
                     <div class="menuSandwitch" @click="menuEtats">
                         <!-- Les trois div forment, dans le style CSS, un menu sandwich composé de trois lignes horizontales, l’une en dessous de l’autre. -->
                         <div class="menu sandwitch1"></div>
@@ -66,23 +66,19 @@
                     <div class="flocon neige5"></div>
                     <div class="flocon neige6"></div>
                 </div>
-                <!-- Le div decoPresentation contient l’image de la première section de mon site. -->
+                <!--↗️ Le div decoPresentation contient l’image de la première section de mon site. ↗️-->
                 <section class="decoPresentation">
                     <!-- L’URL de mon image de sorcière, qui présente à l’utilisateur mon style artistique, sera contenue dans principalImage, qui décidera de sa taille à l’écran. -->
                     <div class="principalImage">
                         <img class="dessin" src="./img/sorciere.png" alt="dessin-principal-de-sorciere">
                     </div>
                 </section>
-
-                <!-- La deuxième section de mon site sera composée de la présentation de qui je suis. Il y a dans cette section une image de fond et une animation GSAP qui donne un effet parallaxe. -->
+                <!-- ➡️La deuxième section de mon site sera composée de la présentation de qui je suis. Il y a dans cette section une image de fond et une animation GSAP qui donne un effet parallaxe.⬅️ -->
                 <section class="deuxiemeSection">
-
                     <!-- Le div presentation contiendra, dans un effet de papier découpé, les diverses informations me concernant. -->
                     <div class="presentation">
-
                         <!-- Ma photo professionnelle me présentera physiquement aux utilisateurs du site. -->
                         <div class="photo" alt="photo-professionel"></div>
-
                         <!-- L’article aPropos contient mon texte de présentation et mes disponibilités actuelles. -->
                         <article class="aPropos">
                             <h2>À propos</h2>
@@ -90,7 +86,6 @@
                                 En effet, je souhaite intégrer une équipe en tant que web designer, 
                                 afin de créer des interfaces modernes et intuitives en mobilisant mes connaissances en HTML, CSS et design graphique.
                             </p>
-
                             <!-- Le div disponibilite est géré par Vue.js, qui décide quel texte parmi les paragraphes doit apparaître. -->
                             <div class="disponibilite">
                                 <p v-if="disponible" class="dispo">
@@ -103,18 +98,14 @@
                         </article>
                     </div>
                 </section>
-
-                <!-- La troisième section présentera mes projets en carrousel et les logiciels que je maîtrise sous forme d’images de leurs logos.  Il y a dans cette section une image de fond et une animation GSAP qui donne un effet parallaxe. -->
+                <!-- ↘️La troisième section présentera mes projets en carrousel et les logiciels que je maîtrise sous forme d’images de leurs logos.  Il y a dans cette section une image de fond et une animation GSAP qui donne un effet parallaxe.↘️ -->
                 <section class="troisiemeSection">
-
                     <!-- Le div competance contiendra, dans un effet de papier découpé, les diverses informations de mes projets et les logiciels maîtrisés. -->
                     <div class="competance">
-                        
                         <!-- Le carrousel donne un avant-goût en images de mes projets et il est géré par Swiper ; lorsque l’on clique dessus, cela emmène à la page Projets de l’image cliquée grâce à Vue.js.  -->
                         <div class="swiper">
                             <p>Projets</p>
                             <div class="swiper-wrapper">
-
                                 <!-- Chaque swiper-slide contient une image d’un projet. -->
                                 <div class="swiper-slide">
                                     <img src="./img/carrousel-img/resto_carrousel.png" @click="resto()" alt="projet-de-modelistion-3d">
@@ -150,7 +141,7 @@
                     </div>
                 </section>
             </main>
-            <!-- Le footer présente les informations de navigation et trois informations personnelles pour les utilisateurs. -->
+            <!-- ⬇️Le footer présente les informations de navigation et trois informations personnelles pour les utilisateurs.⬇️ -->
             <footer>
                 <div class="infoGeneral">
                     <div class="contact">
