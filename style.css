@@ -34,9 +34,8 @@ html {
 
 /*Le potfolio est un div qui anglobe tous et empeche que des elements depansse l'ecran*/
 .portfolio {
-    overflow: hidden;
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
 }
 
 /*Le body possede la couleur de base de mon site*/
@@ -490,16 +489,16 @@ header {
 
 /*Le footer englobe les infos general.*/
 footer {
+    border-top: solid 100px var(--bleu-claire);
     position: relative; 
     width: 100%;
-    height: 20vh;
+    height: 30vh;
     bottom: 0;
     background-color: rgb(214, 214, 214);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 5; /* Passe au-dessus de troisiemeSection */
-    margin: 0;
 }
 
 /*infoGeneral englobe les information pour me contacter et les info de la navigation.*/
@@ -604,7 +603,7 @@ h4 {
 .projetExplixation {
     width: 60%;
     height: 20%;
-    margin-bottom: 300px;
+    margin-bottom: 100px;
     overflow: hidden;
     z-index: 2; 
     display: flex;
@@ -640,8 +639,7 @@ h4 {
 
 /*projetDeveloppement englobe tout la deuxieme presentation du projets avec sont titre, son text et une image.*/
 .projetDeveloppement {
-    margin-top: 50px;
-    margin-bottom: 300px;
+    margin-top: 20px;
     width: 60%;
     height: 20%;
     overflow: hidden;
@@ -695,6 +693,22 @@ h4 {
     font-family: "merriweather";
     font-size: 0.5em;
     text-align: justify;
+}
+
+.projetCreation {
+    position: relative;
+    margin-bottom: 100px;
+    width: 60%;
+    height: 20%;
+    overflow: hidden;
+    z-index: 2; 
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    align-items: center;
+    opacity: 1;
+    background-color: var(--bleu-fonce);
+    box-shadow: inset 0 0 20px 25px var(--bleu-tres-fonce);
 }
 
 /*anim est le nom d'animation mis dans principalImageProjet et principalImage pour creer une transition d'opaciter.*/

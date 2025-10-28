@@ -104,6 +104,19 @@
                             <p class="conception">{{paragrapheConception}}</p>
                         </article>
                     </div>
+                    <div class="projetCreation" v-if="estModele">
+                        <!-- Le div imageProjet partage le même style CSS que le deuxième imageProjet. Le div contient l’image et la positionne adéquatement. -->
+                        <div class="imageProjet explixationImg">
+                            <!-- L’image qui sera présentée dans la page est choisie en fonction de l’URL, gérée par Vue.js. -->
+                            <img id="explixationImage" :src="imageDescritpion" alt="image-du-projet">
+                        </div>
+                        <!-- L’article possède un texte qui présente en partie le projet, et le texte affiché est géré par Vue.js. -->
+                        <article class="projetConception">
+                            <h2 class="titre 3">{{creationTitre}}</h2>
+                            <p class="conception 3" >{{creationText}}</p>
+                        </article>
+                    </div>
+                    
                 </section>
             </main>
             <!-- Le footer présente les informations de navigation et trois informations personnelles pour les utilisateurs. -->

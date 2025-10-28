@@ -11,6 +11,7 @@
 const app = Vue.createApp({
   data() {
     return {
+      vide: '',
       //Le project est un tableau vide qui contiendra le data de fetch permettons ainsi d'acceder au information du projects.json.
       project: [],
       //Le disponible vas descider dans le HTML grace a un if et else de l'apparition de l'un des deux paragraphe.
@@ -62,6 +63,11 @@ const app = Vue.createApp({
     },
   },
   computed: {
+    estModele() {
+      const params = new URLSearchParams(window.location.search);
+      const projet = params.get("projet");
+      return projet === "modele";
+    },
     titreDescritpion(){
       //
       const params = new URLSearchParams(window.location.search);
@@ -84,6 +90,40 @@ const app = Vue.createApp({
         return this.project[2].titreProjet;
       } else {
         return this.titreDescritpionDefaut; 
+      }
+    },    
+    creationTitre(){
+      //
+      const params = new URLSearchParams(window.location.search);
+      const projet = params.get("projet");
+
+      //Ce if empêche que le code continue si le tableu projects est vide. En gros si le n'a pas le data il vas retourner une valeur par defaut du projet resto.
+      if (!this.project || this.project.length === 0) {
+        return this.vide; 
+      };
+
+      //Ce if vas faire en sorte que si l'URL de la page projets a un projet = un type specifique de projet, change l'information par une autre recuperer dans le tableau du projects.json, sinon avois une donner du resto par defaut.
+      if (projet === "modele") {
+        return this.project[0].processusCreation;
+      } else {
+        return this.vide; 
+      }
+    },
+    creationText(){
+      //
+      const params = new URLSearchParams(window.location.search);
+      const projet = params.get("projet");
+
+      //Ce if empêche que le code continue si le tableu projects est vide. En gros si le n'a pas le data il vas retourner une valeur par defaut du projet resto.
+      if (!this.project || this.project.length === 0) {
+        return this.vide; 
+      };
+
+      //Ce if vas faire en sorte que si l'URL de la page projets a un projet = un type specifique de projet, change l'information par une autre recuperer dans le tableau du projects.json, sinon avois une donner du resto par defaut.
+      if (projet === "modele") {
+        return this.project[0].processusCreationText;
+      } else {
+        return this.vide; 
       }
     },
    lienProjet() {
