@@ -489,10 +489,9 @@ header {
 
 /*Le footer englobe les infos general.*/
 footer {
-    border-top: solid 100px var(--bleu-claire);
     position: relative; 
     width: 100%;
-    height: 30vh;
+    height: 20vh;
     bottom: 0;
     background-color: rgb(214, 214, 214);
     display: flex;
@@ -507,7 +506,7 @@ footer {
     width: 60%; 
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
 }
 
 /*Le text de contact et navigation est centrer en column.*/
@@ -587,6 +586,7 @@ h4 {
     position: relative;
     width: 100%;
     height: 260vh;
+    padding-top: 500px;
     background-image: url('./img/2ieme-section.png');
     background-repeat: no-repeat;
     background-position: top;
@@ -594,7 +594,7 @@ h4 {
     z-index: 1; 
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     margin: 0;
 }
@@ -603,7 +603,7 @@ h4 {
 .projetExplixation {
     width: 60%;
     height: 20%;
-    margin-bottom: 100px;
+    margin-bottom: 30px;
     overflow: hidden;
     z-index: 2; 
     display: flex;
@@ -627,6 +627,8 @@ h4 {
     align-items: center;
 }
 
+
+
 /*L'image dans projetExplixation est cherche dans explixationImg la deuxieme parti du nom de class ou ce trouve aussi imageProjet.*/
 .explixationImg img {
     width: 100%;
@@ -639,9 +641,9 @@ h4 {
 
 /*projetDeveloppement englobe tout la deuxieme presentation du projets avec sont titre, son text et une image.*/
 .projetDeveloppement {
-    margin-top: 20px;
     width: 60%;
     height: 20%;
+    margin-bottom: 30px;
     overflow: hidden;
     z-index: 2; 
     display: flex;
@@ -697,7 +699,7 @@ h4 {
 
 .projetCreation {
     position: relative;
-    margin-bottom: 100px;
+    margin-bottom: 30px;
     width: 60%;
     height: 20%;
     overflow: hidden;
@@ -706,7 +708,7 @@ h4 {
     flex-direction: row-reverse;
     justify-content: flex-start;
     align-items: center;
-    opacity: 1;
+    opacity: 0;
     background-color: var(--bleu-fonce);
     box-shadow: inset 0 0 20px 25px var(--bleu-tres-fonce);
 }
@@ -796,8 +798,8 @@ h4 {
     }
     
     .photo {
-        width: 200px;
-        height: 90%;
+        width: 30%;
+        height: 50%;
     }
 
     .aPropos {
@@ -831,10 +833,17 @@ h4 {
         width: 60%;
     }
 
+    /*projet*/
+    
+    .premierSectionProjet {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+
     .projetExplixation {
         width: 70%;
         height: 23%;
-        margin-bottom: 100px;
     }
 
     .imageProjet {
@@ -848,7 +857,6 @@ h4 {
     }
 
     .projetDeveloppement {
-        margin-top: 60px;
         width: 70%;
         height: 25%;
     }
@@ -858,6 +866,12 @@ h4 {
         margin: 30px;
         font-size: 2.1em;
     }
+
+    .projetCreation {
+        width: 70%;
+        height: 20%;
+    }
+
 }
 
 
@@ -972,8 +986,8 @@ h4 {
     
     /*Il y a dedans une image temporaire en attendant la photo professionnelle.*/
     .photo {
-        width: 150px;
-        height: 80%;
+        width: 40%;
+        height: 30%;
     }
 
     .aPropos {
@@ -1027,7 +1041,7 @@ h4 {
 
     .swiper {
         width: 100%; 
-        height: 80%; 
+        height: 40%; 
         max-width: 350px;
         position: relative;
         margin: auto;
@@ -1068,14 +1082,20 @@ h4 {
         font-size: 0.8em;
     }
 
+    /*projet*/
+
     .premierSectionProjet {
         position: relative;
         width: 100%;
         height: 200vh;
-        background-image: url('./img/2ieme-section-projets-mobile.png');
+        background-image: 
+        linear-gradient(to top, var(--bleu-claire) 50%, transparent 50%),
+        url('./img/2ieme-section-projets-mobile.png');
         display: flex;
+        background-size: cover;
         flex-direction: column;
-        justify-content: flex-end;
+        justify-content: center;
+        padding-top: 200px;
     }
 
     .principalImageProjet a{
@@ -1084,8 +1104,8 @@ h4 {
 
     .projetExplixation {
         width: 100%;
-        height: 27%;
-        margin-bottom: 10px;
+        height: 20%;
+        margin-bottom: 30px;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -1107,14 +1127,11 @@ h4 {
     }
 
     .projetDeveloppement {
-        margin-top: 60px;
         width: 100%;
-        height: 30%;
+        height: 20%;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        align-items: center;
-        margin-bottom: 150px;
     }
 
     .projetDescritpion {
@@ -1125,6 +1142,14 @@ h4 {
 
     .developpementImg img {
         border: outset 11px var(--bleu-claire);
+    }
+
+    .projetCreation {
+        width: 100%;
+        height: 20%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
     }
 
     .infoGeneral {

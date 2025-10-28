@@ -354,7 +354,7 @@ const premierSectionProjet = document.querySelector(".premierSectionProjet");
 if (premierSectionProjet) {
   ScrollTrigger.create({
     trigger: ".premierSectionProjet",
-    start: "center-+=20% center",
+    start: "center-+=25% center",
     onEnter: () => {
       gsap
       .timeline()
@@ -365,6 +365,12 @@ if (premierSectionProjet) {
         scale:1,
       })
       .to(".projetDeveloppement", { 
+        opacity: 1, 
+        duration: 0.8, 
+        ease: "power2.out",
+        scale:1,
+      })
+      .to(".projetCreation", { 
         opacity: 1, 
         duration: 0.8, 
         ease: "power2.out",
@@ -384,6 +390,12 @@ if (premierSectionProjet) {
         duration: 0.8, 
         ease: "power2.out",
         scale: 0.95,
+      })
+      .to(".projetCreation", { 
+        opacity: 0, 
+        duration: 0.8, 
+        ease: "power2.out",
+        scale:0.95,
       })
     }
   })
