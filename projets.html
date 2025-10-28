@@ -4,7 +4,9 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Projets</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
         <link rel="stylesheet" href="./style.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
 
@@ -67,29 +69,37 @@
                 </div>
                 <!-- Le div decoPresentation contient l’image de la première section de mon site. -->
                 <section class="decoPresentation">
-                    <!-- L’URL de mon image projet, qui présente à l’utilisateur mon un grand premiere appersus de mon projet, sera contenue dans principalImageProjet, qui décidera de sa taille à l’écran. -->
+                    <!-- L’URL de mon image projet, qui présente à l’utilisateur un aperçu principal de mon projet, sera contenue dans principalImageProjet, qui décidera de sa taille à l’écran. -->
                     <div class="principalImageProjet" v-if="project.length">
-                        <!-- Un lien cliquable qui change en fonction de l'URL descider pas vue.js meneras au resulta de mon projet. -->
+                        <!-- Un lien cliquable, qui change en fonction de l’URL décidée par Vue.js, mènera au résultat de mon projet. -->
                         <a :href="lienProjet" target="_blank">
                             <img class="imagePrincipalProjet" :src="imagePrincipal" alt="image-principal-du-projet">
                         </a>
                     </div>
                 </section>
-                <!--  -->
+                <!-- La premierSectionProjet contient toutes les informations du projet sélectionné ; elle est majoritairement gérée par Vue.js. Il y a dans cette section une image de fond et une animation GSAP qui donne un effet parallaxe. -->
                 <section class="premierSectionProjet">
+                    <!-- Le div projetExplixation présente une partie de la présentation de mon projet avec un titre dans un effet de papier découpé. -->
                     <div class="projetExplixation">
+                        <!-- Le div imageProjet partage le même style CSS que le deuxième imageProjet. Le div contient l’image et la positionne adéquatement. -->
                         <div class="imageProjet explixationImg">
+                            <!-- L’image qui sera présentée dans la page est choisie en fonction de l’URL, gérée par Vue.js. -->
                             <img id="explixationImage" :src="imageDescritpion" alt="image-du-projet">
                         </div>
+                        <!-- L’article possède un texte qui présente en partie le projet, et le texte affiché est géré par Vue.js. -->
                         <article class="projetConception">
                             <h2 class="titre 1">{{titreDescritpion}}</h2>
                             <p class="conception">{{paragrapheDescription}}</p>
                         </article>
                     </div>
+                    <!-- Le div projetDeveloppement présente une partie de la présentation de mon projet avec une description dans un effet de papier découpé. -->
                     <div class="projetDeveloppement">
+                        <!-- Le div imageProjet partage le même style CSS que le deuxième imageProjet. Le div contient l’image et la positionne adéquatement. -->
                         <div class="imageProjet developpementImg">
+                            <!-- L’image qui sera présentée dans la page est choisie en fonction de l’URL, gérée par Vue.js. -->
                             <img id="developpementImage" :src="imageConception" alt="image-du-projet">
                         </div>
+                        <!-- L’article possède un texte qui présente en partie le projet, et le texte affiché est géré par Vue.js. -->
                         <article class="projetConception">
                             <h2 class="titre 2">{{titreConception}}</h2>
                             <p class="conception">{{paragrapheConception}}</p>
@@ -97,6 +107,7 @@
                     </div>
                 </section>
             </main>
+            <!-- Le footer présente les informations de navigation et trois informations personnelles pour les utilisateurs. -->
             <footer>
                 <section class="infoGeneral">
                     <div class="contact">
@@ -110,11 +121,12 @@
                     </div>
                 </section>
             </footer>
-            <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-            <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-            <script src="./script.js" ></script>
         </div>
+        <!-- Cette partie de mon code contient ma bibliothèque GSAP, ScrollTrigger, Swiper, Vue.js et le lien vers mon script JavaScript. -->
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <script src="./script.js" ></script>
     </body>
 
 </html>
