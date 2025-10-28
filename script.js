@@ -300,9 +300,10 @@ if (deuxiemeSection) {
   ScrollTrigger.create({
     trigger: ".deuxiemeSection",
     start: "center center",
-    end: "bottom+=50% top",
+    end: "bottom+=20% top",
     pin: true,
     pinSpacing: false,
+    markers: true,
     //Aprés le commenece du pin par le start cette animation gsap commence.
     onEnter: () => {
       gsap.to(".presentation", { 
