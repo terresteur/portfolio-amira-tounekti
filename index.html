@@ -1,25 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="./style.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Portfolio</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+        <link rel="stylesheet" href="./style.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
     <body>
-        <!-- Première partie du visuel qui présente le style du portfolio -->
-        <div id="app" class="Portfolio">
+        <!-- Id app se charge de communiquer avec Vue, et la class portfolio donne le style CSS. -->
+        <div id="app" class="portfolio">
+            <!-- Le header est « pinné » avec GSAP pour qu’il ne bouge pas lors des défilements, afin qu’il reste toujours visible avec la navigation et le logo. -->
             <header>
+                <!-- La navigation permet le déplacement général sur mon site, entre les sections Projets et Accueil. -->
                 <div class="navigation">
+                    <!-- Le menu sandwich apparaît lors du format mobile de mon site. Cela permet de prendre moins de place que les deux boutons classiques de navigation.-->
                     <div class="menuSandwitch" @click="menuEtats">
+                        <!-- Les trois div forment, dans le style CSS, un menu sandwich composé de trois lignes horizontales, l’une en dessous de l’autre. -->
                         <div class="menu sandwitch1"></div>
                         <div class="menu sandwitch2"></div>
                         <div class="menu sandwitch3"></div>
+                        <!-- Lorsque le menu sandwich est cliqué, cela fait apparaître le menu déroulant sous le header grâce au codage en Vue.js.-->
                         <section class="menuDeroulant">
+                            <!-- Le clic sur le menu sandwich va provoquer, dans menuEtats, le passage de menuOuvert à true.-->
                             <ul class="sousMenu" v-if="menuOuvert">
+                                <!-- Au clic sur un lien Projets, un ajout du type de projet sera fait dans l’URL de la page Projets, donnant ainsi accès aux images et textes dans le JSON du projet en question à l’utilisateur. -->
                                 <li id="projet1" ><a @click="resto()">modelisation 3D</a></li>
                                 <li id="projet2"><a  @click="jeux()">jeux video</a></li>
                                 <li id="projet3"><a @click="animation3d()">animation 3D</a></li>
@@ -27,11 +33,14 @@
                             </ul>
                         </section>
                     </div>
-                    <!-- Les boutons sont faits pour un écran large, alors que le menu sandwich est pour un écran plus petit. <a href="" >accueil</a>-->
+                    <!-- Les boutons apparaissent par défaut pour remplacer le menu sandwich de la version mobile. -->
                     <nav class="boutons">
+                        <!-- Le bouton Accueil ramène les utilisateurs à la page d’accueil, tout comme le clic sur le logo.-->
                         <div class="bouton accueil">Accueil</div> 
+                        <!-- Le bouton Projets fait dérouler, au survol, le menu déroulant qui apparaît juste en dessous du bouton. -->
                         <div class="bouton projet">Projet
                             <section class="menuDeroulant">
+                                <!-- Le sous-menu contient tous les liens vers la page Projets qui, au clic, ajoutent selon le projet le type de projet à l’URL, permettant ainsi à Vue.js d’afficher les textes et les images liés au projet cliqué. -->
                                 <ul class="sousMenu">
                                     <li id="projetUn" ><a @click="resto()">modelisation 3D</a></li>
                                     <li id="projetDeux"><a  @click="jeux()">jeux video</a></li>
@@ -41,41 +50,48 @@
                             </section>
                         </div>
                     </nav>
+                    <!-- Le logo, se trouvant dans le header, permet, au clic, de revenir à la page d’accueil grâce à du code JavaScript. -->
                     <img class="logo" src="./img/logo.png" alt="logo-portfolio">
                 </div>
             </header>
-            
-            <div class="tombeNeige">
-                <div class="flocon neige1"></div>
-                <div class="flocon neige2"></div>
-                <div class="flocon neige3"></div>
-                <div class="flocon neige4"></div>
-                <div class="flocon neige5"></div>
-                <div class="flocon neige6"></div>
-            </div>
-            <!-- La neige sera animée pour donner vie à l'environnement avec le scroll. -->
-            <div class="decoPresentation">
-
-                <!-- Donne un avant-goût du style de mon art. -->
-                <div class="principalImage">
-                    <img class="dessin" src="./img/sorciere.png" alt="dessin-principal-de-sorciere">
+            <!-- Le main contient toutes les informations fournies par cette page. -->
+            <main>
+                <!-- Le div tombe-neige, qui se trouve tout en haut de la page, ne bouge pas au scroll et contient les animations GSAP des div flocons qui tombent. -->
+                <div class="tombeNeige">
+                    <!-- Les div flocon sont stylisés en CSS pour ressembler à de la neige. -->
+                    <div class="flocon neige1"></div>
+                    <div class="flocon neige2"></div>
+                    <div class="flocon neige3"></div>
+                    <div class="flocon neige4"></div>
+                    <div class="flocon neige5"></div>
+                    <div class="flocon neige6"></div>
                 </div>
-            </div>
+                <!-- Le div decoPresentation contient l’image de la première section de mon site. -->
+                <section class="decoPresentation">
+                    <!-- L’URL de mon image de sorcière, qui présente à l’utilisateur mon style artistique, sera contenue dans principalImage, qui décidera de sa taille à l’écran. -->
+                    <div class="principalImage">
+                        <img class="dessin" src="./img/sorciere.png" alt="dessin-principal-de-sorciere">
+                    </div>
+                </section>
 
-            <!-- Cette section sera animée pour donner un effet de carte. -->
-            
-            <section class="deuxiemeSection">
-                <section class="presentation">
+                <!-- La deuxième section de mon site sera composée de la présentation de qui je suis. Il y a dans cette section une image de fond et une animation GSAP qui donne un effet parallaxe. -->
+                <section class="deuxiemeSection">
 
-                    <!-- Ce sera une photo professionnelle de moi. -->
+                    <!-- Le div presentation contiendra, dans un effet de papier découpé, les diverses informations me concernant. -->
+                    <div class="presentation">
+
+                        <!-- Ma photo professionnelle me présentera physiquement aux utilisateurs du site. -->
                         <div class="photo" alt="photo-professionel"></div>
-                    <!-- L'article me présente. -->
-                    <article class="aPropos">
-                        <h2>À propos</h2>
-                        <p> Je m'appelle Amira. L'un de mes loisirs est le dessin, et cela se reflète dans le métier que je souhaite exercer.
-                            En effet, je souhaite intégrer une équipe en tant que web designer, 
-                            afin de créer des interfaces modernes et intuitives en mobilisant mes connaissances en HTML, CSS et design graphique.
-                        </p>
+
+                        <!-- L’article aPropos contient mon texte de présentation et mes disponibilités actuelles. -->
+                        <article class="aPropos">
+                            <h2>À propos</h2>
+                            <p> Je m'appelle Amira. L'un de mes loisirs est le dessin, et cela se reflète dans le métier que je souhaite exercer.
+                                En effet, je souhaite intégrer une équipe en tant que web designer, 
+                                afin de créer des interfaces modernes et intuitives en mobilisant mes connaissances en HTML, CSS et design graphique.
+                            </p>
+
+                            <!-- Le div disponibilite est géré par Vue.js, qui décide quel texte parmi les paragraphes doit apparaître. -->
                             <div class="disponibilite">
                                 <p v-if="disponible" class="dispo">
                                 🟢 Disponible pour un stage à partir de mars 2026
@@ -84,65 +100,62 @@
                                 🔴 Actuellement indisponible pour un stage
                                 </p>
                             </div>
-                    </article>
-                    
+                        </article>
+                    </div>
                 </section>
-                <!-- Je vais enlever l'image pour l’intégrer directement dans le CSS. -->
-            </section>
 
-            <!-- Cette section sera animée pour donner un effet de carte. -->
-            <section class="troisiemeSection">
+                <!-- La troisième section présentera mes projets en carrousel et les logiciels que je maîtrise sous forme d’images de leurs logos. -->
+                <section class="troisiemeSection">
 
-                <!-- Cette section montrera tous les logiciels que je maîtrise et elle montrera des projets que j’ai réalisés. -->
-                <div class="competance">
-                    
-                    <!-- Le carousel donne un avant-goût en images de mes projets ; lorsque tu cliques dessus, ça emmène à la page Projets de l'image cliquer. -->
-                    <div class="swiper">
-                        <p>Projets</p>
-                        <div class="swiper-wrapper">
+                    <!-- Le div competance contiendra, dans un effet de papier découpé, les diverses informations de mes projets et les logiciels maîtrisés. -->
+                    <div class="competance">
+                        
+                        <!-- Le carrousel donne un avant-goût en images de mes projets et il est géré par Swiper ; lorsque l’on clique dessus, cela emmène à la page Projets de l’image cliquée grâce à Vue.js.  -->
+                        <div class="swiper">
+                            <p>Projets</p>
+                            <div class="swiper-wrapper">
 
-                           <!-- <div class="swiper-slide" v-for>
-
-                                <a :href="projets.html?projet=" class="">img</a>-->
-
-                            <div class="swiper-slide">
-                              
-                                <img src="./img/carrousel-img/resto_carrousel.png" @click="resto()" alt="projet-de-modelistion-3d">
+                                <!-- Chaque swiper-slide contient une image d’un projet. -->
+                                <div class="swiper-slide">
+                                    <img src="./img/carrousel-img/resto_carrousel.png" @click="resto()" alt="projet-de-modelistion-3d">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./img/carrousel-img/balobilou_carrousel.png" @click="jeux()" alt="projet-de-jeu-video">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./img/carrousel-img/consequence-insouciance_carrousel.png" @click="animation3d()" alt="projet-de-animation-3d">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./img/carrousel-img/patatophobie_carrousel.png" @click="courtMetrage()" alt="projet-de-court-metrage">
+                                </div>
                             </div>
-                            <div class="swiper-slide">
-                                <img src="./img/carrousel-img/balobilou_carrousel.png" @click="jeux()" alt="projet-de-jeu-video">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="./img/carrousel-img/consequence-insouciance_carrousel.png" @click="animation3d()" alt="projet-de-animation-3d">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="./img/carrousel-img/patatophobie_carrousel.png" @click="courtMetrage()" alt="projet-de-court-metrage">
-                            </div>
+                            <!-- Les swiper-button dirigent le passage d’une image à l’autre du carrousel. -->
+                            <div class="swiper-button-next arrow"></div>
+                            <div class="swiper-button-prev arrow"></div>
                         </div>
-                        <div class="swiper-button-next arrow"></div>
-                        <div class="swiper-button-prev arrow"></div>
-                    </div>
-                    <p>Logiels metriser</p>
-                    <div class="iconsComp">
-                        <div class="icon1">
-                            <img src="./img/icon/adobe_illustrator_icon.png" class="icon illustrator" alt="illustrator">
-                            <img src="./img/icon/html_icon.png" class="icon html" alt="html">
-                            <img src="./img/icon/css_icon.png" class="icon css" alt="css">
-                        </div>
-                        <div class="icon2">
-                            <img src="./img/icon/photoshop_icon.png" class="icon photoshop" alt="photoshop">
-                            <img src="./img/icon/davinci_resolve_icon.png" class="icon davinci" alt="davinci">
+                        <p>Logiels metriser</p>
+                        <!-- Le div iconsComp contient toutes mes icônes de logiciels que je maîtrise. -->
+                        <div class="iconsComp">
+                            <!-- Deux div ont été mis pour séparer la partie qui ira en bas de celle qui ira en haut en version mobile. Sinon, par défaut, les div sont côte à côte. -->
+                            <div class="icon1">
+                                <img src="./img/icon/adobe_illustrator_icon.png" class="icon illustrator" alt="illustrator">
+                                <img src="./img/icon/html_icon.png" class="icon html" alt="html">
+                                <img src="./img/icon/css_icon.png" class="icon css" alt="css">
+                            </div>
+                            <div class="icon2">
+                                <img src="./img/icon/photoshop_icon.png" class="icon photoshop" alt="photoshop">
+                                <img src="./img/icon/davinci_resolve_icon.png" class="icon davinci" alt="davinci">
+                            </div>
                         </div>
                     </div>
-                </div>
-
-            </section>
-
+                </section>
+            </main>
+            <!-- Le footer présente les informations de navigation et trois informations personnelles pour les utilisateurs. -->
             <footer>
                 <div class="infoGeneral">
                     <div class="contact">
                         <h4>Contact</h4>
-                        <p class="paragrapheInfo">Email: amiratounekti05@gmail.com<br>Téléphone: 438-465-9454 <br>Ville: Saint-Eustache </p>
+                        <p class="paragrapheInfo">Email: amiratounekti05@gmail.com<br>Pays: Canada<br>Province: Quebec</p>
                     </div>
                     <div class="Navigation">
                         <h4>Navigation</h4>
@@ -150,9 +163,8 @@
                     </div>
                 </div>
             </footer>
-
         </div>
-
+        <!-- Cette partie de mon code contient ma bibliothèque GSAP, ScrollTrigger, Swiper, Vue.js et le lien vers mon script JavaScript. -->
         <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>

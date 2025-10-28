@@ -1,113 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Projets</title>
+        <link rel="stylesheet" href="./style.css" />
+    </head>
+    <body>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projets</title>
-    <link rel="stylesheet" href="./style.css" />
-</head>
-
-<body>
-    <div id="app" class="Portfolio">
-        <header>
-            <div class="navigation">
-                <div class="menuSandwitch" @click="menuEtats">
-                    <div class="menu sandwitch1"></div>
-                    <div class="menu sandwitch2"></div>
-                    <div class="menu sandwitch3"></div>
-                    <section class="menuDeroulant">
-                        <ul class="sousMenu" v-if="menuOuvert">
-                            <li id="projet1" ><a @click="resto()">modelisation 3D</a></li>
-                            <li id="projet2"><a  @click="jeux()">jeux video</a></li>
-                            <li id="projet3"><a @click="animation3d()">animation 3D</a></li>
-                            <li id="projet4"><a @click="courtMetrage()">court metrage</a></li>
-                        </ul>
-                    </section>
-                </div>
-                <!-- Les boutons sont faits pour un écran large, alors que le menu sandwich est pour un écran plus petit. <a href="" >accueil</a>-->
-                <nav class="boutons">
-                    <div class="bouton accueil">Accueil</div> 
-                    <div class="bouton projet">Projet
+        <!-- Id app se charge de communiquer avec Vue, et la class portfolio donne le style CSS. -->
+        <div id="app" class="portfolio">
+            <!-- Le header est « pinné » avec GSAP pour qu’il ne bouge pas lors des défilements, afin qu’il reste toujours visible avec la navigation et le logo. -->
+            <header>
+                <!-- La navigation permet le déplacement général sur mon site, entre les sections Projets et Accueil. -->
+                <div class="navigation">
+                    <!-- Le menu sandwich apparaît lors du format mobile de mon site. Cela permet de prendre moins de place que les deux boutons classiques de navigation.-->
+                    <div class="menuSandwitch" @click="menuEtats">
+                        <!-- Les trois div forment, dans le style CSS, un menu sandwich composé de trois lignes horizontales, l’une en dessous de l’autre. -->
+                        <div class="menu sandwitch1"></div>
+                        <div class="menu sandwitch2"></div>
+                        <div class="menu sandwitch3"></div>
+                        <!-- Lorsque le menu sandwich est cliqué, cela fait apparaître le menu déroulant sous le header grâce au codage en Vue.js.-->
                         <section class="menuDeroulant">
-                            <ul class="sousMenu">
-                                <li id="projetUn" ><a @click="resto()">modelisation 3D</a></li>
-                                <li id="projetDeux"><a  @click="jeux()">jeux video</a></li>
-                                <li id="projetTrois"><a @click="animation3d()">animation 3D</a></li>
-                                <li id="projetQuatre"><a @click="courtMetrage()">court metrage</a></li>
+                            <!-- Le clic sur le menu sandwich va provoquer, dans menuEtats, le passage de menuOuvert à true.-->
+                            <ul class="sousMenu" v-if="menuOuvert">
+                                <!-- Au clic sur un lien Projets, un ajout du type de projet sera fait dans l’URL de la page Projets, donnant ainsi accès aux images et textes dans le JSON du projet en question à l’utilisateur. -->
+                                <li id="projet1" ><a @click="resto()">modelisation 3D</a></li>
+                                <li id="projet2"><a  @click="jeux()">jeux video</a></li>
+                                <li id="projet3"><a @click="animation3d()">animation 3D</a></li>
+                                <li id="projet4"><a @click="courtMetrage()">court metrage</a></li>
                             </ul>
                         </section>
                     </div>
-                </nav>
-                <img class="logo" src="./img/logo.png" alt="logo-portfolio">
-            </div>
-        </header>
-        <div class="tombeNeige">
-            <div class="flocon neige1"></div>
-            <div class="flocon neige2"></div>
-            <div class="flocon neige3"></div>
-            <div class="flocon neige4"></div>
-            <div class="flocon neige5"></div>
-            <div class="flocon neige6"></div>
+                    <!-- Les boutons apparaissent par défaut pour remplacer le menu sandwich de la version mobile. -->
+                    <nav class="boutons">
+                        <!-- Le bouton Accueil ramène les utilisateurs à la page d’accueil, tout comme le clic sur le logo.-->
+                        <div class="bouton accueil">Accueil</div> 
+                        <!-- Le bouton Projets fait dérouler, au survol, le menu déroulant qui apparaît juste en dessous du bouton. -->
+                        <div class="bouton projet">Projet
+                            <section class="menuDeroulant">
+                                <!-- Le sous-menu contient tous les liens vers la page Projets qui, au clic, ajoutent selon le projet le type de projet à l’URL, permettant ainsi à Vue.js d’afficher les textes et les images liés au projet cliqué. -->
+                                <ul class="sousMenu">
+                                    <li id="projetUn" ><a @click="resto()">modelisation 3D</a></li>
+                                    <li id="projetDeux"><a  @click="jeux()">jeux video</a></li>
+                                    <li id="projetTrois"><a @click="animation3d()">animation 3D</a></li>
+                                    <li id="projetQuatre"><a @click="courtMetrage()">court metrage</a></li>
+                                </ul>
+                            </section>
+                        </div>
+                    </nav>
+                    <!-- Le logo, se trouvant dans le header, permet, au clic, de revenir à la page d’accueil grâce à du code JavaScript. -->
+                    <img class="logo" src="./img/logo.png" alt="logo-portfolio">
+                </div>
+            </header>
+            <!-- Le main contient toutes les informations fournies par cette page. -->
+            <main>
+                <!-- Le div tombe-neige, qui se trouve tout en haut de la page, ne bouge pas au scroll et contient les animations GSAP des div flocons qui tombent. -->
+                <div class="tombeNeige">
+                    <!-- Les div flocon sont stylisés en CSS pour ressembler à de la neige. -->
+                    <div class="flocon neige1"></div>
+                    <div class="flocon neige2"></div>
+                    <div class="flocon neige3"></div>
+                    <div class="flocon neige4"></div>
+                    <div class="flocon neige5"></div>
+                    <div class="flocon neige6"></div>
+                </div>
+                <!-- Le div decoPresentation contient l’image de la première section de mon site. -->
+                <section class="decoPresentation">
+                    <!-- L’URL de mon image projet, qui présente à l’utilisateur mon un grand premiere appersus de mon projet, sera contenue dans principalImageProjet, qui décidera de sa taille à l’écran. -->
+                    <div class="principalImageProjet" v-if="project.length">
+                        <!-- Un lien cliquable qui change en fonction de l'URL descider pas vue.js meneras au resulta de mon projet. -->
+                        <a :href="lienProjet" target="_blank">
+                            <img class="imagePrincipalProjet" :src="imagePrincipal" alt="image-principal-du-projet">
+                        </a>
+                    </div>
+                </section>
+                <!--  -->
+                <section class="premierSectionProjet">
+                    <div class="projetExplixation">
+                        <div class="imageProjet explixationImg">
+                            <img id="explixationImage" :src="imageDescritpion" alt="image-du-projet">
+                        </div>
+                        <article class="projetConception">
+                            <h2 class="titre 1">{{titreDescritpion}}</h2>
+                            <p class="conception">{{paragrapheDescription}}</p>
+                        </article>
+                    </div>
+                    <div class="projetDeveloppement">
+                        <div class="imageProjet developpementImg">
+                            <img id="developpementImage" :src="imageConception" alt="image-du-projet">
+                        </div>
+                        <article class="projetConception">
+                            <h2 class="titre 2">{{titreConception}}</h2>
+                            <p class="conception">{{paragrapheConception}}</p>
+                        </article>
+                    </div>
+                </section>
+            </main>
+            <footer>
+                <section class="infoGeneral">
+                    <div class="contact">
+                        <h4>Contact</h4>
+                        <p class="paragrapheInfo">Email: amiratounekti05@gmail.com<br>Téléphone: 438-465-9454 <br>Ville:
+                            Saint-Eustache </p>
+                    </div>
+                    <div class="Navigation">
+                        <h4>Navigation</h4>
+                        <p class="paragrapheInfo">Accueil<br>Projets</p>
+                    </div>
+                </section>
+            </footer>
+            <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+            <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+            <script src="./script.js" ></script>
         </div>
-            <!-- La neige sera animée pour donner vie à l'environnement avec le scroll. -->
-            <div class="decoPresentation">
-                <!-- Donne un avant-goût du style de mon art. -->
-                <div class="principalImageProjet" v-if="project.length">
-                    <a :href="lienProjet" target="_blank">
-                        <img class="imagePrincipalProjet" :src="imagePrincipal" alt="image-principal-du-projet">
-                    </a>
-                </div>
-            </div>
-
-        <!-- Cette section sera animée pour donner un effet de carte. -->
-
-        <section class="premierSectionProjet">
-            <section class="projetExplixation">
-
-                <!-- Ce sera une photo professionnelle de moi. -->
-                <div class="imageProjet explixationImg">
-                    <img id="explixationImage" :src="imageDescritpion" alt="image-du-projet">
-                </div>
-
-                <!-- L'article me présente. -->
-                <article class="projetConception">
-                    <h2 class="titre 1">{{titreDescritpion}}</h2>
-                    <p class="conception">{{paragrapheDescription}}</p>
-                </article>
-            </section>
-            <section class="projetDeveloppement">
-
-                <!-- Ce sera une photo professionnelle de moi. -->
-                <div class="imageProjet developpementImg">
-                    <img id="developpementImage" :src="imageConception" alt="image-du-projet">
-                </div>
-
-                <!-- L'article me présente. -->
-                <article class="projetConception">
-                    <h2 class="titre 2">{{titreConception}}</h2>
-                    <p class="conception">{{paragrapheConception}}</p>
-                </article>
-            </section>
-        </section>
-        <footer>
-            <div class="infoGeneral">
-                <div class="contact">
-                    <h4>Contact</h4>
-                    <p class="paragrapheInfo">Email: amiratounekti05@gmail.com<br>Téléphone: 438-465-9454 <br>Ville:
-                        Saint-Eustache </p>
-                </div>
-                <div class="Navigation">
-                    <h4>Navigation</h4>
-                    <p class="paragrapheInfo">Accueil<br>Projets</p>
-                </div>
-            </div>
-        </footer>
-        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-        <script src="./script.js" ></script>
-    </div>
-</body>
+    </body>
 
 </html>

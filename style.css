@@ -33,7 +33,7 @@ html {
 }
 
 /*Le potfolio est un div qui anglobe tous et empeche que des elements depansse l'ecran*/
-.Portfolio {
+.portfolio {
     overflow: hidden;
     width: 100%;
     height: 100%;
