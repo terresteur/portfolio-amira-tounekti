@@ -278,12 +278,12 @@ ScrollTrigger.create({
 });
 
 //Ce ScrollTrigger empêche le div decoPresentation de bouger au scroll de la page.
-ScrollTrigger.create({
+/*ScrollTrigger.create({
   trigger: ".decoPresentation",
   start: "top-=11% top",
-  pin: true,
+  pin: false,
   pinSpacing: false,
-});
+});*/
 
 //Cette section est appelée du HTML vers le JavaScript et est mise dans un const.
 const deuxiemeSection = document.querySelector(".deuxiemeSection");
