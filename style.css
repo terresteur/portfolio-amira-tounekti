@@ -310,6 +310,10 @@ header {
     color: black;
 }
 
+#email {
+    color: var(--bleu-fonce);
+}
+
 /*Le div aPropos présente la description de ma personne.*/
 .aPropos {
     width: 60%;
@@ -388,14 +392,10 @@ header {
 }
 
 /*Je sélectionne juste le texte de compétence pour pouvoir le modifier sans affecter les autres paragraphes dans mon code.*/
-.competance p {
-    font-size: 1.4em;
+.competance h2 {
+    font-size: 1.5em;
     font-family: "ougkeh", sans-serif;
     letter-spacing: 2px;
-}
-
-#email {
-    color: var(--bleu-fonce);
 }
 
 /*Le Swiper englobe des div avec le mot Swiper, mais il se trouve exclusivement dans la page Accueil.*/
