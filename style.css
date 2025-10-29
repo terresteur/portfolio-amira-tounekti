@@ -403,13 +403,25 @@ header {
 
 .swiper {
     width: 460px; 
-    height: 300px; 
+    height: 350px; 
     position: relative;
     margin: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
+.swiperResto {
+    width: 460px; 
+    height: 320px; 
+    position: relative;
+    overflow: hidden;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 
 .swiper-wrapper {
     width: 100%;
@@ -601,8 +613,8 @@ h4 {
 
 /*projetExplixation englobe tout la premier presentation du projets avec sont titre, son text et une image.*/
 .projetExplixation {
-    width: 60%;
-    height: 20%;
+    width: 90%;
+    height: 40%;
     margin-bottom: 30px;
     overflow: hidden;
     z-index: 2; 
@@ -641,8 +653,8 @@ h4 {
 
 /*projetDeveloppement englobe tout la deuxieme presentation du projets avec sont titre, son text et une image.*/
 .projetDeveloppement {
-    width: 60%;
-    height: 20%;
+    width: 90%;
+    height: 40%;
     margin-bottom: 30px;
     overflow: hidden;
     z-index: 2; 
@@ -700,8 +712,8 @@ h4 {
 .projetCreation {
     position: relative;
     margin-bottom: 30px;
-    width: 60%;
-    height: 20%;
+    width: 90%;
+    height: 40%;
     overflow: hidden;
     z-index: 2; 
     display: flex;
@@ -734,7 +746,7 @@ h4 {
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 /*Lorsque la taille de la page est plus petit en largeur que 1800px les diverses informationde de style mis dans des objets sont modifier pour s'adapter a la taille de la page.*/
-@media screen and (max-width: 1800px)  {
+@media screen and (max-width: 1500px)  {
     .menu {
         background: linear-gradient(40deg, var(--mauve-claire), var(--bleu-fonce));
         width: 50px;
@@ -858,7 +870,7 @@ h4 {
 
     .projetDeveloppement {
         width: 90%;
-        height: 25%;
+        height: 35%;
     }
 
     .projetDescritpion {
@@ -869,7 +881,19 @@ h4 {
 
     .projetCreation {
         width: 90%;
-        height: 30%;
+        height: 40%;
+    }
+
+    .swiperResto {
+        width: 450px; 
+        height: 300px; 
+        margin: 0;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 
 }
@@ -908,7 +932,7 @@ h4 {
 
     /*🥪Le menu Sandwitch apparait en version mobile de mon site et lorsque je clique dessus le sous menu apparait en dessous du header🥪*/
     .menuSandwitch {
-        width: 40px;
+        width: 20%;
         height: 30px;
         overflow: hidden;
         display: flex;
@@ -1040,8 +1064,8 @@ h4 {
     }
 
     .swiper {
-        width: 60%; 
-        height: 50%; 
+        width: 90%; 
+        height: 70%; 
         max-width: 350px;
         position: relative;
         margin: auto;
@@ -1087,7 +1111,7 @@ h4 {
     .premierSectionProjet {
         position: relative;
         width: 100%;
-        height: 200vh;
+        height: 350vh;
         background-image: 
         linear-gradient(to top, var(--bleu-claire) 50%, transparent 50%),
         url('./img/2ieme-section-projets-mobile.png');
@@ -1104,8 +1128,8 @@ h4 {
 
     .projetExplixation {
         width: 100%;
-        height: 20%;
-        margin-bottom: 30px;
+        height: 25%;
+        margin: 0;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -1113,8 +1137,9 @@ h4 {
     }
 
     .imageProjet {
-        width: 50%;
-        height: 40%;
+        width: 300px;
+        height: 250px;
+        margin-top: 60px;
     }
 
     .projetConception {
@@ -1128,7 +1153,8 @@ h4 {
 
     .projetDeveloppement {
         width: 100%;
-        height: 20%;
+        height: 25%;
+        margin: 0;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -1147,9 +1173,23 @@ h4 {
     .projetCreation {
         width: 100%;
         height: 30%;
+        margin-bottom: 0;
         display: flex;
         flex-direction: column;
-        justify-content: flex-end;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .swiperResto {
+        width: 340px; 
+        height: 240px; 
+        margin: 0;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 
     .infoGeneral {
