@@ -1,45 +1,45 @@
 /*L’intégration de la font pour mon site.*/
 @font-face {
-  src: url("./font/OugkehRegular-DYYrW.otf") format("opentype");
-  font-family: "ougkeh";
+    src: url("./font/OugkehRegular-DYYrW.otf") format("opentype");
+    font-family: "ougkeh";
 }
 
 @font-face {
-  src: url("./font/Merriweather-Italic-VariableFont_opsz,wdth,wght.ttf")
-    format("truetype");
-  font-family: "merriweather";
+    src: url("./font/Merriweather-Italic-VariableFont_opsz,wdth,wght.ttf") format("truetype");
+    font-family: "merriweather";
 }
 
 /*Liste des couleurs que je vais souvent utiliser.*/
 :root {
-  --bleu-fonce: #426c8d;
-  --bleu-tres-fonce: #2d4a61;
-  --bleu-claire: #d6e5ef;
-  --bleu-claire-fonce: #a5b2bb;
-  --mauve-claire: #97ead2;
-  --mauve-fonce: #222c73;
-  --blanc: rgb(255, 255, 255);
-  --jaune: #f3e478;
+    --bleu-fonce: #426c8d;
+    --bleu-tres-fonce: #2d4a61;
+    --bleu-claire: #d6e5ef;
+    --bleu-claire-fonce: #a5b2bb;
+    --mauve-claire: #97ead2;
+    --mauve-fonce: #222c73;
+    --blanc: rgb(255, 255, 255);
+    --jaune: #f3e478;
 }
+
 /*L’intégration de la font pour mon site.*/
 * {
-  box-sizing: border-box;
-  margin: 0;
+    box-sizing: border-box;
+    margin: 0;
 }
 
 /*Le portfolio est un div qui englobe tout et empêche que des éléments dépassent l’écran.*/
 .portfolio {
-  width: 100%;
-  min-height: 100vh;
+    width: 100%;
+    min-height: 100vh;
 }
 
 /*Le body possède la couleur de base de mon site.*/
 body {
-  background-color: var(--bleu-fonce);
+    background-color: var(--bleu-fonce);
 }
 
 img {
-  max-width: 100%;
+    max-width: 100%;
 }
 
 /* -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -58,117 +58,114 @@ img {
 
 /*Le header englobe tout le navigateur de mon site.*/
 header {
-  position: relative;
-  top: 0;
-  left: 0;
-  background-color: var(--bleu-fonce);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 10;
-  height: 120px;
-  width: 100%;
-  max-width: 100%;
-  box-shadow: 0px 0px 50px black;
+    position: relative;
+    top: 0;
+    left: 0;
+    background-color: var(--bleu-fonce);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    height: 120px;
+    width: 100%;
+    max-width: 100%;
+    box-shadow: 0px 0px 50px black;
 }
 
 /*Le navigateur possède le logo et mes navigations sous forme de div cliquable*/
 .navigation {
-  width: 75vw;
-  max-width: 100%;
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-between;
-  align-items: center;
+    width: 75vw;
+    max-width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
 }
 
 /*Le logo présente l’identité de mon site et affiche mon nom.*/
 .logo {
-  width: 20%;
-  max-width: 20%;
-  cursor: pointer;
+    width: 20%;
+    max-width: 20%;
+    cursor: pointer;
 }
 
 /*Le bouton englobe les boutons Accueil et Projet.*/
 .boutons {
-  display: flex;
+    display: flex;
 }
 
 /*Le bouton s’occupe du style des deux boutons Accueil et Projet.*/
 .bouton {
-  position: relative;
-  font-size: 2em;
-  padding: 12px 19px;
-  border-radius: 13px;
-  font-family: "ougkeh", sans-serif;
-  color: var(--mauve-claire);
-  z-index: 0;
-  cursor: pointer;
-  margin: 0 30px;
-  background: linear-gradient(
-        var(--mauve-fond, #426c8d),
-        var(--mauve-fond, #426c8d)
-      )
-      padding-box,
-    linear-gradient(40deg, var(--mauve-claire), var(--bleu-fonce)) border-box;
-  border: 4px solid transparent;
+    position: relative;
+    font-size: 2em;
+    padding: 12px 19px;
+    border-radius: 13px;
+    font-family: "ougkeh", sans-serif;
+    color: var(--mauve-claire);
+    z-index: 0;
+    cursor: pointer;
+    margin: 0 30px;
+    background: linear-gradient(var(--mauve-fond, #426c8d),
+            var(--mauve-fond, #426c8d)) padding-box,
+        linear-gradient(40deg, var(--mauve-claire), var(--bleu-fonce)) border-box;
+    border: 4px solid transparent;
 }
 
 /*Le bouton:hover crée un changement de couleur pour signifier à l’interacteur qu’il peut cliquer dessus.*/
 .bouton:hover {
-  color: var(--jaune);
-  background: linear-gradient(40deg, var(--mauve-claire), var(--bleu-fonce));
+    color: var(--jaune);
+    background: linear-gradient(40deg, var(--mauve-claire), var(--bleu-fonce));
 }
 
 /*Le menuDeroulant englobe le sousMenu où se trouvera la liste des projets. Il est positionné juste en dessous du bouton Projet et n’est pas encore visible car il est en display: none.*/
 .menuDeroulant {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: var(--bleu-tres-fonce);
-  border-radius: 0 10px 10px 10px;
-  display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--bleu-tres-fonce);
+    border-radius: 0 10px 10px 10px;
+    display: none;
 }
 
 /*Lorsqu’il y a un survol sur le .bouton.projet, le menuDeroulant apparaît en changeant son display.*/
 .bouton.projet:hover .menuDeroulant {
-  display: block;
+    display: block;
 }
 
 /*Le sousMenu va englober les listes de projets qui sont des liens cliquables.*/
 .sousMenu {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 /*Les liens qui se trouvent dans le sousMenu sont stylisés pour s’adapter au style du sousMenu dans lequel ils se trouvent, ainsi qu’à la font mise en place pour le texte.*/
 .sousMenu li a {
-  display: block;
-  height: 100%;
-  padding: 10px 22px;
-  color: var(--mauve-claire);
-  text-decoration: none;
-  font-family: "ougkeh", sans-serif;
-  font-size: 0.8em;
+    display: block;
+    height: 100%;
+    padding: 10px 22px;
+    color: var(--mauve-claire);
+    text-decoration: none;
+    font-family: "ougkeh", sans-serif;
+    font-size: 0.8em;
 }
 
 /*Pour chaque lien de projet, le style changera au survol pour signifier la possibilité d’une interaction.*/
 .sousMenu li a:hover {
-  background-color: var(--bleu-claire-fonce);
-  color: var(--jaune);
+    background-color: var(--bleu-claire-fonce);
+    color: var(--jaune);
 }
 
 /*Le radius du bouton Projet change au survol de celui-ci pour créer une plus grande symbiose avec le menuDeroulant.*/
 .bouton.projet:hover {
-  border-radius: 10px 10px 0 0;
+    border-radius: 10px 10px 0 0;
 }
 
 /*Le menuSandwich est la version mobile du menuDeroulant et n’apparaît que lorsque la largeur de l’écran est inférieure à 900px.*/
 .menuSandwitch {
-  display: none;
+    display: none;
 }
 
 /* -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -187,54 +184,54 @@ header {
 
 /*Les flocons se trouvent dans ce grand div avec principalImag.*/
 .decoPresentation {
-  position: relative;
-  z-index: 1;
-  height: 100vh;
-  width: 100%;
-  overflow: hidden;
-  box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
 }
 
 /*Le div principalImag englobe le dessin. Une animation d’opacité est créée à son apparition*/
 .principalImage {
-  position: fixed;
-  margin: 7vh 0 80px 0;
-  width: 100%;
-  overflow: auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  opacity: 1;
-  animation-name: anim;
-  animation-duration: 2s;
+    position: fixed;
+    margin: 7vh 0 80px 0;
+    width: 100%;
+    overflow: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    animation-name: anim;
+    animation-duration: 2s;
 }
 
 /*Le dessin est une illustration qui présente mon style artistique.*/
 .dessin {
-  width: 40%;
-  object-fit: contain;
-  display: block;
-  border: inset 10px var(--bleu-claire);
+    width: 40%;
+    object-fit: contain;
+    display: block;
+    border: inset 10px var(--bleu-claire);
 }
 
 .tombeNeige {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 100%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
 }
 
 /*Les flocons sont des divs ronds qui représentent de la neige et qui possèdent le style, ensuite ils sont placés à diverses positions avec le div neige dans le JavaScript.*/
 .flocon {
-  position: absolute;
-  top: -300px;
-  width: 45px;
-  height: 45px;
-  margin: 10px;
-  background-color: var(--blanc);
-  border-radius: 90px;
-  box-shadow: 0px 0px 30px var(--blanc);
+    position: absolute;
+    top: -300px;
+    width: 45px;
+    height: 45px;
+    margin: 10px;
+    background-color: var(--blanc);
+    border-radius: 90px;
+    box-shadow: 0px 0px 30px var(--blanc);
 }
 
 /* -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -253,92 +250,93 @@ header {
 
 /*Cette section est enneigée et elle englobe À propos. Il y a, dans le JavaScript, une animation qui crée l’effet parallax.*/
 .deuxiemeSection {
-  position: relative;
-  width: 100%;
-  height: 200vh;
-  background-image: url("./img/2ieme-section.png");
-  background-repeat: no-repeat;
-  background-position: top;
-  background-size: cover;
-  z-index: 2; /* Passe au-dessus de decoPresentation */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    height: 200vh;
+    background-image: url("./img/2ieme-section.png");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    z-index: 2;
+    /* Passe au-dessus de decoPresentation */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 /*Dans la section Présentation, il y a la photo et le (À propos). Elle prend toute la largeur pour les centrer.*/
 .presentation {
-  margin: 10% 0 10% 0;
-  width: 55%;
-  height: 29%;
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  background-color: var(--bleu-fonce);
-  box-shadow: inset 0 0 29px 25px rgb(45, 74, 97, 0.6);
+    margin: 10% 0 10% 0;
+    width: 55%;
+    height: 29%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    background-color: var(--bleu-fonce);
+    box-shadow: inset 0 0 29px 25px rgb(45, 74, 97, 0.6);
 }
 
 /*Dans photo, il y a ma photo professionnelle de moi.*/
 .photo {
-  position: relative;
-  width: 18%;
-  height: 70%;
-  background-image: url("./img/icon/photo_profesionel-2.jpg");
-  background-position: top;
-  background-size: cover;
-  background-repeat: no-repeat;
-  border: inset 10px var(--bleu-claire);
+    position: relative;
+    width: 18%;
+    height: 70%;
+    background-image: url("./img/icon/photo_profesionel-2.jpg");
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: inset 10px var(--bleu-claire);
 }
 
 /*La disponibilité est présentée en une phrase indiquant si je suis disponible pour un stage ou non. Son état change avec Vue.js en fonction de ma disponibilité.*/
 .disponibilite {
-  background-color: var(--blanc);
-  margin-top: 30px;
-  width: 100%;
-  height: 50%;
-  padding: 10px;
-  left: 50%;
-  border-radius: 8px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  z-index: 3;
-  font-family: "merriweather";
-  color: black;
+    background-color: var(--blanc);
+    margin-top: 30px;
+    width: 100%;
+    height: 50%;
+    padding: 10px;
+    left: 50%;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 3;
+    font-family: "merriweather";
+    color: black;
 }
 
 /*Le div aPropos présente la description de ma personne.*/
 .aPropos {
-  width: 60%;
-  margin: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: var(--bleu-claire);
-  text-align: justify;
+    width: 60%;
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--bleu-claire);
+    text-align: justify;
 }
 
 /*C’est le titre du texte aPropos.*/
 .aPropos h2 {
-  width: 60%;
-  font-size: 1.9em;
-  font-family: "ougkeh", sans-serif;
-  letter-spacing: 2px;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
+    width: 60%;
+    font-size: 1.9em;
+    font-family: "ougkeh", sans-serif;
+    letter-spacing: 2px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
 }
 
 /*C’est le texte de aPropos.*/
 .aPropos p {
-  font-family: "merriweather";
-  font-size: 1.4em;
+    font-family: "merriweather";
+    font-size: 1.4em;
 }
 
 /* -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -357,132 +355,137 @@ header {
 
 /*Cette section est glacée et elle englobe les compétences. Il y a, dans le JavaScript, une animation qui crée l’effet parallax.*/
 .troisiemeSection {
-  position: relative;
-  width: 100%;
-  height: 270vh;
-  margin: 0;
-  background-image: url("./img/3ieme-section.png");
-  background-repeat: no-repeat;
-  background-position: top;
-  background-size: cover;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-  justify-content: center;
-  z-index: 4; /* Passe au-dessus de disponibilite */
-  box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    height: 270vh;
+    margin: 0;
+    background-image: url("./img/3ieme-section.png");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: center;
+    z-index: 4;
+    /* Passe au-dessus de disponibilite */
+    box-sizing: border-box;
 }
 
 /*Le div comptenance englobe le carrousel de mes projets et les logiciels maîtrisés*/
 .competance {
-  width: 50%;
-  height: 40%;
-  padding: 20px;
-  margin-bottom: 25%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--bleu-claire);
-  box-shadow: inset 0 0 25px 25px rgba(159, 171, 179, 0.4);
-  opacity: 0;
+    width: 50%;
+    height: 40%;
+    padding: 20px;
+    margin-bottom: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bleu-claire);
+    box-shadow: inset 0 0 25px 25px rgba(159, 171, 179, 0.4);
+    opacity: 0;
 }
 
 /*Je sélectionne juste le texte de compétence pour pouvoir le modifier sans affecter les autres paragraphes dans mon code.*/
 .competance p {
-  font-size: 1.4em;
-  font-family: "ougkeh", sans-serif;
-  letter-spacing: 2px;
+    font-size: 1.4em;
+    font-family: "ougkeh", sans-serif;
+    letter-spacing: 2px;
 }
 
 /*Le Swiper englobe des div avec le mot Swiper, mais il se trouve exclusivement dans la page Accueil.*/
 .swiper {
-  width: 560px;
-  height: 450px;
-  position: relative;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    width: 560px;
+    height: 450px;
+    position: relative;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /*Le swiperResto englobe des div avec le mot Swiper, mais il se trouve exclusivement dans la page projet du Resto.*/
 .swiperResto {
-  width: 460px;
-  height: 320px;
-  position: relative;
-  overflow: hidden;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    width: 460px;
+    height: 320px;
+    position: relative;
+    overflow: hidden;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /*Ce div englobe les divs swiper-slide.*/
 .swiper-wrapper {
-  width: 100%;
-  height: 100%;
-  margin-top: 15px;
-  object-fit: contain;
+    width: 100%;
+    height: 100%;
+    margin-top: 15px;
+    object-fit: contain;
 }
 
 /*Chaque image de Swiper est entourée par un div avec cette class.*/
 .swiper-slide {
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
-  cursor: pointer;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    cursor: pointer;
 }
 
 /*Définition de la taille des images à l’intérieur de Swiper.*/
 .swiper-slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
 }
 
 /*Les deux boutons font glisser l’image d’un bord ou de l’autre pour laisser apparaître la suivante dans le Swiper.*/
 .swiper-button-next,
 .swiper-button-prev {
-  color: var(--bleu-fonce);
-  cursor: pointer;
-  width: 50px;
-  height: 50px;
-  margin-top: 5px;
-  background-size: contain;
-  background-repeat: no-repeat;
+    color: var(--bleu-fonce);
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    margin-top: 5px;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 /*Le div iconsComp englobe les icônes des logiciels maîtrisés.*/
 .iconsComp {
-  position: relative;
-  width: 80%;
-  height: 20%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  left: 27px;
+    position: relative;
+    width: 80%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 27px;
 }
 
 /*Le premier div, possédant trois images d’icônes, sera placé à côté du div possédant deux images d’icônes.*/
 .icon1,
 .icon2 {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
-  width: 196px;
-  margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 196px;
+    margin: 0;
 }
 
 /*Le div icon est la class de l’image et une taille lui est donnée.*/
 .icon {
-  max-width: 60px;
-  height: auto;
-  display: block;
-  margin: 0;
+    max-width: 60px;
+    height: auto;
+    display: block;
+    margin: 0;
+}
+
+.icon:hover {
+    transform: scale(1.2);
 }
 
 /* -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -501,48 +504,49 @@ header {
 
 /*Le footer englobe les infos générales.*/
 footer {
-  position: relative;
-  width: 100%;
-  height: 26vh;
-  bottom: 0;
-  background-color: rgb(214, 214, 214);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 5; /* Passe au-dessus de troisiemeSection */
+    position: relative;
+    width: 100%;
+    height: 26vh;
+    bottom: 0;
+    background-color: rgb(214, 214, 214);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+    /* Passe au-dessus de troisiemeSection */
 }
 
 /*Le div infoGeneral englobe les informations pour me contacter et les infos de la navigation.*/
 .infoGeneral {
-  height: 70%;
-  width: 60%;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+    height: 70%;
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 
 /*Le texte de contact et de navigation est centré en column.*/
 .contact,
 .Navigation {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 /*Une taille et un style sont appliqués aux titres Contact et Navigation*/
 h4 {
-  font-size: 1.8em;
-  font-family: "ougkeh", sans-serif;
-  margin-bottom: 6px;
-  letter-spacing: 2px;
+    font-size: 1.8em;
+    font-family: "ougkeh", sans-serif;
+    margin-bottom: 6px;
+    letter-spacing: 2px;
 }
 
 /*Une taille et un style sont appliqués au texte de Contact et Navigation.*/
 .paragrapheInfo {
-  margin: 0;
-  font-family: "merriweather";
-  line-height: 1.4;
-  font-size: 1.4em;
+    margin: 0;
+    font-family: "merriweather";
+    line-height: 1.4;
+    font-size: 1.4em;
 }
 
 /* -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -561,180 +565,182 @@ h4 {
 
 /*Le div principalImageProjet est un div qui englobe une grande image qui a la class imagePrincipalProjet du projet. Une animation d’opacité a été mise dessus lorsque la page est chargée.*/
 .principalImageProjet {
-  position: fixed;
-  margin: 5vh 0 80px 0;
-  width: 100%;
-  overflow: auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  opacity: 1;
-  animation-name: anim;
-  animation-duration: 2s;
+    position: fixed;
+    margin: 5vh 0 80px 0;
+    width: 100%;
+    overflow: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    animation-name: anim;
+    animation-duration: 2s;
 }
 
 /*Un lien cliquable vers une vidéo ou le résultat du projet en question est mis sur le div. Lorsqu’on clique dessus, il ouvre un autre onglet avec le projet.*/
 .principalImageProjet a {
-  width: 40%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 /*Le div imagePrincipalProjet est la class de l’image du projet.*/
 .imagePrincipalProjet {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-  border: outset 11px var(--bleu-claire);
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    border: outset 11px var(--bleu-claire);
 }
 
 /*La premierSectionProjet englobe toute la présentation du projet en image et texte. Elle possède une animation pour créer un effet parallax.*/
 .premierSectionProjet {
-  position: relative;
-  width: 100%;
-  height: 260vh;
-  padding-top: 500px;
-  background-image: url("./img/2ieme-section.png");
-  background-repeat: no-repeat;
-  background-position: top;
-  background-size: cover;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
+    position: relative;
+    width: 100%;
+    height: 260vh;
+    padding-top: 500px;
+    background-image: url("./img/2ieme-section.png");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
 }
 
 /*Le div projetExplication englobe toute la première présentation du projet avec son titre, son texte et une image.*/
 .projetExplixation {
-  width: 90%;
-  height: 40%;
-  margin-bottom: 30px;
-  overflow: hidden;
-  z-index: 2;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  opacity: 0;
-  background-color: var(--bleu-fonce);
-  box-shadow: inset 0 0 20px 25px var(--bleu-tres-fonce);
+    width: 90%;
+    height: 40%;
+    margin-bottom: 30px;
+    overflow: hidden;
+    z-index: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    opacity: 0;
+    background-color: var(--bleu-fonce);
+    box-shadow: inset 0 0 20px 25px var(--bleu-tres-fonce);
 }
 
 /*Le div imageProjet est un nom de class qui possède les deux divs qui englobent chacune une des deux images présentant le projet.*/
 .imageProjet {
-  width: 30%;
-  height: 60%;
-  max-height: 70vh;
-  margin: 0;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    width: 30%;
+    height: 60%;
+    max-height: 70vh;
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /*L’image dans projetExplication est cherchée dans explicationImg, la deuxième partie du nom de class où se trouve aussi imageProjet.*/
 .explixationImg img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-  border: outset 11px var(--bleu-claire);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    border: outset 11px var(--bleu-claire);
 }
 
 /*Le div projetDeveloppement englobe toute la deuxième présentation du projet avec son titre, son texte et une image.*/
 .projetDeveloppement {
-  width: 90%;
-  height: 40%;
-  margin-bottom: 30px;
-  overflow: hidden;
-  z-index: 2;
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: flex-start;
-  align-items: center;
-  opacity: 0;
-  background-color: var(--bleu-fonce);
-  box-shadow: inset 0 0 20px 25px var(--bleu-tres-fonce);
+    width: 90%;
+    height: 40%;
+    margin-bottom: 30px;
+    overflow: hidden;
+    z-index: 2;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    align-items: center;
+    opacity: 0;
+    background-color: var(--bleu-fonce);
+    box-shadow: inset 0 0 20px 25px var(--bleu-tres-fonce);
 }
 
 /*L’image dans projetDeveloppement est cherchée dans developpementImg, la deuxième partie du nom de class où se trouve aussi imageProjet*/
 .developpementImg img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-  border: inset 11px var(--bleu-claire);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    border: inset 11px var(--bleu-claire);
 }
 
 /*Le div projetConception est le nom de class qui possède deux divs qui encadrent le texte et le titre dans les divs projetExplication et projetDeveloppement.*/
 .projetConception {
-  width: 60%;
-  margin: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-family: "ougkeh", sans-serif;
-  font-size: 2.5em;
-  color: var(--bleu-claire);
+    width: 60%;
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "ougkeh", sans-serif;
+    font-size: 2.5em;
+    color: var(--bleu-claire);
 }
 
 /*Le div titre est le nom de class qui possède deux h2 se trouvant dans projetConception, lui-même dans les divs projetExplication et projetDeveloppement.*/
 .titre {
-  width: 60%;
-  display: flex;
-  justify-content: center;
-  font-size: 0.7em;
-  font-family: "ougkeh", sans-serif;
-  letter-spacing: 2px;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    font-size: 0.7em;
+    font-family: "ougkeh", sans-serif;
+    letter-spacing: 2px;
 }
 
 .projetDescritpion {
-  width: 60%;
-  margin: 30px;
-  font-size: 2.1em;
+    width: 60%;
+    margin: 30px;
+    font-size: 2.1em;
 }
 
 /*Le div conception est le nom de class qui possède deux p se trouvant dans projetConception, lui-même dans les divs projetExplication et projetDeveloppement.*/
 .conception {
-  margin-top: 20px;
-  font-family: "merriweather";
-  font-size: 0.5em;
-  text-align: justify;
+    margin-top: 20px;
+    font-family: "merriweather";
+    font-size: 0.5em;
+    text-align: justify;
 }
 
 /*Ce div n’apparaît que dans le projet Resto et il possède le processus de création avec un swiperResto.*/
 .projetCreation {
-  position: relative;
-  margin-bottom: 30px;
-  width: 90%;
-  height: 40%;
-  overflow: hidden;
-  z-index: 2;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  opacity: 0;
-  background-color: var(--bleu-fonce);
-  box-shadow: inset 0 0 20px 25px var(--bleu-tres-fonce);
+    position: relative;
+    margin-bottom: 30px;
+    width: 90%;
+    height: 40%;
+    overflow: hidden;
+    z-index: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    opacity: 0;
+    background-color: var(--bleu-fonce);
+    box-shadow: inset 0 0 20px 25px var(--bleu-tres-fonce);
 }
+
 /*L’animation anim est le nom de l’animation mise dans principalImageProjet et principalImage pour créer une transition d’opacité.*/
 @keyframes anim {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 /* -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -753,129 +759,129 @@ h4 {
 
 /*Lorsque la largeur de la page est inférieure à 1800px, les diverses informations de style mises dans des objets sont modifiées pour s’adapter à la taille de la page.*/
 @media screen and (max-width: 1500px) {
-  .bouton {
-    margin: 15px;
-    font-size: 1.6em;
-  }
+    .bouton {
+        margin: 15px;
+        font-size: 1.6em;
+    }
 
-  .logo {
-    width: 300px;
-    max-width: 300px;
-  }
+    .logo {
+        width: 300px;
+        max-width: 300px;
+    }
 
-  .flocon {
-    width: 30px;
-    height: 30px;
-  }
+    .flocon {
+        width: 30px;
+        height: 30px;
+    }
 
-  .dessin {
-    width: 75%;
-  }
+    .dessin {
+        width: 75%;
+    }
 
-  .deuxiemeSection {
-    background-image: url("./img/2ieme-section-moyen.png");
-  }
+    .deuxiemeSection {
+        background-image: url("./img/2ieme-section-moyen.png");
+    }
 
-  .presentation {
-    width: 60%;
-    height: 25%;
-    padding: 20px;
-  }
+    .presentation {
+        width: 60%;
+        height: 25%;
+        padding: 20px;
+    }
 
-  .photoDispo {
-    width: 70%;
-    height: 30%;
-  }
+    .photoDispo {
+        width: 70%;
+        height: 30%;
+    }
 
-  .photo {
-    width: 30%;
-    height: 50%;
-  }
+    .photo {
+        width: 30%;
+        height: 50%;
+    }
 
-  .aPropos {
-    width: 80%;
-    font-size: 0.7em;
-  }
+    .aPropos {
+        width: 80%;
+        font-size: 0.7em;
+    }
 
-  .decoPresentation {
-    height: 100vh;
-    top: 0;
-  }
+    .decoPresentation {
+        height: 100vh;
+        top: 0;
+    }
 
-  .competance {
-    width: 60%;
-    height: 29%;
-  }
+    .competance {
+        width: 60%;
+        height: 29%;
+    }
 
-  .swiper {
-    width: 410px;
-    height: 330px;
-  }
+    .swiper {
+        width: 410px;
+        height: 330px;
+    }
 
-  footer {
-    position: relative;
-    width: 100%;
-    height: 25vh;
-  }
+    footer {
+        position: relative;
+        width: 100%;
+        height: 25vh;
+    }
 
-  .infoGeneral {
-    width: 80%;
-  }
+    .infoGeneral {
+        width: 80%;
+    }
 
-  h4 {
-    font-size: 1.3em;
-  }
+    h4 {
+        font-size: 1.3em;
+    }
 
-  .paragrapheInfo {
-    font-size: 1.1em;
-  }
+    .paragrapheInfo {
+        font-size: 1.1em;
+    }
 
-  /*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    /*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
      #PROJETS TABLETTE 1500px💻
      
      ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
-  .principalImageProjet a {
-    width: 60%;
-  }
+    .principalImageProjet a {
+        width: 60%;
+    }
 
-  .premierSectionProjet {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-  }
+    .premierSectionProjet {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
 
-  .projetExplixation {
-    width: 90%;
-    height: 23%;
-  }
+    .projetExplixation {
+        width: 90%;
+        height: 23%;
+    }
 
-  .imageProjet {
-    width: 300px;
-    height: 240px;
-  }
+    .imageProjet {
+        width: 300px;
+        height: 240px;
+    }
 
-  .projetConception {
-    width: 60%;
-    font-size: 2.1em;
-  }
+    .projetConception {
+        width: 60%;
+        font-size: 2.1em;
+    }
 
-  .projetDeveloppement {
-    width: 90%;
-    height: 35%;
-  }
+    .projetDeveloppement {
+        width: 90%;
+        height: 35%;
+    }
 
-  .projetCreation {
-    width: 90%;
-    height: 40%;
-  }
+    .projetCreation {
+        width: 90%;
+        height: 40%;
+    }
 
-  .swiperResto {
-    width: 450px;
-    height: 300px;
-    margin: 0;
-  }
+    .swiperResto {
+        width: 450px;
+        height: 300px;
+        margin: 0;
+    }
 }
 
 /* -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -894,239 +900,238 @@ h4 {
 
 /*Lorsque la largeur de la page est inférieure à 900px, les diverses informations de style mises dans des objets sont modifiées pour s’adapter à la taille de la page.*/
 @media screen and (max-width: 900px) {
-  header {
-    height: 80px;
-  }
+    header {
+        height: 80px;
+    }
 
-  .logo {
-    width: 200px;
-    max-width: 200px;
-  }
+    .logo {
+        width: 200px;
+        max-width: 200px;
+    }
 
-  .bouton {
-    display: none;
-  }
+    .bouton {
+        display: none;
+    }
 
-  /*🥪Le menu Sandwitch apparaît en version mobile de mon site et, lorsque je clique dessus, le sous-menu apparaît en dessous du header🥪*/
-  .menu {
-    background: linear-gradient(40deg, var(--mauve-claire), var(--bleu-fonce));
-    width: 50px;
-    height: 7px;
-    border-radius: 2px;
-  }
+    /*🥪Le menu Sandwitch apparaît en version mobile de mon site et, lorsque je clique dessus, le sous-menu apparaît en dessous du header🥪*/
+    .menu {
+        background: linear-gradient(40deg, var(--mauve-claire), var(--bleu-fonce));
+        width: 50px;
+        height: 7px;
+        border-radius: 2px;
+    }
 
-  .menuSandwitch {
-    width: 20%;
-    height: 30px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    cursor: pointer;
-  }
+    .menuSandwitch {
+        width: 20%;
+        height: 30px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        cursor: pointer;
+    }
 
-  .menuDeroulant {
-    width: 100vw;
-    display: block;
-  }
+    .menuDeroulant {
+        width: 100vw;
+        display: block;
+    }
 
-  /*🍔Le sous-menu permet de montrer les différents liens qui mènent vers un projet🍔*/
-  .sousMenu {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-  }
+    /*🍔Le sous-menu permet de montrer les différents liens qui mènent vers un projet🍔*/
+    .sousMenu {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
 
-  .sousMenu li a {
-    width: 100%;
-    padding: 10px 20px;
-    color: var(--mauve-claire);
-    text-decoration: none;
-    font-family: "ougkeh", sans-serif;
-    font-size: 1em;
-    text-align: center;
-  }
+    .sousMenu li a {
+        width: 100%;
+        padding: 10px 20px;
+        color: var(--mauve-claire);
+        text-decoration: none;
+        font-family: "ougkeh", sans-serif;
+        font-size: 1em;
+        text-align: center;
+    }
 
-  .sousMenu li {
-    width: 100%;
-    text-align: center;
-  }
-  /*🍔🥪*/
+    .sousMenu li {
+        width: 100%;
+        text-align: center;
+    }
 
-  .flocon {
-    width: 25px;
-    height: 25px;
-  }
+    /*🍔🥪*/
 
-  .dessin {
-    width: 90%;
-  }
+    .flocon {
+        width: 25px;
+        height: 25px;
+    }
 
-  .deuxiemeSection {
-    background-image: url("./img/2ieme-section-mobile.png");
-  }
+    .dessin {
+        width: 90%;
+    }
 
-  .presentation {
-    width: 100%;
-    height: 35%;
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: center;
-    align-items: center;
-  }
+    .deuxiemeSection {
+        background-image: url("./img/2ieme-section-mobile.png");
+    }
 
-  .photoDispo {
-    width: 50%;
-    height: 80%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+    .presentation {
+        width: 100%;
+        height: 35%;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
 
-  .photo {
-    width: 40%;
-    height: 30%;
-  }
+    .photoDispo {
+        width: 50%;
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 
-  .aPropos {
-    width: 80%;
-    font-family: "ougkeh", sans-serif;
-    font-size: 0.7em;
-  }
+    .photo {
+        width: 40%;
+        height: 30%;
+    }
 
-  .paragrapheInfo {
-    margin: 0;
-    font-family: "merriweather";
-    line-height: 1.4;
-    font-size: 0.7em;
-  }
+    .aPropos {
+        width: 80%;
+        font-family: "ougkeh", sans-serif;
+        font-size: 0.7em;
+    }
 
-  .troisiemeSection {
-    background-image: url("./img/3ieme-section-mobile.png");
-  }
+    .paragrapheInfo {
+        margin: 0;
+        font-family: "merriweather";
+        line-height: 1.4;
+        font-size: 0.7em;
+    }
 
-  .competance {
-    width: 100%;
-    height: 35%;
-    padding: 50px;
-  }
+    .troisiemeSection {
+        background-image: url("./img/3ieme-section-mobile.png");
+    }
 
-  .competance p:nth-child(2) {
-    margin-top: 25px;
-  }
+    .competance {
+        width: 100%;
+        height: 35%;
+        padding: 50px;
+    }
 
-  .swiper {
-    width: 90%;
-    height: 70%;
-    max-width: 350px;
-  }
+    .competance p:nth-child(2) {
+        margin-top: 25px;
+    }
 
-  .iconsComp {
-    margin-top: 25px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    left: 2px;
-  }
+    .swiper {
+        width: 90%;
+        height: 70%;
+        max-width: 350px;
+    }
 
-  .icon1,
-  .icon2 {
-    gap: 20px;
-    width: 30%;
-  }
+    .iconsComp {
+        margin-top: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        left: 2px;
+    }
 
-  .icon {
-    max-width: 60px;
-  }
+    .icon1,
+    .icon2 {
+        gap: 20px;
+        width: 30%;
+    }
 
-  .infoGeneral {
-    height: 70%;
-    width: 95%;
-  }
+    .icon {
+        max-width: 60px;
+    }
 
-  h4 {
-    font-size: 1.3em;
-  }
+    .infoGeneral {
+        height: 70%;
+        width: 95%;
+    }
 
-  .paragrapheInfo {
-    font-size: 0.8em;
-  }
+    h4 {
+        font-size: 1.3em;
+    }
 
-  /*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    .paragrapheInfo {
+        font-size: 0.8em;
+    }
+
+    /*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
      #PROJETS TMOBILE 900px📱
      
      ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
-  .premierSectionProjet {
-    position: relative;
-    width: 100%;
-    height: 350vh;
-    background-image: linear-gradient(
-        to top,
-        var(--bleu-claire) 50%,
-        transparent 50%
-      ),
-      url("./img/2ieme-section-projets-mobile.png");
-    display: flex;
-    background-size: cover;
-    flex-direction: column;
-    justify-content: center;
-    padding-top: 200px;
-  }
+    .premierSectionProjet {
+        position: relative;
+        width: 100%;
+        height: 350vh;
+        background-image: linear-gradient(to top,
+                var(--bleu-claire) 50%,
+                transparent 50%),
+            url("./img/2ieme-section-projets-mobile.png");
+        display: flex;
+        background-size: cover;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 200px;
+    }
 
-  .principalImageProjet a {
-    width: 90%;
-  }
+    .principalImageProjet a {
+        width: 90%;
+    }
 
-  .projetExplixation {
-    width: 100%;
-    height: 25%;
-    margin: 0;
-    flex-direction: column;
-  }
+    .projetExplixation {
+        width: 100%;
+        height: 25%;
+        margin: 0;
+        flex-direction: column;
+    }
 
-  .imageProjet {
-    width: 300px;
-    height: 250px;
-    margin-top: 60px;
-  }
+    .imageProjet {
+        width: 300px;
+        height: 250px;
+        margin-top: 60px;
+    }
 
-  .projetConception {
-    width: 90%;
-    font-size: 1.5em;
-  }
+    .projetConception {
+        width: 90%;
+        font-size: 1.5em;
+    }
 
-  .projetDeveloppement {
-    width: 100%;
-    height: 25%;
-    margin: 0;
-    flex-direction: column;
-  }
+    .projetDeveloppement {
+        width: 100%;
+        height: 25%;
+        margin: 0;
+        flex-direction: column;
+    }
 
-  .projetDescritpion {
-    font-size: 1.5em;
-  }
+    .projetDescritpion {
+        font-size: 1.5em;
+    }
 
-  .developpementImg img {
-    border: outset 11px var(--bleu-claire);
-  }
+    .developpementImg img {
+        border: outset 11px var(--bleu-claire);
+    }
 
-  .projetCreation {
-    width: 100%;
-    height: 30%;
-    margin-bottom: 0;
-    flex-direction: column;
-    justify-content: center;
-  }
+    .projetCreation {
+        width: 100%;
+        height: 30%;
+        margin-bottom: 0;
+        flex-direction: column;
+        justify-content: center;
+    }
 
-  .swiperResto {
-    width: 340px;
-    height: 240px;
-  }
+    .swiperResto {
+        width: 340px;
+        height: 240px;
+    }
 }
