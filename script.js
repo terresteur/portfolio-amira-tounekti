@@ -277,14 +277,6 @@ ScrollTrigger.create({
   pinSpacing: false,
 });
 
-//Ce ScrollTrigger empêche le div decoPresentation de bouger au scroll de la page.
-/*ScrollTrigger.create({
-  trigger: ".decoPresentation",
-  start: "top-=11% top",
-  pin: false,
-  pinSpacing: false,
-});*/
-
 //Cette section est appelée du HTML vers le JavaScript et est mise dans un const.
 const deuxiemeSection = document.querySelector(".deuxiemeSection");
 //Le const est ensuite utilisé dans un if pour empêcher le ScrollTrigger d’exister si .deuxiemeSection n’est pas dans la page.
