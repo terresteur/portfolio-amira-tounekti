@@ -443,6 +443,7 @@ header {
 /*Les deux boutons font glisser l’image d’un bord ou de l’autre pour laisser apparaître la suivante dans le Swiper.*/
 .swiper-button-next, 
 .swiper-button-prev {
+    color: var(--bleu-fonce);
     cursor: pointer;
     width: 50px;
     height: 50px;
@@ -514,7 +515,7 @@ footer {
     width: 60%; 
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
 }
 
 /*Le texte de contact et de navigation est centré en column.*/
@@ -727,7 +728,6 @@ h4 {
     background-color: var(--bleu-fonce);
     box-shadow: inset 0 0 20px 25px var(--bleu-tres-fonce);
 }
-
 /*L’animation anim est le nom de l’animation mise dans principalImageProjet et principalImage pour créer une transition d’opacité.*/
 @keyframes anim { 
   from { opacity: 0; } 
@@ -810,9 +810,24 @@ h4 {
         height: 330px; 
     }
 
+    footer {
+        position: relative; 
+        width: 100%;
+        height: 25vh;
+    }
+
     .infoGeneral {
         width: 80%; 
     }
+
+    h4 {
+        font-size: 1.3em;
+    }
+
+    .paragrapheInfo {
+        font-size: 1.1em;
+    }
+
 
      /*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

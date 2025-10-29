@@ -11,14 +11,15 @@
 const app = Vue.createApp({
   data() {
     return {
+      //Le vide sera utilisé pour ne rien retourner si les créations ne fonctionnent pas.
       vide: '',
-      //Le project est un tableau vide qui contiendra le data de fetch permettons ainsi d'acceder au information du projects.json.
+      //Le project est un tableau vide qui contiendra le data du fetch, permettant ainsi d’accéder aux informations du projects.json.
       project: [],
-      //Le disponible vas descider dans le HTML grace a un if et else de l'apparition de l'un des deux paragraphe.
+      //Le disponible va décider dans le HTML, grâce à un if et else, de l’apparition de l’un des deux paragraphes
       disponible: true,
-      //Le menuOuvert vas descider de l'apparition ou non du sousMenu dans le HTML avec un if. Son etats d'apparition seras gerer pas un clique du menuEtats.
+      //Le menuOuvert va décider de l’apparition ou non du sousMenu dans le HTML avec un if. Son état d’apparition sera géré par un clic sur menuEtats.
       menuOuvert: false,
-      //Si il y a un probleme de chargement du fetch le projet resto avec c'est information sera montré par defaut dans le HTML.
+      //S’il y a un problème de chargement du fetch, le projet Resto avec ses informations sera affiché par défaut dans le HTML.
       imagePrincipalDefaut: "./img/projets/projet_resto3.png",
       titreDescritpionDefaut: "Resto",
       paragrapheDescriptionDefaut: `Resto est un projet de modélisation 3D réalisé dans un cadre académique. Pour ce projet, deux logiciels ont dû être utilisés : Maya pour la modélisation et Unity pour l’importation. J’ai réalisé ce projet en équipe de trois personnes composées de Kristy Moussally, Mégane Ranger et moi-même. Mon rôle dans ce projet était de modéliser trois modèles 3D (le pot de fleur, le drapeau italien et la porte du resto). Ces modèles ont ensuite été intégrés dans le restaurant.`,
@@ -28,7 +29,7 @@ const app = Vue.createApp({
       imageConceptionDefaut: './img/projets/projet_resto2.png',
     };
   },
-  //Dans la fonction mounted en appel le projects.json avec un fetch qui convertiras le json en code pour que ensuite il soit chercher via le data. Le data sera appeler dans mon code avec le tableau vide du debut qui s'appel project.
+  //Dans la fonction mounted, on appelle le projects.json avec un fetch qui convertira le JSON en code pour qu’ensuite il soit accessible via le data. Le data sera appelé dans mon code avec le tableau vide du début qui s’appelle project.
   mounted() {
     fetch('projects.json')
       .then(res => res.json())
@@ -37,18 +38,18 @@ const app = Vue.createApp({
 
           this.project = data;
       })
-      //Dans la console une erreur apparait si le data na pas etais correctement charger.
+      //Dans la console, une erreur apparaît si le data n’a pas été correctement chargé.
       .catch(error => {
           console.error("Erreur le fetch ne fonctionne pas:", error);
       });
   },
-  //La methods gerer un changement qui est provoquer dans le code par un clique dans le HTML qui est appeler par une fonction dans methods.
+  //La method gère un changement qui est provoqué dans le code par un clic dans le HTML, appelé par une fonction dans methods.
   methods: {
-    //Le menuEtats change en true et false le menuOuvert descide ainsi au clique dans le HTML avec un if de l'apparition du sousMenu.
+    //Le menuEtats change en true et false, et menuOuvert décide ainsi au clic dans le HTML, avec un if pour l’apparition du sousMenu.
     menuEtats() {
       this.menuOuvert = !this.menuOuvert;
     },
-    //Les autres fonction dans methods change l'URL de la page projets pour ajouter le type de projets qui aurais etais provoque au prehalable pas un clique dans le html. C'est fonction ce trouve dans le swiper et dans le navigateur.
+    //Les autres fonctions dans methods changent l’URL de la page projets pour ajouter le type de projet qui aurait été provoqué préalablement par un clic dans le HTML. Ces fonctions se trouvent dans le Swiper et dans le navigateur.
     jeux() {
       window.location.href = "projets.html?projet=jeux";
     },
@@ -63,23 +64,24 @@ const app = Vue.createApp({
     },
   },
   computed: {
+    //Le estModele() fait en sorte qu’il n’apparaisse que dans le projet modele.
     estModele() {
+      //Dans params, toute information qui se trouve après le point d’interrogation est récupérée, et ensuite dans projet, la valeur projet est récupérée dans cette URL.
       const params = new URLSearchParams(window.location.search);
       const projet = params.get("projet");
       return projet === "modele";
     },
     titreDescritpion(){
-      //
       const params = new URLSearchParams(window.location.search);
       const projet = params.get("projet");
 
-      //Ce if empêche que le code continue si le tableu projects est vide. En gros si le n'a pas le data il vas retourner une valeur par defaut du projet resto.
+      //Ce if empêche que le code continue si le tableau projects est vide. En gros, s’il n’y a pas de data, il va retourner une valeur par défaut du projet Resto.
       if (!this.project || this.project.length === 0) {
         return this.titreDescritpionDefaut; 
       };
 
       
-      //Ce if vas faire en sorte que si l'URL de la page projets a un projet = un type specifique de projet, change l'information par une autre recuperer dans le tableau du projects.json, sinon avois une donner du resto par defaut.
+      //Ce if va faire en sorte que si l’URL de la page projets a un projet = un type spécifique de projet, il change l’information par une autre récupérée dans le tableau du projects.json, sinon il a une donnée du Resto par défaut.
       if (projet === "jeux") {
         return this.project[1].titreProjet;
       } else if (projet === "modele") {
@@ -92,17 +94,16 @@ const app = Vue.createApp({
         return this.titreDescritpionDefaut; 
       }
     },    
+    //Le estModele() fait en sorte qu’il n’apparaisse que dans le projet Modèle.
     creationTitre(){
-      //
       const params = new URLSearchParams(window.location.search);
       const projet = params.get("projet");
 
-      //Ce if empêche que le code continue si le tableu projects est vide. En gros si le n'a pas le data il vas retourner une valeur par defaut du projet resto.
+      //Ce if empêche que le code continue si le tableau projects est vide. En gros, s’il n’y a pas de data, il va retourner une valeur par défaut.
       if (!this.project || this.project.length === 0) {
         return this.vide; 
       };
 
-      //Ce if vas faire en sorte que si l'URL de la page projets a un projet = un type specifique de projet, change l'information par une autre recuperer dans le tableau du projects.json, sinon avois une donner du resto par defaut.
       if (projet === "modele") {
         return this.project[0].processusCreation;
       } else {
@@ -114,12 +115,10 @@ const app = Vue.createApp({
       const params = new URLSearchParams(window.location.search);
       const projet = params.get("projet");
 
-      //Ce if empêche que le code continue si le tableu projects est vide. En gros si le n'a pas le data il vas retourner une valeur par defaut du projet resto.
       if (!this.project || this.project.length === 0) {
         return this.vide; 
       };
 
-      //Ce if vas faire en sorte que si l'URL de la page projets a un projet = un type specifique de projet, change l'information par une autre recuperer dans le tableau du projects.json, sinon avois une donner du resto par defaut.
       if (projet === "modele") {
         return this.project[0].processusCreationText;
       } else {
@@ -130,7 +129,7 @@ const app = Vue.createApp({
       const params = new URLSearchParams(window.location.search);
       const projet = params.get("projet");
 
-    //Ce if empêche que le code continue si le tableu projects est vide. En gros si le n'a pas le data il vas retourner un URL vide car resto n'a pas de base d'URL.
+    //Ce if empêche que le code continue si le tableau projects est vide. En gros, s’il n’y a pas de data, il va retourner une URL vide car Resto n’a pas de base d’URL.
     if (!this.project || this.project.length === 0) return "#";
 
       if (projet === "jeux") {
@@ -264,7 +263,7 @@ app.mount('#app')
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/ 
 
-/*Le window vas recalculer tout les position et la taille de la page pour reposition le scrollTrigger.*/
+/*Le window va recalculer toutes les positions et la taille de la page pour repositionner le ScrollTrigger.*/
 window.addEventListener("resize", () => {
   ScrollTrigger.refresh();
 });
@@ -272,10 +271,10 @@ window.addEventListener("orientationchange", () => {
   ScrollTrigger.refresh();
 });
 
-/*Cette partis de code appel la biblioteque ScrollTrigger du GSAP.*/
+/*Cette partie de code appelle la bibliothèque ScrollTrigger de GSAP.*/
 gsap.registerPlugin(ScrollTrigger);
 
-//Ce scrollTrigger empeche le header de bouger au scroll de la page.
+//Ce ScrollTrigger empêche le header de bouger au scroll de la page.
 ScrollTrigger.create({
   trigger: "header",
   start: "top top",
@@ -285,7 +284,7 @@ ScrollTrigger.create({
   pinSpacing: false,
 });
 
-//Ce scrollTrigger empeche le div decoPresentation de bouger au scroll de la page.
+//Ce ScrollTrigger empêche le div decoPresentation de bouger au scroll de la page.
 ScrollTrigger.create({
   trigger: ".decoPresentation",
   start: "top-=11% top",
@@ -293,9 +292,9 @@ ScrollTrigger.create({
   pinSpacing: false,
 });
 
-//Cette section est appeler du html vers le javascript et est mis dans un const.
+//Cette section est appelée du HTML vers le JavaScript et est mise dans un const.
 const deuxiemeSection = document.querySelector(".deuxiemeSection");
-//Le const est ensuite utiliser dans un if pour empecher le scrollTrigger d'exister si le .deuxiemeSection n'est pas dans la page.
+//Le const est ensuite utilisé dans un if pour empêcher le ScrollTrigger d’exister si .deuxiemeSection n’est pas dans la page.
 if (deuxiemeSection) {
   ScrollTrigger.create({
     trigger: ".deuxiemeSection",
@@ -303,8 +302,8 @@ if (deuxiemeSection) {
     end: "bottom+=20% top",
     pin: true,
     pinSpacing: false,
-    markers: true,
-    //Aprés le commenece du pin par le start cette animation gsap commence.
+    markers: false,
+    //Après le commencement du pin par le start, cette animation GSAP commence.
     onEnter: () => {
       gsap.to(".presentation", { 
         opacity: 1, 
@@ -313,7 +312,7 @@ if (deuxiemeSection) {
         scale:1,
       });
     },
-    //Aprés que le scroll sois repasser dans l'autre par le start cette animaion gsap commence.
+    //Après que le scroll soit repassé dans l’autre par le start, cette animation GSAP commence.
     onLeaveBack: () => {
       gsap.to(".presentation", { 
         opacity: 0, 
@@ -402,12 +401,16 @@ if (premierSectionProjet) {
   })
 };
 
+//Une fonction animeFlocon est créée pour ensuite lui passer le sélecteur qui ira chercher les divs et un délai.
 function animeFlocon(selector, delay = 0) {
+  //Ensuite, dans la fonction, la largeur de la fenêtre est prise et le sélecteur est défini dans une variable. 
   const flocon = document.querySelector(selector);
   const windowWidth = window.innerWidth;
 
+  //Cette animation donne au div sélectionné une position de départ qui se situe en haut de la fenêtre, avec une largeur aléatoire.
   gsap.set(flocon, { x: Math.random() * windowWidth, y: 0 });
 
+  //Pour finir, les flocons descendent plus bas que la fenêtre de 500 avec une animation.
   gsap.to(flocon, {
       y: window.innerHeight + 500, 
       x: `+=${Math.random() * 100 - 0}`, 
@@ -418,7 +421,7 @@ function animeFlocon(selector, delay = 0) {
   });
 }
 
-// Lancer l'animation pour chaque flocon
+// Lancer l’animation à différents endroits pour chaque flocon.
 animeFlocon(".neige1", 0);
 animeFlocon(".neige2", 0.5);
 animeFlocon(".neige3", 1);
@@ -436,6 +439,7 @@ animeFlocon(".neige6", 2.5);
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
+// Dans cette partie de code, le bouton Accueil et le logo sont cherchés dans le HTML pour les mettre dans une variable, qui est utilisée pour que, au clic sur ces éléments, l’utilisateur soit ramené à la page Accueil, donc index.
 let boutonAccueil = document.querySelector(".bouton.accueil");
 let logoAccueil = document.querySelector(".logo");
 
@@ -447,7 +451,7 @@ logoAccueil.addEventListener("click", () => {
   window.location.href = "./index.html";
 });
 
-
+// La bibliothèque Swiper dans le HTML est utilisée pour définir deux carrousels interactifs. Le premier a des flèches pour naviguer et le deuxième a juste des points de pagination.
 const swiper = new Swiper('.swiper', {
   direction: 'horizontal',
   navigation: {
