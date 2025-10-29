@@ -394,6 +394,10 @@ header {
     letter-spacing: 2px;
 }
 
+#email {
+    color: var(--bleu-fonce);
+}
+
 /*Le Swiper englobe des div avec le mot Swiper, mais il se trouve exclusivement dans la page Accueil.*/
 .swiper {
     width: 560px;
