@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Projets du portfolio d'Amira Tounekti - web designer.">
         <title>Projets</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
         <link rel="stylesheet" href="./style.css" />
@@ -104,37 +105,37 @@
                             <p class="conception">{{paragrapheConception}}</p>
                         </article>
                     </div>
+                    <!-- Le div projetCreation n’apparaît que si estModele existe. L’existence de estModele sera gérée par Vue et dépendra de l’URL de la page projets. -->
                     <div class="projetCreation" v-if="estModele">
-                        <!-- Le div imageProjet partage le même style CSS que le deuxième imageProjet. Le div contient l’image et la positionne adéquatement. -->
-                            <!-- L’image qui sera présentée dans la page est choisie en fonction de l’URL, gérée par Vue.js. -->
-                            <div class="swiperResto explixationImg">
-                                <div class="swiper-wrapper">
-                                    <!-- Chaque swiper-slide contient une image d’un projet. -->
-                                    <div class="swiper-slide">
-                                        <img src="./img/projets/model-pot-page-resto.png"  alt="carrousel-resto-model-pot">
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="./img/projets/model-porte-page-resto.png" alt="carrousel-resto-model-porte">
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="./img/projets/model-drapeau-page-resto.png" alt="carrousel-resto-model-drapeau">
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="./img/projets/moodboard-page-resto.png"  alt="carrousel-resto-moodboard">
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="./img/projets/sketch-drapeau-page-resto.png" alt="carrousel-resto-sketch-drapeau">
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="./img/projets/sketch-porte-page-resto.png" alt="carrousel-resto-sketch-porte">
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="./img/projets/sketch-pot-page-resto.png" alt="carrousel-resto-sketch-pot">
-                                    </div>
+                        <!-- Swiper est un carrousel qui est géré dans le JavaScript avec la bibliothèque Swiper. -->
+                        <div class="swiperResto explixationImg">
+                            <div class="swiper-wrapper">
+                                <!-- Chaque swiper-slide contient une image d’un projet. -->
+                                <div class="swiper-slide">
+                                    <img src="./img/projets/model-pot-page-resto.png"  alt="carrousel-resto-model-pot">
                                 </div>
-                                <!-- Les swiper-button dirigent le passage d’une image à l’autre du carrousel. -->
-                                <div class="swiper-pagination"></div>
+                                <div class="swiper-slide">
+                                    <img src="./img/projets/model-porte-page-resto.png" alt="carrousel-resto-model-porte">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./img/projets/model-drapeau-page-resto.png" alt="carrousel-resto-model-drapeau">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./img/projets/moodboard-page-resto.png"  alt="carrousel-resto-moodboard">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./img/projets/sketch-drapeau-page-resto.png" alt="carrousel-resto-sketch-drapeau">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./img/projets/sketch-porte-page-resto.png" alt="carrousel-resto-sketch-porte">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./img/projets/sketch-pot-page-resto.png" alt="carrousel-resto-sketch-pot">
+                                </div>
                             </div>
+                            <!-- Les swiper-pagination dirigent le passage d’une image à l’autre du carrousel. -->
+                            <div class="swiper-pagination"></div>
+                        </div>
                         <!-- L’article possède un texte qui présente en partie le projet, et le texte affiché est géré par Vue.js. -->
                         <article class="projetConception">
                             <h2 class="titre 3">{{creationTitre}}</h2>

@@ -293,7 +293,7 @@ ScrollTrigger.create({
   pinSpacing: false,
 });
 
-//La deuxieme section est appeler du html vers le javascript et est mis dans un const.
+//Cette section est appeler du html vers le javascript et est mis dans un const.
 const deuxiemeSection = document.querySelector(".deuxiemeSection");
 //Le const est ensuite utiliser dans un if pour empecher le scrollTrigger d'exister si le .deuxiemeSection n'est pas dans la page.
 if (deuxiemeSection) {
