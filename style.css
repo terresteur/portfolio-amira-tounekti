@@ -84,8 +84,8 @@ header {
 
 /*Le logo présente l’identité de mon site et affiche mon nom.*/
 .logo {
-    width: 20%;
-    max-width: 20%;
+    width: 25%;
+    max-width: 25%;
     cursor: pointer;
 }
 
