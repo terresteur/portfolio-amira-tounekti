@@ -6,13 +6,13 @@
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/ 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 const app = Vue.createApp({
   data() {
     return {
       //Le vide sera utilisé pour ne rien retourner si les créations ne fonctionnent pas.
-      vide: '',
+      vide: "",
       //Le project est un tableau vide qui contiendra le data du fetch, permettant ainsi d’accéder aux informations du projects.json.
       project: [],
       //Le disponible va décider dans le HTML, grâce à un if et else, de l’apparition de l’un des deux paragraphes
@@ -23,24 +23,24 @@ const app = Vue.createApp({
       imagePrincipalDefaut: "./img/projets/projet_resto3.png",
       titreDescritpionDefaut: "Resto",
       paragrapheDescriptionDefaut: `Resto est un projet de modélisation 3D réalisé dans un cadre académique. Pour ce projet, deux logiciels ont dû être utilisés : Maya pour la modélisation et Unity pour l’importation. J’ai réalisé ce projet en équipe de trois personnes composées de Kristy Moussally, Mégane Ranger et moi-même. Mon rôle dans ce projet était de modéliser trois modèles 3D (le pot de fleur, le drapeau italien et la porte du resto). Ces modèles ont ensuite été intégrés dans le restaurant.`,
-      imageDescritpionDefaut: './img/projets/projet_resto1.png',
+      imageDescritpionDefaut: "./img/projets/projet_resto1.png",
       titreConception: "Description",
       paragrapheConceptionDefaut: `Nous avons, en équipe, réalisé ce projet dans le cadre du cours de modélisation 3D. En effet, nous devions créer une modélisation 3D originale sur le thème de notre choix, qui démontrerait nos capacités de modélisation dans un temps imparti et en utilisant les outils appris jusqu’à présent. Dans ce projet, j’ai dû, avec mon équipe, réaliser un sketch qui permettrait de visualiser la modélisation que nous devions faire. Nous avons réalisé un restaurant italien qui devait, rien que par le visuel, transporter le spectateur dans l’ambiance du pays où se trouvait ce restaurant.`,
-      imageConceptionDefaut: './img/projets/projet_resto2.png',
+      imageConceptionDefaut: "./img/projets/projet_resto2.png",
     };
   },
   //Dans la fonction mounted, on appelle le projects.json avec un fetch qui convertira le JSON en code pour qu’ensuite il soit accessible via le data. Le data sera appelé dans mon code avec le tableau vide du début qui s’appelle project.
   mounted() {
-    fetch('projects.json')
-      .then(res => res.json())
-      .then(data => {
-          console.log(data);
+    fetch("projects.json")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
 
-          this.project = data;
+        this.project = data;
       })
       //Dans la console, une erreur apparaît si le data n’a pas été correctement chargé.
-      .catch(error => {
-          console.error("Erreur le fetch ne fonctionne pas:", error);
+      .catch((error) => {
+        console.error("Erreur le fetch ne fonctionne pas:", error);
       });
   },
   //La method gère un changement qui est provoqué dans le code par un clic dans le HTML, appelé par une fonction dans methods.
@@ -71,16 +71,15 @@ const app = Vue.createApp({
       const projet = params.get("projet");
       return projet === "modele";
     },
-    titreDescritpion(){
+    titreDescritpion() {
       const params = new URLSearchParams(window.location.search);
       const projet = params.get("projet");
 
       //Ce if empêche que le code continue si le tableau projects est vide. En gros, s’il n’y a pas de data, il va retourner une valeur par défaut du projet Resto.
       if (!this.project || this.project.length === 0) {
-        return this.titreDescritpionDefaut; 
-      };
+        return this.titreDescritpionDefaut;
+      }
 
-      
       //Ce if va faire en sorte que si l’URL de la page projets a un projet = un type spécifique de projet, il change l’information par une autre récupérée dans le tableau du projects.json, sinon il a une donnée du Resto par défaut.
       if (projet === "jeux") {
         return this.project[1].titreProjet;
@@ -91,46 +90,46 @@ const app = Vue.createApp({
       } else if (projet === "animation") {
         return this.project[2].titreProjet;
       } else {
-        return this.titreDescritpionDefaut; 
+        return this.titreDescritpionDefaut;
       }
-    },    
+    },
     //Le estModele() fait en sorte qu’il n’apparaisse que dans le projet Modèle.
-    creationTitre(){
+    creationTitre() {
       const params = new URLSearchParams(window.location.search);
       const projet = params.get("projet");
 
       //Ce if empêche que le code continue si le tableau projects est vide. En gros, s’il n’y a pas de data, il va retourner une valeur par défaut.
       if (!this.project || this.project.length === 0) {
-        return this.vide; 
-      };
+        return this.vide;
+      }
 
       if (projet === "modele") {
         return this.project[0].processusCreation;
       } else {
-        return this.vide; 
+        return this.vide;
       }
     },
-    creationText(){
+    creationText() {
       //
       const params = new URLSearchParams(window.location.search);
       const projet = params.get("projet");
 
       if (!this.project || this.project.length === 0) {
-        return this.vide; 
-      };
+        return this.vide;
+      }
 
       if (projet === "modele") {
         return this.project[0].processusCreationText;
       } else {
-        return this.vide; 
+        return this.vide;
       }
     },
-   lienProjet() {
+    lienProjet() {
       const params = new URLSearchParams(window.location.search);
       const projet = params.get("projet");
 
-    //Ce if empêche que le code continue si le tableau projects est vide. En gros, s’il n’y a pas de data, il va retourner une URL vide car Resto n’a pas de base d’URL.
-    if (!this.project || this.project.length === 0) return "#";
+      //Ce if empêche que le code continue si le tableau projects est vide. En gros, s’il n’y a pas de data, il va retourner une URL vide car Resto n’a pas de base d’URL.
+      if (!this.project || this.project.length === 0) return "#";
 
       if (projet === "jeux") {
         return "https://amiratounekt.itch.io/balobilou";
@@ -142,14 +141,13 @@ const app = Vue.createApp({
         return "#";
       }
     },
-    paragrapheDescription(){
+    paragrapheDescription() {
       const params = new URLSearchParams(window.location.search);
       const projet = params.get("projet");
 
       if (!this.project || this.project.length === 0) {
-        return this.paragrapheDescriptionDefaut; 
-      };
-
+        return this.paragrapheDescriptionDefaut;
+      }
 
       if (projet === "jeux") {
         return this.project[1].projetPresentation;
@@ -160,18 +158,16 @@ const app = Vue.createApp({
       } else if (projet === "animation") {
         return this.project[2].projetPresentation;
       } else {
-        return this.paragrapheDescriptionDefaut; 
+        return this.paragrapheDescriptionDefaut;
       }
     },
-    imagePrincipal(){
+    imagePrincipal() {
       const params = new URLSearchParams(window.location.search);
       const projet = params.get("projet");
 
-
       if (!this.project || this.project.length === 0) {
-        return this.imagePrincipalDefaut; 
-      };
-
+        return this.imagePrincipalDefaut;
+      }
 
       if (projet === "jeux") {
         return this.project[1].imageProjet;
@@ -182,17 +178,16 @@ const app = Vue.createApp({
       } else if (projet === "animation") {
         return this.project[2].imageProjet;
       } else {
-        return this.imagePrincipalDefaut; 
+        return this.imagePrincipalDefaut;
       }
     },
-    imageDescritpion(){
+    imageDescritpion() {
       const params = new URLSearchParams(window.location.search);
       const projet = params.get("projet");
 
       if (!this.project || this.project.length === 0) {
-        return this.imageDescritpionDefaut; 
-      };
-
+        return this.imageDescritpionDefaut;
+      }
 
       if (projet === "jeux") {
         return this.project[1].imagePresentation;
@@ -203,17 +198,16 @@ const app = Vue.createApp({
       } else if (projet === "animation") {
         return this.project[2].imagePresentation;
       } else {
-        return this.imageDescritpionDefaut; 
+        return this.imageDescritpionDefaut;
       }
     },
-    paragrapheConception(){
+    paragrapheConception() {
       const params = new URLSearchParams(window.location.search);
       const projet = params.get("projet");
 
       if (!this.project || this.project.length === 0) {
-        return this.paragrapheConceptionDefaut; 
-      };
-
+        return this.paragrapheConceptionDefaut;
+      }
 
       if (projet === "jeux") {
         return this.project[1].projetDescritpion;
@@ -224,17 +218,16 @@ const app = Vue.createApp({
       } else if (projet === "animation") {
         return this.project[2].projetDescritpion;
       } else {
-        return this.paragrapheConceptionDefaut; 
+        return this.paragrapheConceptionDefaut;
       }
     },
-    imageConception(){
+    imageConception() {
       const params = new URLSearchParams(window.location.search);
       const projet = params.get("projet");
 
       if (!this.project || this.project.length === 0) {
-        return this.imageConceptionDefaut; 
-      };
-
+        return this.imageConceptionDefaut;
+      }
 
       if (projet === "jeux") {
         return this.project[1].imageDescritpion;
@@ -245,13 +238,13 @@ const app = Vue.createApp({
       } else if (projet === "animation") {
         return this.project[2].imageDescritpion;
       } else {
-        return this.imageConceptionDefaut; 
+        return this.imageConceptionDefaut;
       }
     },
-  }
+  },
 });
 
-app.mount('#app')
+app.mount("#app");
 
 /*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -261,7 +254,7 @@ app.mount('#app')
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/ 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 /*Le window va recalculer toutes les positions et la taille de la page pour repositionner le ScrollTrigger.*/
 window.addEventListener("resize", () => {
@@ -305,25 +298,24 @@ if (deuxiemeSection) {
     markers: false,
     //Après le commencement du pin par le start, cette animation GSAP commence.
     onEnter: () => {
-      gsap.to(".presentation", { 
-        opacity: 1, 
-        duration: 1, 
+      gsap.to(".presentation", {
+        opacity: 1,
+        duration: 1,
         ease: "power2.out",
-        scale:1,
+        scale: 1,
       });
     },
     //Après que le scroll soit repassé dans l’autre par le start, cette animation GSAP commence.
     onLeaveBack: () => {
-      gsap.to(".presentation", { 
-        opacity: 0, 
-        duration: 1, 
+      gsap.to(".presentation", {
+        opacity: 0,
+        duration: 1,
         ease: "power2.out",
         scale: 0.95,
       });
-    }
-  })
-};
-
+    },
+  });
+}
 
 const troisiemeSection = document.querySelector(".troisiemeSection");
 if (troisiemeSection) {
@@ -332,23 +324,23 @@ if (troisiemeSection) {
     start: "center-=15% center",
     end: "bottom top",
     onEnter: () => {
-      gsap.to(".competance", { 
-        opacity: 1, 
-        duration: 1, 
+      gsap.to(".competance", {
+        opacity: 1,
+        duration: 1,
         ease: "power2.out",
-        scale:1,
+        scale: 1,
       });
     },
     onLeaveBack: () => {
-      gsap.to(".competance", { 
-        opacity: 0, 
-        duration: 1, 
+      gsap.to(".competance", {
+        opacity: 0,
+        duration: 1,
         ease: "power2.out",
         scale: 0.95,
       });
-    }
-  })
-};
+    },
+  });
+}
 
 const premierSectionProjet = document.querySelector(".premierSectionProjet");
 if (premierSectionProjet) {
@@ -357,53 +349,54 @@ if (premierSectionProjet) {
     start: "center-+=25% center",
     onEnter: () => {
       gsap
-      .timeline()
-      .to(".projetExplixation", { 
-        opacity: 1, 
-        duration: 0.8, 
-        ease: "power2.out",
-        scale:1,
-      })
-      .to(".projetDeveloppement", { 
-        opacity: 1, 
-        duration: 0.8, 
-        ease: "power2.out",
-        scale:1,
-      })
-      .to(".projetCreation", { 
-        opacity: 1, 
-        duration: 0.8, 
-        ease: "power2.out",
-        scale:1,
-      })
+        .timeline()
+        .to(".projetExplixation", {
+          opacity: 1,
+          duration: 0.8,
+          ease: "power2.out",
+          scale: 1,
+        })
+        .to(".projetDeveloppement", {
+          opacity: 1,
+          duration: 0.8,
+          ease: "power2.out",
+          scale: 1,
+        })
+        .to(".projetCreation", {
+          opacity: 1,
+          duration: 0.8,
+          ease: "power2.out",
+          scale: 1,
+        });
     },
     onLeaveBack: () => {
       gsap
-      .timeline()
-      .to(".projetExplixation", { 
-        opacity: 0, 
-        duration: 0.8, 
-        ease: "power2.out",
-        scale: 0.95,
-      }).to(".projetDeveloppement", { 
-        opacity: 0, 
-        duration: 0.8, 
-        ease: "power2.out",
-        scale: 0.95,
-      })
-      .to(".projetCreation", { 
-        opacity: 0, 
-        duration: 0.8, 
-        ease: "power2.out",
-        scale:0.95,
-      })
-    }
-  })
-};
+        .timeline()
+        .to(".projetExplixation", {
+          opacity: 0,
+          duration: 0.8,
+          ease: "power2.out",
+          scale: 0.95,
+        })
+        .to(".projetDeveloppement", {
+          opacity: 0,
+          duration: 0.8,
+          ease: "power2.out",
+          scale: 0.95,
+        })
+        .to(".projetCreation", {
+          opacity: 0,
+          duration: 0.8,
+          ease: "power2.out",
+          scale: 0.95,
+        });
+    },
+  });
+}
 
 //Une fonction animeFlocon est créée pour ensuite lui passer le sélecteur qui ira chercher les divs et un délai.
 function animeFlocon(selector, delay = 0) {
-  //Ensuite, dans la fonction, la largeur de la fenêtre est prise et le sélecteur est défini dans une variable. 
+  //Ensuite, dans la fonction, la largeur de la fenêtre est prise et le sélecteur est défini dans une variable.
   const flocon = document.querySelector(selector);
   const windowWidth = window.innerWidth;
 
@@ -412,12 +405,12 @@ function animeFlocon(selector, delay = 0) {
 
   //Pour finir, les flocons descendent plus bas que la fenêtre de 500 avec une animation.
   gsap.to(flocon, {
-      y: window.innerHeight + 500, 
-      x: `+=${Math.random() * 100 - 0}`, 
-      duration: Math.random() * 5 + 5,
-      repeat: -1, 
-      ease: "linear",
-      delay: delay
+    y: window.innerHeight + 500,
+    x: `+=${Math.random() * 100 - 0}`,
+    duration: Math.random() * 5 + 5,
+    repeat: -1,
+    ease: "linear",
+    delay: delay,
   });
 }
 
@@ -443,7 +436,6 @@ animeFlocon(".neige6", 2.5);
 let boutonAccueil = document.querySelector(".bouton.accueil");
 let logoAccueil = document.querySelector(".logo");
 
-  
 boutonAccueil.addEventListener("click", () => {
   window.location.href = "./index.html";
 });
@@ -452,8 +444,8 @@ logoAccueil.addEventListener("click", () => {
 });
 
 // La bibliothèque Swiper dans le HTML est utilisée pour définir deux carrousels interactifs. Le premier a des flèches pour naviguer et le deuxième a juste des points de pagination.
-const swiper = new Swiper('.swiper', {
-  direction: 'horizontal',
+const swiper = new Swiper(".swiper", {
+  direction: "horizontal",
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
@@ -461,13 +453,11 @@ const swiper = new Swiper('.swiper', {
   slidesPerView: 1,
 });
 
-const swiperResto = new Swiper('.swiperResto', {
-  direction: 'horizontal',
+const swiperResto = new Swiper(".swiperResto", {
+  direction: "horizontal",
   slidesPerView: 1,
   pagination: {
-    el: '.swiper-pagination',
-    clickable: true, 
+    el: ".swiper-pagination",
+    clickable: true,
   },
 });
-
-
