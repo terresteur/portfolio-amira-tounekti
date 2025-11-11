@@ -283,7 +283,7 @@ const deuxiemeSection = document.querySelector(".deuxiemeSection");
 if (deuxiemeSection) {
   ScrollTrigger.create({
     trigger: ".deuxiemeSection",
-    start: "center center",
+    start: "center-=5% center",
     end: "bottom+=20% top",
     pin: true,
     pinSpacing: false,
