@@ -62,6 +62,9 @@ const app = Vue.createApp({
     animation3d() {
       window.location.href = "projets.html?projet=animation";
     },
+    siteWeb() {
+      window.location.href = "projets.html?projet=web";
+    },
   },
   computed: {
     //Le estModele() fait en sorte qu’il n’apparaisse que dans le projet modele.
@@ -89,6 +92,8 @@ const app = Vue.createApp({
         return this.project[3].titreProjet;
       } else if (projet === "animation") {
         return this.project[2].titreProjet;
+      } else if (projet === "web") {
+        return this.project[4].titreProjet;
       } else {
         return this.titreDescritpionDefaut;
       }
@@ -137,6 +142,8 @@ const app = Vue.createApp({
         return "https://youtu.be/fH8j3C7BZWk";
       } else if (projet === "animation") {
         return "https://youtu.be/UIA_zOXrovo";
+      } else if (projet === "web") {
+        return "https://rad8433.github.io/webapp-creative-Radhouane-Thearylou-Amira/#/";
       } else {
         return "#";
       }
@@ -157,6 +164,8 @@ const app = Vue.createApp({
         return this.project[3].projetPresentation;
       } else if (projet === "animation") {
         return this.project[2].projetPresentation;
+      } else if (projet === "web") {
+        return this.project[4].projetPresentation;
       } else {
         return this.paragrapheDescriptionDefaut;
       }
@@ -177,6 +186,8 @@ const app = Vue.createApp({
         return this.project[3].imageProjet;
       } else if (projet === "animation") {
         return this.project[2].imageProjet;
+      } else if (projet === "web") {
+        return this.project[4].imageProjet;
       } else {
         return this.imagePrincipalDefaut;
       }
@@ -197,6 +208,8 @@ const app = Vue.createApp({
         return this.project[3].imagePresentation;
       } else if (projet === "animation") {
         return this.project[2].imagePresentation;
+      } else if (projet === "web") {
+        return this.project[4].imagePresentation;
       } else {
         return this.imageDescritpionDefaut;
       }
@@ -217,6 +230,8 @@ const app = Vue.createApp({
         return this.project[3].projetDescritpion;
       } else if (projet === "animation") {
         return this.project[2].projetDescritpion;
+      } else if (projet === "web") {
+        return this.project[4].projetDescritpion;
       } else {
         return this.paragrapheConceptionDefaut;
       }
@@ -237,6 +252,8 @@ const app = Vue.createApp({
         return this.project[3].imageDescritpion;
       } else if (projet === "animation") {
         return this.project[2].imageDescritpion;
+      } else if (projet === "web") {
+        return this.project[4].imageDescritpion;
       } else {
         return this.imageConceptionDefaut;
       }

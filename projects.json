@@ -38,5 +38,14 @@
     "projetDescritpion": "Nous avons, en équipe, réalisé ce projet dans le cadre du cours de montage vidéo. En effet, nous devions créer un court-métrage en stop motion en réalisant nous-mêmes le montage, le son, les animations et les diverses photos du stop motion, le tout en nous basant sur un poème. Dans ce projet, j’ai dû m’occuper d’être l’actrice principale du court-métrage. Je me suis aussi occupée de trois des animations : la tête, la femme qui pleure et la femme en boule. J’ai également aidé au montage vidéo. Le court-métrage se base sur un poème qui transmet un message sur la pauvreté à travers la consommation excessive d’un ingrédient peu coûteux : la patate. Il explore cette thématique à travers la phobie des patates.",
     "imageDescritpion": ["./img/projets/patatophobie3.png"],
     "lien": "https://youtu.be/fH8j3C7BZWk"
-  }
+  },
+  {
+    "typeProjet": "Site Web",
+    "imageProjet": ["./img/projets/site-web1.png"],
+    "titreProjet": "Vos voyages en mémoires",
+    "projetPresentation": "« Vos voyages en mémoire » est un projet de programmation d’un site web que j’ai réalisé dans un cadre académique. Pour ce projet, quatre logiciels ont été utilisés : Visual Studio Code pour le codage, Figma pour le design du site, Trello pour la gestion des tâches, et Teams pour la communication au sein du groupe. J’ai réalisé ce projet en équipe de trois personnes : Radhouane Kordan, Thearylou Lach et moi-même. Mon rôle dans ce projet consistait à gérer les tâches sur Trello, coder certaines composantes du site et aider à résoudre différents problèmes auxquels l’équipe était confrontée pendant la programmation.",
+    "imagePresentation": ["./img/projets/site-web2.png"],
+    "projetDescritpion": "Nous avons réalisé ce projet en équipe dans le cadre du cours de Web 5. L’objectif était de créer un site web adaptatif à différents écrans en utilisant différentes librairies telles que Vue, Vue Router et Pinia. Dans ce projet, j’étais responsable de faire le suivi des différentes tâches de chaque coéquipier. Je me suis également occupée de coder certaines composantes : l’en-tête, la page MuseumRooms et l’ajout de cartes avec la possibilité de les éditer. J’ai aussi aidé à résoudre certains problèmes survenus durant le codage. Le site web permet à l’utilisateur de répertorier ses différents voyages sous forme de cartes. Il peut pour chaque voyage ajouter une date, des tags, une image, un titre et une description.",
+    "imageDescritpion": ["./img/projets/site-web3.png"]
+  } 
 ]
